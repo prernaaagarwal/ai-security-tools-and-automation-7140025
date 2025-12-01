@@ -66,7 +66,7 @@ python privacy_policy_scraper.py www.company.com
 
 ## Use Case
 
-This tool supports Cardinal Security's privacy compliance workflow:
+This tool supports a Security's privacy compliance workflow:
 - Quickly assess website privacy policies
 - Identify non-compliant websites
 - Generate reports on privacy statement gaps
