@@ -1,0 +1,92 @@
+# CCPA/CPRA Gap Analysis Report
+
+**Company:** Audit Caddie
+**Analysis Date:** 2025-12-02T14:03:43.612550
+**Session ID:** privacy_analysis_Audit Caddie_20251202_140343
+
+---
+
+## Gap Analysis
+
+# Audit Caddie Privacy Policy CCPA/CPRA Compliance Gap Analysis
+
+## Executive Summary
+The Audit Caddie privacy policy has been reviewed for compliance with California privacy laws, specifically the CCPA and CPRA. The analysis identified several compliance gaps related to consumer rights, notice requirements, and data handling practices. These gaps need to be addressed to ensure full compliance with the CCPA/CPRA requirements.
+
+## Detailed List of Gaps
+
+### 1. Right to Know Disclosure
+- **Gap:** The privacy policy does not explicitly provide consumers with the right to know about the categories of personal information collected, the sources from which the information is collected, the business or commercial purpose for collecting, and the categories of third parties with whom the business shares personal information.
+- **Reference:** CCPA Section 1798.110
+- **Recommendation:** Include a section detailing the categories of personal information collected, the purposes for collection, and the categories of third parties with whom the information is shared.
+- **Priority:** High
+
+### 2. Right to Delete Disclosure
+- **Gap:** The policy does not mention the consumer's right to request the deletion of personal information collected by the business.
+- **Reference:** CCPA Section 1798.105
+- **Recommendation:** Add a clear statement on the consumer's right to request deletion of their personal information and the process to submit such requests.
+- **Priority:** High
+
+### 3. Right to Opt-Out of Sale/Sharing
+- **Gap:** There is no mention of the right to opt-out of the sale or sharing of personal information.
+- **Reference:** CCPA Section 1798.120
+- **Recommendation:** Include a section on the right to opt-out of the sale or sharing of personal information, along with a "Do Not Sell or Share My Personal Information" link.
+- **Priority:** Critical
+
+### 4. Right to Correct Inaccurate Information
+- **Gap:** The policy does not address the consumer's right to correct inaccurate personal information.
+- **Reference:** CPRA Section 1798.106
+- **Recommendation:** Add a provision for consumers to request corrections to their personal information and explain the process for making such requests.
+- **Priority:** Medium
+
+### 5. Right to Limit Use of Sensitive Personal Information
+- **Gap:** There is no mention of the right to limit the use of sensitive personal information.
+- **Reference:** CPRA Section 1798.121
+- **Recommendation:** Include information on how consumers can limit the use of their sensitive personal information.
+- **Priority:** Medium
+
+### 6. Data Retention Policies
+- **Gap:** The policy does not specify the data retention periods for different categories of personal information.
+- **Reference:** CPRA Section 1798.100(a)(3)
+- **Recommendation:** Clearly state the retention periods for each category of personal information collected.
+- **Priority:** Medium
+
+### 7. Children's Data Protections
+- **Gap:** The policy does not adequately address protections for children's data, specifically for those under 13 and between 13-16.
+- **Reference:** CCPA Section 1798.120(c)
+- **Recommendation:** Include specific provisions for obtaining parental consent for data collection from children under 13 and opt-in consent for those aged 13-16.
+- **Priority:** High
+
+### 8. Authorized Agent Procedures
+- **Gap:** The policy does not outline procedures for consumers to use authorized agents to exercise their rights.
+- **Reference:** CCPA Regulations Section 999.326
+- **Recommendation:** Provide a clear process for consumers to designate authorized agents and the verification process required.
+- **Priority:** Medium
+
+### 9. Non-Discrimination Policy
+- **Gap:** The policy lacks a statement on non-discrimination against consumers exercising their CCPA rights.
+- **Reference:** CCPA Section 1798.125
+- **Recommendation:** Add a non-discrimination clause ensuring consumers will not face discrimination for exercising their privacy rights.
+- **Priority:** High
+
+### 10. Contact Methods for Exercising Rights
+- **Gap:** The policy does not provide clear contact methods for consumers to exercise their rights.
+- **Reference:** CCPA Section 1798.130(a)(2)
+- **Recommendation:** Include specific contact information, such as an email address or phone number, for consumers to submit requests.
+- **Priority:** High
+
+## Conclusion
+Addressing these gaps is crucial for Audit Caddie to ensure compliance with CCPA/CPRA requirements. Implementing the recommended changes will enhance transparency and consumer trust while aligning with California's privacy laws.
+
+---
+
+## Metadata
+
+- **Model Used:** GPT-4.1
+- **Tokens Consumed:** 9873
+- **Framework:** CCPA/CPRA (California Consumer Privacy Act / California Privacy Rights Act)
+
+---
+
+*Report generated by Privacy Policy Gap Analysis System with RAG and MCP*
+*Powered by Audit CADDIE Privacy Compliance Workflow*
