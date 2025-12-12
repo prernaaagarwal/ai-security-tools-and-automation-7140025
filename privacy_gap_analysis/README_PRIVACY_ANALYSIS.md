@@ -415,7 +415,6 @@ Proprietary -  Audit Caddie
 ## Contact
 
 For questions or support:
-- **Cardinal Security**: Scott Morris
 - **Audit Caddie**: Brennan Lodge (BLodgic)
 
 ---
