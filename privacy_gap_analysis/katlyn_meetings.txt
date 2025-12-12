@@ -1,0 +1,564 @@
+Meeting Title: Katlyn Anders and Brennan Lodge
+Date: Dec 5
+Meeting participants: Koanders
+
+Transcript:
+ 
+Them: Hello.  
+Me: Hey, how's it going?  
+Them: Happy Friday.  
+Me: Yeah, I got you. How you doing? Today.  
+Them: Cool. Good. It's like the calm before the storm sort of situation in our office. Kind of calm on a Friday, but scrambling to get things done before end of year.  
+Me: I get it.  
+Them: Are you having those kinds of things? Like, do you. Do you get hired a lot to do a lot of, like, talks end of year or beginning of year?  
+Me: That's sprinkled all over. So if you see. So these are all the lanyards from the talks, right in the corner.  
+Them: Oh, my God.  
+Me: Of all the talks I did this year.  
+Them: Wow.  
+Me: So it's probably like 20 plus now, but. Yeah, I've got one more next week at the AI Summit here in New York.  
+Them: Oh, my gosh.  
+Me: And then off for the following couple weeks. Actually, yeah. Don't have much planned for next year. So it's kind of been scramble every day this year. Anyways.  
+Them: Well, that's. That's good. It's good to hear that you're. You're keeping busy. You're popular. So that's. That's always a nice thing.  
+Me: I guess. Yeah, sure, I'll take it.  
+Them: Better than being unpopular.  
+Me: It's true.  
+Them: Okay, so I've got my list here of things that we need to go over.  
+Me: Let's do it.  
+Them: Some updates for you. Looks like travel's all booked.  
+Me: Yeah.  
+Them: So you're set there.  
+Me: Yeah.  
+Them: And okay. I was able to work with my team and secure one of our brand new they're like a virtual wall studios. So instead of doing the. The black box screen cap studio. You're going to be in a live action stage and we're. We have a computer that will be set up for you and you'll work with our crew. So you'll have me and teleprompter operator and a live action director so we can do. Picture in picture. And. And we'll be spending some time.  
+Me: Nice.  
+Them: Helping coach you on that a little bit and how we've been doing it and how we find its most successful. So when there's moments of reflection or conceptual content, it's like we want you to be looking at the camera and have as much content scripted as possible. So this is going to be a different approach than what you've done with Lucas in the past.  
+Me: Yeah.  
+Them: There's a shift in language a little bit than what you've done in past courses. Like, for example, we. We're just trying to make it more conversational. I think I may have mentioned this last time, but I. I kind of. I think of this as, like, cerebral TikTok. It's you. Know, it's kind of trying to breach that gap between. Between what's, like, really entertaining and what's really educational. So we want to avoid saying the more traditional things. Like in our next module, we're going to and over the next few slides, I'll talk about. So a lot less of that learning objective kind of list conversation or switching that more to a conversation like, so saying, like, security considerations are important because. Or I've found in my experience that cybersecurity matters because of the, you know, things like that.  
+Me: Yeah. Y. Eah.  
+Them: Or starting off with a little bit of a story, and then let's look at how this works and then get right to the practical. So approaching it, our theory is to approach it from more of a one on one standpoint. Like if you're, if you're doing office hours with a student and they have a specific question, and the question is the topic of the title of the video. How would you address it that way? So. So that shifts the way.  
+Me: Y. Eah. Cool. Yeah, I like the question. Yeah. And let me just play that back to make sure what I've been thinking fits to that model. Right. It's a bit different, and I'm, you know. Okay. Kind of flexing to this more live. Almost like. Kind of like live vibe coding. Right? And you want it to be more hands on. And I'm walking the, you know, call them student through the code with a little, you know, education diagrams, you know, side by side, kind of walk through as to what the heck's going on in this code, why it's important. And then, you know, some security kind of know hows or why should I care? Type moments sprinkled in. And then the other thing, too. And I. I like how you put this. Almost like some teasers. So starting out with the end product of, hey, this is what we're going to build to, you know, attract them, pull them in. Of, you know, actual applications, which, which I have and tools, and then we'll do kind of the, the underneath of building in order to, to get to that, you know, nice shiny application and delivery and value. That they want to build towards.  
+Them: Yes, exactly. Nailed it in every capacity. And. And you also brought up a great point.  
+Me: Cool.  
+Them: I think more traditionally, we've always done kind of showing it from top to bottom, and then you see the end result, whereas now we want to kind of show that end result. And be like, here's what we're going to build. And then, like, you said, like, open the hood and be like, okay, here's so. It's, like, dazzling. It's like, oh, my gosh. Yes. I want to stick around and watch this whole thing all the way through, because I want to see how he got to that end result.  
+Me: Sure.  
+Them: So it's, we're trying. And of course, this is backed by data and all sorts of feedback that we get, trying to kind of flip the e. Learning from what we've, what we've done in the past. And I'm, I'm glad to hear that you're into that and. You're willing to. To try this new format with us. Because I think, you know, on. On the topic of you being popular, this is going to be. Hopefully this is going to be a huge one for the library and a huge win for you, too, to kind of, you know, flex these new muscles. It's not it. The feeling that we are trying to give is more of a vibe coding, but rest assured that we are still leaning on editing. So if it's going to be a little bit more pressure on you to have two more people in the room with us recording, and it's I mean, you experienced that when you've done the live action portions before, so it's very similar to that, except you'll. You'll be at a desk in your computer will be there.  
+Me: Okay?  
+Them: And so we have essentially two cameras going. One is recording your screen and one is recording you. So we can pop you in where there are. What we want to avoid is having moments of lull on screen where you're talking about, you know, something static on screen, whether it's a chart or code or anything. Like that, or if it's bullet points or something, we want to pop your face on screen so the learner can have that moment of connection with you and really feel like they're learning, like, directly from you, rather than, like, a whole classroom full of people where we really want, like, their individual learning to matter. Here so that connection matters.  
+Me: Yeah. Got it. So trying to keep it, like, the connection with the one person that's, you know, watching the video. Okay?  
+Them: Yeah. Yeah. And so with that scripting, I want to talk about scripting. I also want to talk about your table of contents. I see that you're in there also in that document right now, so.  
+Me: Yeah. Let me just give you a quick update as to where I am. And you know why? There's no content in there. So I am building the, like, mini applications. For the. The content. I've got.  
+Them: Okay?  
+Me: I'm considering three. I've got two right now. That are kind of built on each other. For the class, the infrastructure, and then the the real use cases that relate to governance system compliance and insecurity. And it's just a matter of then now me building you know, the scripts. And, you know, diagrams and a small amount of slides. For the. The educational piece. And, yeah, that's where I'm at.  
+Them: That's huge. I'm. I'm so glad to hear that. So walk me through on. On the. Oh, cool. You're sharing. Okay.  
+Me: Y. Eah.  
+Them: On.  
+Me: Go ahead.  
+Them: The. You go. What were you going to say?  
+Me: Okay? All right, so I'm basically building out, you know, chapter two, chapter three here. Of using rag, MCP and a quick little use case. So this tool that I've already got, you know, a readme file and some, you know, very sloppy architecture or walkthroughs and, and components. The use case being, you know, a company wants to assess a potential vendor or another company on their, their privacy and to see if it matches that company's, you know, types of privacy controls and such. So it's a web scraper that goes out to the company. In this case, we're going to check out audicaddy. Com. It's going to pull down the. The privacy policy that's public on the. The website. Which many companies you have publicly post and then does an assessment using the the AI tactics of, of RAG and mcp why they should use it, the value in there. And then the delivery of. Hey, does this privacy policy that we grabbed from this company's website. Map to how we, you know, consider privacy at our company. And. Then. Yeah. Yeah, going through that. So, yeah, I just got to, you know, build some slides. And, you know, get a script. But, you know, this. This code is all done. And ready to go.  
+Them: That is rad. That is so cool.  
+Me: Thank. You. Thank you.  
+Them: Oh. Oh, my gosh. This is gonna. Yeah.  
+Me: Yeah. So like an end result. Will be. Oh, so this cool stuff, Right? So I'm using California's ccpa. Privacy as the regulation that we want to assess that company to. And the cool thing, it showcases the rag. So this is like an end report. So we. We scan that company, we mapped that privacy policy to our own policy. And also mapped it to a ccpa. And then got these detailed lists of. Of gaps. So reference CCPA section 1798110. Right. It does this automagically to say, hey, here's a gap. Here's a reference on CCPA and a recommendation, a priority on what you need to do or what this company needs to do in order to abide by this, you know, privacy information collection regulation. Right. And then like, a few others. So this will be like kind of the secret sauce that, that we'll go through.  
+Them: Oh, my gosh.  
+Me: And, you know, I can showcase this at the front. Like, hey, this is what you could get, you know, an automated report on, you know, privacy gap analysis, and this is what we're going to build.  
+Them: It's so cool how you also have level of priority in there, too, so people can actually use that in their own security of, like, not everything might be, like, absolutely on fire or it might not be a complete no, because. It's, you know, medium priority or a high priority, it's really cool.  
+Me: Yeah, it's all. It's a bit subjective, too. I'll leave that part out. But, yeah, the Friday is going to help. Guide you as to, you know, what you should focus on. And yeah.  
+Them: Oh, my gosh. This is going to be such a massive time saver for people.  
+Me: Hope so.  
+Them: Going through that. I. I also love seeing that your. Your creating this. Is another note I have. Is that we're when we have your GitHub code spaces like to. To put a clean version in there so they don't see all of your version history of anything that you're creating because you probably. I don't know if you did that last time or not, but I have some, some things to ask you on that, and this is really exciting. I'm so, so. Excited to see how this is all going to shape up.  
+Me: Right. Thanks. Yeah.  
+Them: You've done a great work.  
+Me: Thank you. Thank you. The other one is through Audit Caddy. And this is a bit going into the weeds using LLMs and analyzers.  
+Them: Okay?  
+Me: And I've got, you know, the GitHub all set up here and this. Will be some good slides that, you know, I can share. And I've got diagrams and all this stuff set up as well, and then the use case for this one. Is they've got, like, a regulation, so similar to the privacy use case. But we're going with a framework. And, you know, a bit larger in that they can upload their policies and then see how far along they are to like Soc 2. Right. So the the analyzer, LLM and AI on the back end scans their policies for the the text. And see how well that maps up to the entirety. Of soc2 framework. For example, and then output a report.  
+Them: Smokes. So cool.  
+Me: So, yeah, I mean.  
+Them: This is a lot of work.  
+Me: Thank you. These two probably suffice. Like the time constraints that we've got of, what, like an hour? You know, add in.  
+Them: Yeah.  
+Me: Add in. You know, going through all this, you know, these, like, line items. To. To help structure it, but, you know, I feel like I've got a good amount of code to walk through with demos. And then translating them into use cases as to why you should care. And then, you know, actual showcases of reports. That they can see, you know, at the front, say, hey, we can build this. And this is why it's helpful for your security team.  
+Them: Okay, so help me understand, like, audit caddy. And like, anything else you're showing is this. This is all, like, open source and, like, available to the public. Like, you're not. You're not scraping through an actual, like, Ford Motor Company or some, like, big company that we're going to see. Anything scare. Okay. So this is all okay to use?  
+Me: Yeah. This is my company, actually. Yeah. And okay to use. So we need permission from me, the business owner. And I'm okay in this, so I get permission. Yes.  
+Them: And you give permission. Okay?  
+Me: So, like here, the privacy policy that we're going to take a look at. Right. And. And bring down and scan. Possibly terms and conditions and then all this stuff. Yeah, Open source. And available on the the public. GitHub repo.  
+Them: Okay? Cool. On that. I also. I really like the. The I can. The logo. For autocad. That's pretty cool. Do you have any other images? You said maybe there's some slides or something that we need. Like, are you imagining any assets or photos, images that we would need permissions to show, or is this all? Stuff you've created.  
+Me: Yeah. It's all stuff I've created. And then on some of the just give me a second. On some of the, like, diagrams and stuff, Maybe I'll need some help from you guys to make them pretty. You know, I've got some some basic ones, and then I've got a ton of slides  
+Them: Yes.  
+Me: from my conferences and from previous, like, classes and stuff that I've taught. That I'm gonna, you know, throw into the mix. But everything I know So no crappy, wreck infringement, things to deal with.  
+Them: Okay? Okay? To keep things cohesive and to keep them within our palette, we would, we always do like to revise slides, if possible, with our own. Did you go through that last time?  
+Me: Yeah. Just handed everything over, and they did their magic.  
+Them: Okay? Is there anything that you need for recording, though? That I should have pre prepped for you.  
+Me: What would be an ex sorry.  
+Them: So if you're going through anything and showing, like, here's. Here's a diagram. And you have it. Pre made. I want to be able to, like, prep it for you. So if you give me anything beforehand and you can put it. I don't know if you'd have anything actually in your repo. Or if it's like, more. You're thinking more like cut away. To an actual slide deck.  
+Me: Yeah. So it'll probably be like a cutaway. Let me just  
+Them: Okay?  
+Me: pull up my slides. Sorry. One sec here. Alright, so like here's a slide deck of a conference I presented at So I may say, hey, this could be a good diagram for RAG. Here's another one. That I step through. Like, here's the analogy of the library. That I use to help explain it. And then for MCP, this is a, like, image I like to talk through that is relatable. Because everybody's familiar with these USB C dongles and how they work. As it is very similar to how MCP architecture is. And then, yeah, just like some other examples, some other diagrams, okay, now here's our use case. But yeah.  
+Them: Yeah. Just a couple of things. That come to mind? Like I see logos in their chat GPT, claude. I think there was slack and another one. We typically can't use any logos. Oddly enough, we. We also can't use Microsoft logos. Unless we get permission.  
+Me: Interesting. K. Yeah.  
+Them: So. Yeah. So anything that.  
+Me: Going to recommend using JGPT or Eauclaud for  
+Them: We can show it in text. Like, we just type it out in text. We just can't show their colorful logo.  
+Me: okay. Got it.  
+Them: And we find that that doesn't really prevent any learning.  
+Me: Yeah. That's fine.  
+Them: Anyway, It's. It's just more recognizable with the. The icons or the logos, but I think we can get away without. Yeah, any. Any portions of sleds like that one that you have on screen right now.  
+Me: Okay. Yeah.  
+Them: Screenshotting that and. And putting that on to one of our slides and saying something along the lines of, please recreate. This is something we can do, but we have to also include all the text that we want on screen because that has to be editable by our technical writing team.  
+Me: Okay.  
+Them: To make sure we do have to abide by Microsoft's accessibility standards and by broadcast standards. So making sure that color and font size and all those things are, are up to requirement.  
+Me: Okay.  
+Them: So it needs all the text needs to be editable. Anything you want to put in a slide like that in in your course folder. We do have the slide templates. There's a folder for slides. We have both keynote and PowerPoint.  
+Me: Okay.  
+Them: It looks like you were using PowerPoint. Whatever your preference is.  
+Me: Yeah.  
+Them: So as a reminder on slides. Yeah. See the third folder?  
+Me: Side? Yep.  
+Them: Yeah. So in those, if you download those templates they have, they already have the.  
+Me: So  
+Them: Oh, there we go. The text. Why is that showing up like that? Do you have to? Maybe you have to download it because it's just showing a Google version.  
+Me: Let me try.  
+Them: So per video in your course. We like to have a slide deck.  
+Me: Is this one associated?  
+Them: If. Yes, there it is. So those. Those were just all templates so you can rearrange the. It looks like the text is showing up a little funny for you in some areas. But. Yeah, that. Yeah, those ones. I don't know why. That text is showing up funny. But essentially the. The goal is for you to duplicate. The slide that you want, kind of drag it to the top.  
+Me: Yeah.  
+Them: And then when you're done with the slide deck, remove all of the template ones that you're not going to use, and then save that as its own deck for whatever video it's going to be associated with. And if you don't have any slide decks for that video, then you don't. You know, need any. But for the ones that you do need, decks, label them the same. It should be in your TOC under video file name. And please hit me up over email. Or we can always jump on a quick call too if we if you want to go over how to use slides. I hope it's pretty straightforward. But if not, just let me know.  
+Me: Okay.  
+Them: Could we pop back over to your toc and I know.  
+Me: Yeah. Sure.  
+Them: You're. You've been working in the blueprint tab.  
+Me: Yeah. Yeah. Yeah. Yeah.  
+Them: And we. We need to get on the same page with putting it on the TOC tab to make sure that we're looking at the same thing.  
+Me: Yeah. Okay. Okay. My apologies. Alright. I'll get that over. Yep.  
+Them: So. I think I've got most of the stuff over there. And then that's also where we have the video file names.  
+Me: Yeah.  
+Them: So if you pop over to that. Yeah. TOC tab, you'll see in column K, there's the video file name. So Those are like 01010102. Those are the same names that you would label those slide decks.  
+Me: Yep. Got it.  
+Them: If you have them.  
+Me: Yep.  
+Them: In this version of it. I think I have everything over there that you had from blueprint.  
+Me: Okay.  
+Them: But you'll see that there's. Up at the top, in column G, it says there's 29 remaining. We have 29 remaining to record, is what that formula is.  
+Me: Okay.  
+Them: So there's 29. That means there's 29 videos so far in this course. To be able to do this picture in picture. Format that we're trying with you. Ideally, we. We get this down to, like, 25. Videos. 25ish. And. And I. That's part of what I.  
+Me: Two average is, like, two minutes each. Okay.  
+Them: Yeah, two to three minutes. If you if you need more time to explain a concept, by all means like the learning is, you know, going to win over anything else. The two to three minutes comes from a data perspective of feeling like the drop off rate is.  
+Me: But  
+Them: Course, and they can look at the overall course time. And depending on their wants and needs, you know, something like a twenty five minute course might not seem robust enough, and something like a five hour course might seem too overwhelming.  
+Me: Sure.  
+Them: That's why we've targeted yours as as an hour. So, yeah, we wanna we wanna try to make it as as close to that as possible, but also understanding that there you know, you have to teach what you have to teach. Like, if a concept can't be taught or learned within three minutes, by all means, go to five. You know?  
+Me: Yeah.  
+Them: But part of the way that you're scripting and hopefully, we ask that you script the intro the beginning, and the closing of every video.  
+Me: Yeah.  
+Them: So we can have you on teleprompter for those moments, and those should be short and sweet. You know, a couple of sentences. Like, we were saying, like, either starting with the story You know, in my experience, this is what's happened in the world of security. And this is why I'm gonna show you this. Or you know, AI and cybersecurity is exploding right now because of blank. So let's look at how. And really getting, like, right you know, having those the scripted moments is gonna help us make sure that we have we don't have a lot of extraneous fluff in there. Going you know, spending time, like, going over learning objectives.  
+Me: Okay.  
+Them: Let me I just wanna double check something. On my end. Make I know I know Laura has to kind of update what our internal learning objectives are because you've had a content manager switch on you. From contracting. Okay. Let me see. Alright. Just a moment here. Yeah. It it hasn't shifted though. It's still it's still an hour long. If so looking down towards the bottom, in your conclusion chapter, that's one I  
+Me: Okay.  
+Them: still have questions for you on. So we had talked about conclusion chapters way that our platform works is so when you get to video zero five zero four, that's you will receive your certificate  
+Me: Yeah.  
+Them: of completion. So anything after that is is not considered a content video.  
+Me: Okay.  
+Them: So right now, we have it set up where you still have a final challenge and quiz. And a demo. We either need to move those to another chapter  
+Me: Yeah.  
+Them: combine them with other videos, or cut them out completely.  
+Me: Yeah. Yeah.  
+Them: So that's  
+Me: I am I remember you mentioning this. Yeah. So we'll cut it out. And I'll give you the demos, you know, as we're we're building. And and coding. And, yeah, that'll be the the showcase I remember you saying, we should update this conclusion to be hey. What's what's next in the world of of AI? You know, for for cybersecurity? My thoughts, maybe know, some links or a quick promotion. So yeah. That is what I had planned doing for the conclusion.  
+Them: Okay. So with that, do you wanna combine that video one and four? Should we the future of AI automation  
+Me: Video one and four. Okay.  
+Them: Yeah. So, I'm sorry. Down on row 41 or forty and forty three.  
+Me: Yeah.  
+Them: So should we combine the your next steps with the future of AI automation? Does that make sense? Like, could that be  
+Me: Sure. So next steps could just be links. And scores to their books.  
+Them: Yeah.  
+Me: To learn more. And then combined we wanna combine this with or talk about it first. Like, the future of AI automation for cybersecurity. And then I can just be  
+Them: Yeah.  
+Me: conclusion. I'm fine with that.  
+Them: Okay. Okay. Let me put this learning goal  
+Me: What about the the quizzes?  
+Them: up here. On this other one too.  
+Me: This is I don't know. I'm always looking here about this. Right? Some students, like, hey. Want to be texted? On what they've they've learned just for like, you know, self gratification. Like, hey. I learned something and did well on the quiz, so I guess I know this this content. Or is it you know, a time killer and, we can just take it out.  
+Them: You know, that's it's such a good question. You're not slated to have assessment questions attached to the course. So in terms of, like, it's not just the learner, but it's also the people administering the courses. Sometimes people require their employees to watch this. Right? And without assessments in there, they have no way of gauging whether or not there was any retention or learned information.  
+Me: Okay.  
+Them: So we don't have that attached. So it's that would make me lean more towards the, yeah, the the quizzes that you provide are helpful and useful, but that would just be on a learner individual you know, pat on the back sort of thing rather than having actual data  
+Me: Okay. Okay.  
+Them: attached to did they unless there was yeah. So our platform wouldn't record whether or not, they're achieving.  
+Me: Okay. And and  
+Them: So it's  
+Me: yeah, and also, it is gonna be code heavy.  
+Them: it's yeah.  
+Me: Right? So I want them to, like, code along. And get the results themselves. So that's the other takeaway or or creative or pat on the back that it works and I feel I I gotta take away.  
+Them: Yeah.  
+Me: As well.  
+Them: I yeah. I mean, I would lean so much more on that  
+Me: Okay.  
+Them: than having a formal quiz. That's my that's my personal perspective. I feel I feel like the hands on approach is and I know that that's listed in part of the scope for your, the goals for your course is to just have the hands on approach.  
+Me: Yeah.  
+Them: So it's there's nothing that's no certification credentials or anything else are attached to it. So I don't I don't feel like it's necessary to have a quiz just for the learner.  
+Me: Okay.  
+Them: Unless that's something that you feel like  
+Me: No. It's fine. It's  
+Them: knowing students  
+Me: it's just a professor in in tracking to to within the the syllabus and grade my students. Right? So  
+Them: I I totally get that.  
+Me: if that's not necessary, not then we can take it out.  
+Them: I don't  
+Me: It's fine.  
+Them: okay. I it's a hard call, though, because I don't think it's necessary. And and I'm looking at it from, like, the business perspective and the admin success rate perspective. So  
+Me: Yeah. No. Right.  
+Them: sort of a similar view that you're taking. But yeah, because there is no formal assessment attached to it, I I feel like the hands on stuff is is what that's what cuts it for this course. That's what's gonna make people feel like they get it or they don't.  
+Me: Cool. That works for me.  
+Them: Okay. So with that said, do you wanna are we just removing those last two forty row forty one and forty two, or do you wanna keep them in there just so you remember to  
+Me: Yes. No. We'll we'll take him out.  
+Them: okay. Alright. Well, look at that. That was that gets us down to a more manageable recording schedule. Also for the for your recording dates too. I don't wanna overwhelm us because just to give you a heads up on this, it just takes longer.  
+Me: Yeah.  
+Them: It's it's more taxing on you to be in a studio and be not only working with your computer, but know, having a camera on you the whole time too. It's, it's just exhausting. And and it's a lot to ask. So and then, you know, throw in things that are gonna happen, like, code is gonna break or, you know, something some technical issue is gonna arise, and we're gonna have to troubleshoot those as they come up. So it's, I had a woman in recently who does a lot of her own recording and posting on on YouTube and LinkedIn. And she was like, four days. Is it really gonna take four days? Like, this would take me four hours to record at home. And then by the time she left here, she was like, we could have used another day. Just because of all the, you know, all the different aspects that come up that are not it's not your typical desk setup that you're used to. Okay.  
+Me: Right. So it this helped me envision what this studio and their setup. Like, so I'm thinking for the diagram will be, like, a green screen. I'll be able to kinda point to some of the diagrams and talk through it or no.  
+Them: It'll no. It'll be screen cap. So you'll have your mouse  
+Me: Oh,  
+Them: and and you can use your mouse to, like, point, or or you just  
+Me: right.  
+Them: more likely, you tell us, like, and can make side comments like, hey, editor. Please highlight this row or this diagram or this section of the diagram.  
+Me: Got it.  
+Them: And we'll make little audio cues to the editor for them to highlight those because  
+Me: Okay. Go ahead.  
+Them: we'll be toggling back and forth between your live action camera and your screen camera. So, no, they're,  
+Me: Got it. Okay.  
+Them: behind you will be a screen, but it's a virtual screen of an office.  
+Me: Yeah. Yeah. Okay. And then alright. And will it be, like, a like a mini kinda, like, screen? Like, my head talking in the bottom right, and then the the screen that I'm currently on in my laptop.  
+Them: Yes. And we'll we'll cut to that so we'll we'll cut between a few different angles. We'll have either you as full screen, you as split screen with whatever tech you're showing, or we'll have you as, like,  
+Me: Yeah.  
+Them: do you remember, like, pop up video?  
+Me: Pop up video. Yeah. Okay.  
+Them: Did you ever watch that? Okay. It's like a little  
+Me: Okay. Remind me again. Alright.  
+Them: it was I think it was on v h one. It was, like, music videos. They had, like, little, overlay that would pop up on screen. Anyway, it's it's just your classic, like, picture in picture. You'll be in a little circle bubble  
+Me: Yeah. Okay.  
+Them: and and we'll put you wherever on screen. That that you're not showing something.  
+Me: Right.  
+Them: You know? So we're not gonna cover up, like, any vital information on screen, so we'll we'll place you appropriately. But we'll kinda switch between those three angles. So you'll either be a little bubble. You'll be a a half  
+Me: Okay.  
+Them: on screen as a split screen, or you'll be full screen.  
+Me: Sound good?  
+Them: Those those three things to kinda try to stay engaging. Okay. I know we only have a couple minutes left. I let's see. Your GitHub username is  
+Me: BLodgic,  
+Them: logic  
+Me: Okay.  
+Them: And you are not going to need any file exercise file requirements. So no assets, no images, no pictures that you can that would need to be in the repo.  
+Me: No. I can make them on slides instead. I I don't we don't understand the question. Sorry.  
+Them: Like, from what you were showing me, I didn't see anything. Like, you wouldn't need an image of, like, like, I see that you have those images. Are those  
+Me: Yes. Yes.  
+Them: slides from a previous  
+Me: We hear it. Yeah. It just basically slides. Right.  
+Them: Okay. Okay.  
+Me: Yeah.  
+Them: Nothing nothing that you would need license. Like, you're not saying, like, who imagine, you know, AI is trying to create an image of 10 cats. You know, you wouldn't need it like an image of 10 cats or or something like that.  
+Me: Yeah.  
+Them: It's if you did need some kind of I'm asking because we have legal restrictions on the images we can show.  
+Me: Yeah.  
+Them: So if it comes up where you need an image of something, please let me know.  
+Me: Okay.  
+Them: So we can get the proper licensing for that. For now, I'm gonna put, no, you don't need that. And  
+Me: Gavin, are you there?  
+Them: Are you able to hear me?  
+Me: Yeah. I can hear you just fine.  
+Them: Hear me? But my, my camera won't turn on for some reason.  
+Me: Okay.  
+Them: Oh, maybe it's  
+Me: There you are.  
+Them: booting up there. Right. I talk too much. So I just had one more question for you. The thank you for setting this up, by the way.  
+Me: Yeah.  
+Them: Data sets. You don't you don't need any data sets from me, do you? I think I asked you this last time. I just wanna double check. Like, is there any reason you can think of needing a dataset  
+Me: What would be an example?  
+Them: So if you wanted to show feedback from I don't know, a survey or something that on as your security team needs, like, x y and z, how this is what they said in their survey. Like, do you set this up?  
+Me: Well, I think I'm okay. Like, I'm gonna be providing my own data for the code, the tool, demo. Yeah. It'd be nice to work. Survey data from folks taking the class, if that's the other thing.  
+Them: That would be nice. We they do yes. You can ask your content manager about that. That separate from what I'm asking though.  
+Me: Okay.  
+Them: But, yes, there there are, histograms too that you can they can share with you of what, where Dropbox rates were too. So if you ever wanted to update the course and you're like, oh, everybody dropped off at this video. Maybe we need to redo this video. That's helpful info.  
+Me: Okay. Yeah. But this is no. I think I'm good.  
+Them: Yeah. No. I'm yeah. Don't think that you would need any. All of this stuff too, if it comes up as your developing content, let me know, and we'll we'll get you what you need. And then let's see. So we're gonna have a Mac computer set up for you. And this will this computer will be will be set up so you, you have to sign in fresh for everything. Like, you have to use all of your own logins. Just a reminder to, like, make you come with all your login information because we we take computers and then we wipe them after people are done recording with them. And reimage them so they're they're fresh for the next person.  
+Me: Okay.  
+Them: We upcoming, we will also have to talk about wardrobes since you will be on camera the whole time. If you could send me pictures of a couple of just, like, hung up on the back of a closet door. Some options for your wardrobe are  
+Me: Okay.  
+Them: managers like to make sure that they get a heads up on what your look will be. Make sure it matches the audience that they're intending. And then more than anything, like, let me know. We only have, like, I know the end of year. We have end of year shutdowns coming. What your scripting schedule is? I would like to see stuff before you get here, of course.  
+Me: Yeah. Yeah. Yeah.  
+Them: And I wanna be able to schedule time appropriately so I can make any comments on anything. So give me an idea of when you think you could have those what we were talking about, the beginnings and the closings of every script. I you're not required to script out everything that you're gonna do, like, play by play. Follow that on a teleprompter. But because you will be on camera for a lot more of the time, than a traditional screen capture course, we do need to have your your beginning and and your closing and any kind of bullet point you need throughout. So we, as the crew, can make sure that you're actually hitting those points because none of us are security experts. Like, we don't you know, we're not gonna be able to fact check you in the moment. So let me know when when do you think you could have  
+Me: Okay.  
+Them: scripts or portions of scripts ready for reviews?  
+Me: Yeah. So I'm putting it chapter by chapter.  
+Them: K?  
+Me: So yeah. Let's see. Next week. Hope to get, you know, like, a chapter and a half done. You know, the thing for the, you know, the following weeks, and that should get me done and, you know, complete, you know, prior to what, January January 15, I think, I'm coming.  
+Them: Yep. So let's see.  
+Me: The heavy work for me was getting the code done, which is  
+Them: That would  
+Me: which is good now. Now it's transforming that into scripted pieces. Diagrams, slides, etcetera.  
+Them: I think you're in a great space. Yeah. Everything. Thank you so much for showing me what you have. It's incredible. It's really exciting to see it.  
+Me: Sure.  
+Them: Coming together.  
+Me: Hopefully, that that makes you feel a little bit better about my my progress.  
+Them: Yeah. A 100%. Yeah. This is it's like a real thing now. So this is  
+Me: Alright.  
+Them: this is very exciting.  
+Me: Okay.  
+Them: Okay. That sounds good. Yeah. I so I put on your calendar check-in just every other week. I just wanna make sure with you that are you gonna be around January 2 That's a Friday for us to our office is open, so that's our first day back from the winter shutdown.  
+Me: Yeah. I'll be around.  
+Them: Okay. Cool. Let's meet then, and then we're also just gonna over email. So maybe by Friday, if you could start sending me some of the scripts,  
+Me: Sure.  
+Them: they should be going into your scripts folder. And we need that for, like, legal reasons.  
+Me: Mhmm.  
+Them: To actually go in your course folder. So labeling them by the video title name. Oh, and and if you could please for peace of mind, for me, sure that I'm presenting the correct stuff on your behalf. Go through that tab, the blueprint tab,  
+Me: Yep. Yep. Yep.  
+Them: and make sure all of those videos align with what's in that TOC tab.  
+Me: Yeah. Yeah. So I'm gonna I'm gonna change some word just, like, very small changes in the terminology.  
+Them: Okay.  
+Me: Right? Like, so I remember one of them let me just go back into it. A thing like let's see. Like mentioning the stock. Right? Like an end to end stock workflow. So keeping it through to g r c and what was another one? See, it's, automating detection and response. That's more like blue team, not really related to GRC. But the the content  
+Them: Okay.  
+Me: it's still within, you know, like, AI risks in the stock. It's it's gonna be more general. All this update to the terminology there.  
+Them: Okay. Any any columns you wanna add from that would be for you to add over from the blueprint side? Over to the TOC side by all means, do that. This is what my team and everyone from me further down the the pipe looks at is this TOC version of it. So  
+Me: Okay.  
+Them: let's just make sure that one is dialed in.  
+Me: Yeah. You're right. Yeah. We gotta be consistent. Okay.  
+Them: And that  
+Me: I'll make those updates.  
+Them: fantastic. Okay. And then one and a half chapters per week that's a manageable goal for you, that sounds great. And I'll just be pestering you, like, hey. You got anything for me to look at?  
+Me: Alright. Yeah. Take care.  
+Them: This week? And and we'll go from there.  
+Me: Yeah. Pretty sure. Alright. Thank you.  
+Them: Okay. Cool. Anything else you need from me at this point?  
+Me: I'm okay. Let's just get your on kinda, like, cold walk through. Right? So I know what looking back in We don't know what to say on, like, one screen. For a lengthy time. And, like, I don't want to have to step through each line of code. Right? That's not helpful for for anybody. So, like, yeah, we look at a section at a time. Introduce what we're going to develop, go through with the basic parts of the the code generalizing, what we're trying to to solve. If it needs a call out on a on a diagram because we need to explain rag or or m c p, you know, I'll I'll do that on the side. But we'll be going back and forth, right, from the the sections of the code. And of course, the deliverables of reports and output. To introduce and at the end. What's kind of like a typical flow for a hands on course?  
+Them: Yes. Yes. Let me let me get a couple of examples.  
+Me: Yeah. Thanks.  
+Them: Of courses. I'll send you that and and hopefully that could help you just kinda do a glance through and see if because, yeah, we are we're transitioning so much more into the we don't need the fluff. People are not looking for, like, the line by line sort of kneading explanation and everything. These people are supposed to be, you know, intermediate to advanced like, they they get it. So they just need to know the how.  
+Me: Yeah.  
+Them: And then and then the quick context of, like, how, you know, this is the the definition of what we're doing or this is why it matters in the workforce.  
+Me: Yeah. Cool. Okay. Yeah. And if what's  
+Them: Okay. Alright. I'll send you some examples.  
+Me: yeah. And so, like, the airport could be to have accumulated even better. If not, that's fine too.  
+Them: I'll look I'll I'll do my best to find that, and I'll I'll ask my team too to see if anybody has some recent examples that that makes sense.  
+Me: Two. Alright.  
+Them: I'll send those along. Okay.  
+Me: Thank you.  
+Them: Alright. Well, I think that's it for now. Thank you so much. I hope you have a good rest of your day, and and I'm glad you're the you don't have to travel for your next speaking engagement. It's  
+Me: Yeah. Thank you.  
+Them: sounds like it's nearby.  
+Me: Yeah. It's right over the the Javits Center. So that'll be nice.  
+Them: Cool.  
+Me: I'm kinda burned out from traveling. But take it all back up again mid January.  
+Them: Yeah.  
+Me: LAX. Okay.  
+Them: Alright. Cool. Thank you so much for your time. We'll talk soon.  
+Me: Alright. Thanks. Yeah.  
+Them: Alright. Bye. 
+
+Meeting Title: Katlyn Anders and Brennan Lodge
+Date: Nov 21
+Meeting participants: Koanders
+
+Transcript:
+ 
+Me: Hey, kayla.  
+Them: Hello? Can you hear me?  
+Me: Yeah, here's this one.  
+Them: Cool.  
+Me: Clear.  
+Them: Is it, Brennan?  
+Me: You got it right.  
+Them: Brennan.  
+Me: Yes.  
+Them: Catn or cat.  
+Me: Cat. Lin. Okay?  
+Them: Yeah.  
+Me: Sorry.  
+Them: How. How are you? Where are you? It looks like there's a big city behind you.  
+Me: Yeah. Let's just say green screen. AI. No kidding. It's real.  
+Them: Oh, is it? Looks very real.  
+Me: Daniel. Yeah. Manhattan in the Upper east side.  
+Them: Cool.  
+Me: 22nd floor. How about you?  
+Them: I am in California. You've been out to our studios. I am in Santa Barbara, the Carpentrya area.  
+Me: Cat. Six.  
+Them: Yeah.  
+Me: Ok? Ay.  
+Them: Yeah. Is it snowing there yet?  
+Me: No, not yet. It was kind of warm today. Actually, like around 50 degrees.  
+Them: That's. That's, like, what it is here. It's super cold here. Everybody's freaking out.  
+Me: Come on. Californians.  
+Them: Well, we got crops. We have crops. And if the crops freeze, you know, the country starves, so we got that.  
+Me: Okay? All right. Fair. Point. Don't do four now because we have to put on a heavy jacket and maybe a hat. That's too cold. I get the craft's point.  
+Them: Yeah, yeah, yeah. Okay, we'll go with that. Then. It's. It's very nice to me. I'm really excited to learn from you. Security is not my area of expertise. Video production is my area of expertise. I know you worked with Lucas Longo as your last producer. He is much more technically savvy than I am, so I'm sure that he understood what you were teaching a lot better. Sadly, he's. He's not with the Company anymore. He's. He's now with Apple. He moved on to more. Even more tech stuff, so that's awesome for. Him. And. And I wanted to ask you first. I've got this whole list here of things to ask you. But Lucas is kind of notoriously known for working with folks to help them be very independent in how they work, which is awesome. And. And I'm sure you thrived in that area. We do have. A few more rules and restrictions. I don't know how much you've heard or if you're on instructor chats with other instructors LinkedIn learning, but there's.  
+Me: Cat. So this will be my third class and second time in the studio.  
+Them: Okay? So I've watched your other courses. They're awesome. We're at the way things are going to work in the studio is similar. I just have a little bit more live action for you to do. I know you did the Tetris, what we call the Tetris live action in the past, and we're going to do just a little bit more of that also. But otherwise it's going to flow pretty much the same way. The things that have changed is that we, our strategy team is trying to make sure that our courses are seen more. And essentially the way that they've broken down that strategy is that they want things to be more practical, they want a lot less explanation and a lot more hands on. So part of what I want to do is spend time going through the TOC with you and making sure that, like, where can we maybe adjust areas so there's not all the context behind it? And there's. There's a lot more. Like, here's how we get started.  
+Me: Yep. Sure.  
+Them: Like, you know, put your mouse here and do this and whatever.  
+Me: Okay?  
+Them: So with that, there also, we're requiring that some, at least the. The intro and the closing of your scripts be scripted. And that means, like, I was looking back through files of your past work, and I don't know if you scripted much of the course, but there they are, requiring that we have those parts scripted, especially in the areas that we're going to be doing live action. Which you probably did in the past. And then we want things to be a little bit more cohesive. So as I was walk watching through your past courses, you'll say like, okay, welcome back, or something along those lines, which is how we may have done things in the past. And now we just want to remove all of that. Just assume that they're watching all the way through. And I like to call it kind of like the cerebral tik tok vibe. We're, we're trying to get a little bit more because we, we've found from feedback and from data that learners just want to get to it or they're not going to watch, and so we don't want to be in the they're not going to watch category. So we got to kind of freshen up the way that we're. We're doing stuff and make it a little bit more exciting. So the way that we're tackling that is by having you script the intros and the closings, and then that's where I can come in and kind of help make sure that it's got, like, a little bit of a hook, you know, that we make sure that we're drawing that learner in and that there's. A little bit of a. A closing on the end. Sometimes all you have to say in the ending is like, okay, and next we're going to be doing X, Y and Z. Like, sort of like a cliffhanger to leave them guessing, like, oh, or excited about what's going to go next. The other thing. We're trying to avoid is having like standalone videos. We really want to have one of our big VPs call calls it like a watch all the way through. Of course we want to watch all the way through. We don't want to have. We want to entice learners to be like, if you missed the last video. You know, you're really missing out. Like, you got to watch all the way through.  
+Me: Yeah. Cool. Y. Eah. Y. Eah.  
+Them: Those are some. And really just they keep calling it practical. Practical AI they want. To remove the context and the explanation in the fluff, but still have that little bit of a hook, like, here's why this is so exciting. Now let's do it.  
+Me: Okay?  
+Them: So hopefully with, with writing out some scripts that, and, you know, however you work, some people use dictation, some people actually write it out.  
+Me: Yeah.  
+Them: That's. That's what I want to hear from you, like how to. How have you worked in the last couple of courses and. And what has worked well and what do you want to stick with and what do you feel like you could improve on?  
+Me: Sure. Yeah. So first off, thanks for that. Agree with the updates of Refresh. Till we get it on kind of retention. And that's just like us as human society. The onslaught of social media, the TikToks.  
+Them: Yeah.  
+Me: So they are out here in the past and look at a professor. A teacher at nyu. Look, you got to throw some theory. In there every once in a while. But, hey, this is a different role of how we project and get across. I'm a data scientist.  
+Them: Y. Eah.  
+Me: Not necessarily a developer. So there is a little bit of exchange in that delivery. Of understanding. And I get it. More hands on. Totally. What I'm delivering is definitely hands on. We're working through a notebook rather than, like, a terminal or a typical developer. With my audience. To how they learn and grow and build. Right. That build is first and foremost. And then I would write out my scripts. Right. Let's get AI to help me along with it. I would, Edward A little bit here and there, given what I'm seeing on screen. To kind of throw in, hey, this is why we're getting responses. And in the data science delivery, it is really running this code and getting this data in a type of response or AI model type of response that we've built. So there still need to be some of that explanation for the why. Of why we did this and why we're getting this result. So I still think that entire video of me working in a jupyter notebook, that's not going to work and it's going to bore the hell out of my students. So there still needs to be that flashy transition of a diagram of quick bullet points and an explanation. Till. We didn't want to diminish that a bit. And still be hands on, but without that explanation. Students copy and pasting code and getting results, and I don't want that either.  
+Them: And it's sprinkling it throughout is another way that we've done it. Rather than having, like, the top half of the video be, like, maybe a minute. Of explanation if it's possible to have it be like, here's kind of the high level reason why get your hands dirty. Pause and explain, like, why that made sense. Get your hands dirty a little bit more and then close out more with this is the explanation why that's the strategy they're coming up with now to try try that platform or try that strategy to see if it works better for our learners. Because right now we're just having drop off. If there's like a minute or two minutes of explanation without actually doing.  
+Me: Yeah. Y. Eah. Sure.  
+Them: So we'll work to find that happy medium. I. I completely understand. Like, the. It doesn't need to be all practical with no theory, no explanation, no. No context. But. But trying to change up our format to make it more exciting.  
+Me: Yeah. And I can definitely work on the transition to your wicked more flowy between the break. Not breaks, but between different subjects.  
+Them: Yeah, and that's, that's where I can come in to help you, because you're the expert. You teach this. You know it. I'm, I'm coming at it from the instructional design standpoint, from LinkedIn, so I'm, I'm going to help you stay within the guardrails. Of that. And making sure that your course gets through to the finish line and all the stakeholders sign off on it, and it's good to go.  
+Me: Sure.  
+Them: Your. Your content manager, Laura, should have gone through. I'm looking at these goals here. That she should have gone through with you. And I'm. I'm happy to email these.  
+Me: Okay? Are we looking at? What are we working out here? Sorry.  
+Them: I'm. I'm just looking at some notes that I took. That I want to read to you, and I'm. I. What I'd like to do is when we're done, I want to email this in a. Because I just have it in kind of a jumbled format right now, but I'd like to clean it up. And email it to you along with anything else we're talking about and timeline and course folder. Make sure we have everything in one email as a kickoff email.  
+Me: Ok? Ay.  
+Them: Recap. But just to kind of chat through these with you. She. She says Laura listed out some of the goals as showing kind of some before and after. Like manual versus AI automated processes. And again, some of this doesn't make sense to me yet until I understand and see your scripts and see what you're teaching, okay?  
+Me: Yeah, it makes sense to me.  
+Them: Chapter progression, like using a visual journal, Journal showing. Or, excuse me, visual journey. Showing the data flowing through security systems. She wants the. Permanent sections. Let's see, to use infographics or animated diagrams for abstract concepts. That is stuff that I, if you kind of draw it out for me, I can make sure there are graphics team animates things properly for you. And also, just so you know, another thing that we're doing now, if you haven't done it in the past is we're asking that you do a content review before your course gets published. So once. Once our team has it all edited together, we get a link, and you and I have 48 hours to review it. And if for some reason, like, you're in the middle of a bunch of stuff where you're traveling and you can't do it, you let us know.  
+Me: Go ahead.  
+Them: And when you can review it. And then we, you and I do that review before it goes off to our quality assurance team, who also does a second review on it. But this way, we're trying to avoid any errors in the content and make sure that it's going out as clean as possible to the learners.  
+Me: Okay?  
+Them: So yeah, that's kind of the gist of the notes that she gave. In addition to just making sure it's practical, we need to work on the hooks and the closing for all videos that that's now required and need to learn why we're doing this and then really get into the how. It's just kind of repetitive of what we've already been talking about. And, and then the live action components that we also talked about. Okay, so moving into a little bit more of the logistics. We talked about. First of all, schedule. Of you being able to do. The week of January 12th. Now I am going to share my screen here. I do in going back just a little bit. It works the same way it has before. You have an instructor folder on our Google Drive, and I've added your previous courses into your archive folder, and your new course is here. This is just where we kind of will keep everything. You have your table of contents. You have slide templates, either Keynote or Parapoint, whichever you prefer. A folder for where your scripts will go. I popped some instructor resources in here. One of the big ones that we're looking at these days is scripting natural language. That's something you might want to check out. They're just little one pagers if you want to do any homework. And I don't have anything in your course assets, but if we need any course assets, we'll put them in there. So in here, we have your table of contents. And I've. I've added this.  
+Me: Let me just back to that photo repo. So, scripts. Used to be my code. Or speaking script. S.  
+Them: Speaking script.  
+Me: Okay? All right.  
+Them: Yes. And please, please manipulate this however you want. If you need to put in code scripts, you know, just create a new folder. And put in anything that we need in there, and you can structure it, however makes the most sense to you. This is just kind of the basic bones that we do.  
+Me: Saves in GitHub for code repo.  
+Them: Is. Yeah, GitHub is still our. Let me make notes on this. We need to get that for you. Okay? Yes. We will do that. Okay. Please ask questions along the way so I can take notes and I can get back to you with anything that we. We don't have for you yet. So I added the schedule in here just for a glance, for us to look at. And. And we were talking about you coming out January 12th. Layout. The 11th? Yeah. I know you. You must have a super busy schedule. Are you? Are you able to come for three days and travel?  
+Me: Yeah.  
+Them: Which I. Okay.  
+Me: That should be fun.  
+Them: Okay, so then when you're recording, do you have classes you're teaching virtually, or do you have meetings that you're taking, or are you dedicated to recording?  
+Me: Yeah. I can dedicate those three days for recording.  
+Them: Okay?  
+Me: Granted. Emergency or anything come up?  
+Them: Okay? Okay? All right. Okay. I can. I have these dates held for you on our end, and I will. I will confirm those. And once I do that, the travel request is kicked off. That is, it's an automated system, so it might not come to you until Monday. The travel request. Just so you know, it's same as before. Should anything come up or happen or we need to change dates. The sooner you let me know, the better. Nothing. Nothing we do is locked in stone and can't be moved. We're definitely functioning as a Human first organization.  
+Me: Cool. Thanks.  
+Them: All right, so moving on to your toc. Oh, give me. Give me a few more logistics here. You're working on Windows is your operating system, right?  
+Me: No, Mac.  
+Them: Mac is your operating system okay? And what? It seems like you're going to be going over a ton of tools. What? What licenses? And you can get back to me with this. What licenses will you be needing or what will you be using? That is already your own if, if you recall from the past. We like to use fresh, clean licenses that don't have any, like, personal information or past projects in it sort of thing. But I'm not sure what your tools are, so you. You let me know.  
+Me: Yeah, sure. So my context protocol are techniques to use AI. They're all open source. I do have my own product. That I'm building that leverage those tools. I really thought about using an annotating notes. And by the way, I've made quite a few updates on the PTAP here. That are not seeing.  
+Them: Oh. Well, that's not good.  
+Me: Hold on one second.  
+Them: Okay?  
+Me: Yeah. Okay? Yeah.  
+Them: If you. If you have. Okay?  
+Me: This is the o. H. Yeah. Apologies, alexa. And. Stephanie.  
+Them: Yes.  
+Me: Both head west. LinkedIn.  
+Them: Yes. So now, how much have you interfaced with Laura? Paulson.  
+Me: At the end of October.  
+Them: Okay? This. This does look like. The same, or. I think we're on the same thing, aren't we? Okay?  
+Me: I'll show you what I see. If you do, let me share.  
+Them: Oops. Yeah.  
+Me: No worries.  
+Them: Oh, you're on blueprint. I see. Okay?  
+Me: Thank you. Awake. Did you get okay?  
+Them: Yeah. We're. We are on the same thing. You're in a different tab. So you're. You're on blueprint and I'm on tlc.  
+Me: I'm sorry. Okay. Yeah, it's like, same type of way out. I. Apologies. I need to update what I got to hear.  
+Them: Okay?  
+Me: In trc.  
+Them: Yeah, let me. Let me know when you have that updated. But we can still kind of. We can look at what you have right there together and kind of talk through here. Here's another thing, Brennan. Like, I'm. I'm your advocate. I'm your support system going through this process, and I. I'M the one that can go to our management and our strategy team and speak for you as long as I know the correct things to say. So, for example, if our, if our team is like, oh, we need everything to be practical, you know, they're not. They're not on, like, the front line like me, so. They're not, like, in the trenches, like, getting the opportunity to work directly with you. So if I'm like, hey, we got to talk about that. I just did this this week on another course at Data Vince Course, actually, and the instructor was like, we have to give this context, otherwise they're going to be completely lost.  
+Me: Okay? Y. Eah. Fair. Thanks.  
+Them: And she gave me some reasons why, and I was able to go back to the strategy team and be like, look, this is how it's going to be. And we kind of found that happy medium sort of thing. So even though our strategy team, you know, they look at a lot of numbers, they try to make decisions. As best they can, and it doesn't always work for the content. So we're going to work together to make sure that it works for you and it showcases you appropriately and properly. To make sure that the learner gets what they need. But we, you know, while staying in that very corporate lane of we got to do what the numbers tell us to do.  
+Me: Yeah, I totally agree. And I'm happy you guys are addressing the competition. It's pretty fierce in this market. And, yeah, but I will put back a bit in that. My audience is different from the data visualization where somebody's software types of courses that you guys hit really well. I just want to keep my audience and keep that going, all while using the metrics and the feedback to improve. I feel like I've got a good following my drag course, which was released almost a year ago. I just crossed over 5,000 threshold. My MCP one. I've got 3,000 or so, so I feel like I've got a decent following. And yeah, I want to double criple that right with this next one. So that's the goal.  
+Them: Yay. Yeah. Yeah, let's do it. Okay?  
+Me: Okay?  
+Them: So those that being said, like things on your. On your intro video, that things should kind of stay the same as you've done in the past. It's a short sort of advertisement. It's in front of our paywall. So this is. And this is used. Our marketing team has algorithms that targets certain people. That have certain skills on LinkedIn to see this video, to try to entice them. So that's more. We don't call that a content video. That's more of a marketing video. That one will be in live action.  
+Me: Y.  
+Them: And then we get into the tests. So tell me, like, give me a quick idea of, like, how those tests are going to work.  
+Me: Eah. I'm sorry. I added some context here. I just skipped around. Yeah. Okay? So this is kind of the before, right? We had mentioned before and after of what the problems in the industry are of not using AI.  
+Them: Okay?  
+Me: But. And then kind of, you know, maybe showcasing the afterword product. I recommend mine or like an end result? You know, really the wow factor, being able to use AI for this cybersecurity of governance, risk and compliance.  
+Them: This. Okay, so that then you also have. You have some demos in here? Can you give me, like, the high level of how those demos are going to work? Because that us, as the learner, watching you walk through this, or are we following along with you?  
+Me: It could be very the end result of what we built within the earlier, you know, co development block fees. Of the power of moving techniques of MVP and REG to deliver on will appear cybersecurity use case.  
+Them: Okay? All right. So, let's see. It looks like things are you have them labeled as the understand, apply, analyze, create. This is cool. I. I love how you've done this. And then you've also given a good idea of where there's going to be video slides, demo and live action.  
+Me: Than. Ks. Yeah. Sorry. Should I have done this in the toc?  
+Them: Yeah, and that's. That's on us for being confusing. On which one's which? The blueprint is supposed to be kind of a sandbox, and the. The TOC is supposed to be, like, the final.  
+Me: All right, well, that works out because, yeah, I'm still, like, sandboxing.  
+Them: Okay? So, yeah, once, once we get them finalized, this is the structure. The TOC is the structure of, of how and where we need all those components to land. You can certainly, in the toc, you can certainly, certainly add rows or add columns for, for putting what the content type is, and then for me to pass it off. To the next team. I'll just remove those. But, yeah, this, this gives us a really good idea of where we're at. When you have the live action on there and your column G is that that's a lot of live action. Are you. Is that. Are those completely done? Like, what are. What are you thinking? Live action wise? Like a picture in picture sort of thing? Or you're saying the intro and the closing on live action?  
+Me: So live action could be either, like, coding along with the person. And going through the notebook. But it's kind of like a side by side.  
+Them: Okay? So.  
+Me: Like either my faith and talking right and with bottom right hand corner and the large screen. Being what I'm working on and explaining and teaching.  
+Them: Okay?  
+Me: Mostly code base.  
+Them: Okay? We will see how much of that how. Much do you like being on camera? Are you okay being on camera? Do you not mind or are you like. I want as little as possible.  
+Me: Yeah. No, I think I've got a decent face or camera, so, yeah.  
+Them: You definitely do. Like, that's. And it's. See, it's comfort level that I'm more concerned with. It's like, you know, some people are very nervous and, like, it can't. Just can't function having like a. A camera on them as well as, like, doing the thing.  
+Me: I'll be on it.  
+Them: So if you're, if you're comfortable with it, like, the more we can add, the better my, my concern there is, then schedule. It's like for, for the doing picture in picture, which is not what you've done before. The way that we do it is, you know, a little bit more high end. Than just a webcam.  
+Me: Right. Yeah. Yeah. Y. Eah.  
+Them: So it's. It requires more time. So if these, if, if you have. It looks like 33ish videos in here. That's a lot. And tell me, like, how did you do it? I know we're at time here. Do you have just a couple of minutes or do you have to go?  
+Me: Give me a sec. Should we get what's. All right, one sec. Let's go check my calendars. Now I'm not getting, like, notifications or somebody pulling me in, so, yeah, it should be good.  
+Them: Okay?  
+Me: It's lunch break here on the East Coast.  
+Them: Oh, yeah. So tell me how it worked last time. Do you recall? Did you. I know it was a while ago. Did you do. Were you able to do like 10 videos a day, or does it take a lot of setup? Because if you have about 30ish.  
+Me: Yeah, yeah. This is new. I can do it like intro outro for the first class before on video and cdl and then everything else I was in with the box. Doing just pure audio and screen capture.  
+Them: Yeah. Did. Do you have any memory of how long it would take you to, like, would you do 10 videos a day, or did you knock it all out? And just a couple.  
+Me: Yeah. I think it's like four days.  
+Them: Long days.  
+Me: Yeah. Let's get it done.  
+Them: Okay, The. The picture in picture to do that. Having you on camera most of the time. We're asking to add a fourth day.  
+Me: Okay?  
+Them: Is that something that you could swing? So we could do that, because otherwise we're going to probably have less of you on screen and just have you do that Tetris session. It is something that we like to explore. We're, we're pushing more for having instructor on screen with the project that they're doing, especially if there's going to be kind of lulls where you, where you need to reflect or spend time commenting or explaining something where there's nothing happening on screen.  
+Me: Yeah.  
+Them: We really like to have that instructor split screen or the little, like, bubble picture of you on screen.  
+Me: So yeah. I'm after that. It's going to get, you know, folks taking the class. And the work of that. I can cut some of the content out. In silver probably within the three days.  
+Them: Okay? In that case, some of the content that I had thought about is in. I think it's in your conclusion. Let me double check here, see if we're looking at the same thing. There's, like, the key takeaways and recap. I don't think you need that.  
+Me: Yeah.  
+Them: I think we can take that out.  
+Me: We talked about for final Challenge and quizzes.  
+Them: Let me just put. Us. You could combine the your next steps in the future.  
+Me: Sure.  
+Them: Of AI automation, right?  
+Me: I finally got.  
+Them: And then.  
+Me: And I can work this demo into one of the chapters.  
+Them: If you could do that, that'd be great. The way that our our platform works too, is anything that's in a conclusion video is not included in. You don't need to watch that to get the certificate of completion. So the last video of your second to last chapter, when they're when they've completed that they'll get the pop up of like you've completed the course. You want to add this to your LinkedIn profile. So the the conclusion videos are more of just. Almost like a novelty.  
+Me: Okay?  
+Them: People who want to hear next steps and. And learn those. Will stay on to watch that. And that's your opportunity to. To be like, check out my website or my blog or my Find me these other places that aren't LinkedIn related. So if you can integrate what you have in that conclusion chapter into the rest of the course, condense it and, and reduce anything here, that would be also thinking about your scripting being like, you know, as as tight as possible.  
+Me: Y. Eah. Y. Eah.  
+Them: To try to, because we don't want to over volume you. We don't want you to be, like, asleep at the wheel while you're recording because you've got way too much to record in a short amount of time. And it's in. And it's on my team too. The, the. Picture in picture is. Is tough. It takes a lot more like technical setup and more hands in the room to. To accomplish that. Because it's a different situation than recording in that the recording box.  
+Me: Okay? Yeah.  
+Them: Okay, so, working on where to condense things, going back to the schedule. Can you give me an idea? We have. I know LinkedIn has a couple of holiday shutdowns, Thanksgiving being the first one coming up. There's also. We have our winter shutdown, and then I think we. We have, like, MLK Day. When is that? That's coming up, too. So give me an idea of with all these shutdowns. When you think you can script and when I can start looking at stuff. And. And when you need things from me, like, please ask me for, you know, any of the. If you need any assets, if you need any licenses, like, any of that kind of stuff, the sooner you ask, the quicker I can get it to you.  
+Me: Y. Eah. So I can. Stuff I'm good on. It's always been sourcing like my own.  
+Them: Okay?  
+Me: So we're fine. Where? Yeah, I'm going to start, you know, knocking this out. Start getting the content and. Soon. So. So yeah.  
+Them: Take your time. When? You can give me an idea of when so I can schedule time to reveal.  
+Me: Okay?  
+Them: And then. And just communicate with me as much as you can. Like I'm. I'm opposite of Lucas. I like over communication. I also like to check in weekly. So I'm going to be a little bit of a mosquito pestering you, like, where you at? Where you at if I don't hear from you during the week?  
+Me: Let's do Friday check ins. How about that?  
+Them: Okay? Sounds good.  
+Me: And this time works.  
+Them: Okay? Okay. And I have your. Your calendar saying that I can book time directly in there, and then. Yeah, you don't. You don't have a ton of time, so. I know. I know this is information that's not new to you, so you should be able to knock it out, but, you know, if. If you're. Going along and things come up like, let me know if you're like, this is too. From my perspective, this is a very aggressive timeline.  
+Me: 30. Yep. Okay?  
+Them: So I just want to make sure that you're set up for success.  
+Me: No, I appreciate that. And I have a lot of this content already, a lot of the code. It's just a matter of organizing it and getting it scripted.  
+Them: Okay?  
+Me: So I'm not worried. I can do it within January time frame. We've got May come down to the Y, right. But I'll have it.  
+Them: If you. If you show up with stuff prepared, that's going to be better because then we'll use our time to just record and not have to develop anything.  
+Me: That is my goal as well. Yeah.  
+Them: Okay? Good. All right, and then, let's see. What else do we. Just revising the toc, making sure that blueprint is all the way over in that TOC tab, okay?  
+Me: Y.  
+Them: I'm going to send you just a recap email with some of these goals and just some of the stuff we went over. And then I think that's kind of it for now as I think of other things.  
+Me: Es.  
+Them: I'll email you. And same goes.  
+Me: Okay?  
+Them: Oh, the last. The one other last thing. Is that keynote, then you do. If you're working on Mac, you have keynote, right?  
+Me: I have PowerPoint.  
+Them: Slides. You're going to do PowerPoint. Okay, so I have both of those slide templates in there. You remember how to use those? Just duplicate them. Make one slide per video. So it'd be like, as. As needed. So if you're doing slides on video 0101, you'll see in the TOC tab on the left. It has column K is the video.  
+Me: Yeah. Yeah. Yeah, okay.  
+Them: File name. So those. That's what you would label the slides. That's what you would label the script. Like, 0, 0, 0, 1, 0, 1, 0, okay. Cool. You know, that introduction chapter? You could probably combine two of those maybe into one also. And yeah. If you could make those into a single video, that would be great.  
+Me: For sure. Okay?  
+Them: Okay?  
+Me: And I'm also, like, aiming for, like, 45 minutes to an hour for the full course.  
+Them: I.  
+Me: I know. It's got a kind of content like video and flag here, and this is probably working on your end. Like, hey, Brennan, like, two hours, like, no. I'd rather have a crap ton of content now and be able to cut down than the opposite.  
+Them: 'm targeting for, like, 45 minutes to an hour, so over. Over an hour, I think, would be overkill.  
+Me: Okay?  
+Them: And, like, 20 minutes wouldn't be enough, so.  
+Me: Okay? Cool. Yeah. No, just stay focused and work on the transition. Then, you know, keep the same type of momentum.  
+Them: Yeah. Yeah.  
+Me: For all of our children. And content circle. That.  
+Them: Yes. You got it. Awesome. Okay. Yeah. All of the things and then as tight of scripts as possible without losing meaning or main points, you know, so.  
+Me: Cool. Okay? Hold on. Did an unclaimed fund. I thought I come through. Yeah. Like usually it's like $50 or whatever, like cuz I did it in the past. $774. Well done. Well done. What is it for? Unclaimed funds. Somewhere, someone took my money. And. Didn't. Mistakenly. No. It's not sinai. Outside. Of school medicine. At now the office has been holding me, son. Since they will receive from like for auditing purposes they have to give it back to the state, right? Until I go out and claim funds, but I don't know when you go on the unclean trial. She didn't email. It says no. You haven't confirmed forever. No. I just went on and searched. Every once in a while, I just go out and search. That's awesome. New york state office of unclan. Fund. I got. Like 50 bucks. From someone. It's like. Tiffany. Was. An expired gift card. That had, like Tiffan. Y's. This. Was. They don't tell you how much it is either. Sure. How do I. Save. Oh, blessed. Okay? Let's see if you got anything. Should do it for Pennsylvania. Oh, my gosh. Definitely company. See? Count. Ercycle. Claim it. 's liberty. That's not you. What's that? You see? But this. One. That's probably one you just got. No, that's from Tiffany. A different one. Look, it's the 140 73. Second. Wow. Cool. I'm going to fill this out for you. What? Go down. Okay? That's. Why you want to put on. Your zip code. Either. Your pencil. Like your. This is new york state. Yeah. Just like new york. Or you don't have to even. For the lip glove. But. Mol. Ly. Gerald. Okay? So. Let's just put New York. I don't know why. Yeah. Bren. Nan. Yeah. There's only one that came back up, I imagine. You had. A file. Claim, but you can. Look. Through. Cool. That's a nice little Christmas bonus. 
+
