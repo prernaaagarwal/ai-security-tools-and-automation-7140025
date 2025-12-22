@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# Environment variables
+.env
+*.env
+
+# API Keys and Secrets
+api key/
+*.key
+*.pem
+
+# Logs
+logs/*.log
+*.log
+
+# Vector Databases (large files)
+vectordb/*/
+*.index
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Generated files (optional - remove if you want to track)
+# reports/*.docx
+# reports/*.md

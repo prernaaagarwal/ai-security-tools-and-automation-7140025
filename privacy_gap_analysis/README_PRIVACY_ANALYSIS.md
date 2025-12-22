@@ -91,33 +91,103 @@ This system provides end-to-end privacy policy compliance analysis:
 
 ---
 
+## 📁 Project Structure
+
+```
+privacy_gap_analysis/
+├── README_PRIVACY_ANALYSIS.md          # This file - system documentation
+├── requirements.txt                    # Python dependencies
+├── .env                               # Environment variables (API keys)
+├── .gitignore                         # Git ignore rules
+│
+├── course_materials/                  # LinkedIn Learning Course Content
+│   ├── COURSE_CONTENT_GUIDE.md       # Complete course scripts & slides
+│   ├── COURSE_CONTENT_CHAPTERS_4_5_6.md  # Chapters 4-6 content
+│   ├── CHAPTER_1_SLIDES.md           # Chapter 1 slides
+│   ├── ProductionTOC_7140025...xlsx  # Course table of contents
+│   └── katlyn_meetings.txt           # Producer meeting notes
+│
+├── docs/                              # Documentation
+│   ├── ARCHITECTURE_DIAGRAMS.md      # System architecture visuals
+│   ├── ARCHITECTURE_DIAGRAMS_MERMAID.md  # Mermaid diagrams
+│   └── What the MCP Server Does      # MCP server explanation
+│
+├── scripts/                           # Core Python Scripts
+│   ├── privacy_policy_scraper.py     # Scrapes privacy policies → PDF
+│   ├── privacy_rag_mcp.py            # RAG system for gap analysis
+│   ├── privacy_mcp_server.py         # MCP workflow tracking server
+│   ├── run_privacy_analysis.py       # End-to-end orchestration
+│   └── markdown_to_docx.py           # Convert reports to Word
+│
+├── data/                              # Data Files
+│   ├── frameworks/                    # Compliance Frameworks
+│   │   ├── CCPA_CPRA_Framework.xlsx  # CCPA/CPRA requirements (35+)
+│   │   └── CCPA_CPRA_Framework.csv   # CSV version
+│   │
+│   └── sample_policies/               # Sample Privacy Policy PDFs
+│       ├── auditcaddie.com_privacy_policy.pdf
+│       ├── stripe.com_privacy_policy.pdf
+│       ├── legal.yahoo.com_privacy_policy.pdf
+│       └── *_terms_conditions.pdf
+│
+├── reports/                           # Generated Gap Analysis Reports
+│   ├── Audit_Caddie_CCPA_Gap_Analysis_*.md
+│   ├── Stripe_CCPA_Gap_Analysis_*.md
+│   ├── Yahoo_CCPA_Gap_Analysis_*.md
+│   └── *.docx                        # Word format reports
+│
+├── assets/                            # Images and Visual Assets
+│   ├── privacy_workflow.png          # Workflow diagram (PNG)
+│   └── privacy_workflow.jpg          # Workflow diagram (JPG)
+│
+├── logs/                              # System Logs
+│   └── mcp_server.log                # MCP server operation logs
+│
+└── vectordb/                          # Vector Databases
+    ├── vectordb_ccpa/                # CCPA framework embeddings
+    └── vectordb_privacy_policies/    # Privacy policy embeddings
+```
+
+---
+
 ## Files and Components
 
 ### Core System Files
 
-| File | Purpose |
-|------|---------|
-| `CCPA_CPRA_Framework.xlsx` | CCPA/CPRA requirements knowledge base (35+ requirements) |
-| `privacy_policy_scraper.py` | Scrapes privacy policies from websites → PDF |
-| `privacy_rag_mcp.py` | RAG system for gap analysis with GPT-4.1 |
-| `privacy_mcp_server.py` | MCP server for workflow tracking |
-| `run_privacy_analysis.py` | End-to-end workflow orchestration |
+| File | Location | Purpose |
+|------|----------|---------|
+| `privacy_policy_scraper.py` | `scripts/` | Scrapes privacy policies from websites → PDF |
+| `privacy_rag_mcp.py` | `scripts/` | RAG system for gap analysis with GPT-4.1 |
+| `privacy_mcp_server.py` | `scripts/` | MCP server for workflow tracking |
+| `run_privacy_analysis.py` | `scripts/` | End-to-end workflow orchestration |
+| `markdown_to_docx.py` | `scripts/` | Convert markdown reports to Word |
+
+### Data Files
+
+| File | Location | Purpose |
+|------|----------|---------|
+| `CCPA_CPRA_Framework.xlsx` | `data/frameworks/` | CCPA/CPRA requirements (35+) |
+| `CCPA_CPRA_Framework.csv` | `data/frameworks/` | CSV version of framework |
+| `*.pdf` | `data/sample_policies/` | Sample privacy policy PDFs |
 
 ### Configuration Files
 
-| File | Purpose |
-|------|---------|
-| `requirements.txt` | Python dependencies |
-| `README_PRIVACY_ANALYSIS.md` | This file - system documentation |
+| File | Location | Purpose |
+|------|----------|---------|
+| `requirements.txt` | Root | Python dependencies |
+| `.env` | Root | API keys (not tracked in git) |
+| `.gitignore` | Root | Git exclusions |
+| `README_PRIVACY_ANALYSIS.md` | Root | This file |
 
-### Generated Files/Directories
+### Generated Directories
 
-| Path | Contents |
-|------|----------|
-| `vectordb_ccpa/` | Vector database for CCPA framework |
-| `vectordb_privacy_policies/` | Vector database for scraped policies |
-| `*.pdf` | Downloaded privacy policy PDFs |
-| `*_CCPA_Gap_Analysis_*.md` | Generated compliance reports |
+| Directory | Contents |
+|-----------|----------|
+| `reports/` | Generated CCPA gap analysis reports (.md & .docx) |
+| `logs/` | MCP server operation logs |
+| `vectordb/` | ChromaDB vector databases for RAG |
+| `__pycache__/` | Python bytecode cache (gitignored) |
+| `api key/` | API key storage (gitignored) |
 
 ---
 
@@ -130,20 +200,26 @@ This system provides end-to-end privacy policy compliance analysis:
 - 8GB+ RAM (for embedding models and vector databases)
 - Internet connection (for scraping)
 
-### Step 1: Install Dependencies
+### Step 1: Clone Repository
 
 ```bash
-cd "privacy scanner"
+git clone https://github.com/JamesCG303/Compliance-Calculator.git
+cd Compliance-Calculator/privacy_gap_analysis
+```
+
+### Step 2: Install Dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-### Step 2: Install Playwright Browsers
+### Step 3: Install Playwright Browsers
 
 ```bash
 playwright install chromium
 ```
 
-### Step 3: Set OpenAI API Key
+### Step 4: Set OpenAI API Key
 
 ```bash
 # Option 1: Environment variable
@@ -153,9 +229,9 @@ export OPENAI_API_KEY="your-api-key-here"
 echo "OPENAI_API_KEY=your-api-key-here" > .env
 ```
 
-### Step 4: Verify CCPA Framework File
+### Step 5: Verify CCPA Framework File
 
-Ensure `CCPA_CPRA_Framework.xlsx` is present in the `privacy scanner` directory.
+The CCPA framework is located in `data/frameworks/CCPA_CPRA_Framework.xlsx`.
 
 ---
 
@@ -167,10 +243,10 @@ Run the end-to-end analysis:
 
 ```bash
 # Terminal 1: Start MCP server
-python privacy_mcp_server.py
+python scripts/privacy_mcp_server.py
 
 # Terminal 2: Run analysis
-python run_privacy_analysis.py https://auditcaddie.com "Audit Caddie"
+python scripts/run_privacy_analysis.py https://auditcaddie.com "Audit Caddie"
 ```
 
 ### Option 2: Step-by-Step
@@ -178,30 +254,34 @@ python run_privacy_analysis.py https://auditcaddie.com "Audit Caddie"
 #### Step 1: Scrape Privacy Policy
 
 ```python
+import sys
+sys.path.insert(0, 'scripts')
 from privacy_policy_scraper import scrape_privacy_policy
 
 pdf_path = scrape_privacy_policy("https://auditcaddie.com")
-# Output: auditcaddie.com_privacy_policy.pdf
+# Output: data/sample_policies/auditcaddie.com_privacy_policy.pdf
 ```
 
 #### Step 2: Analyze with RAG/MCP
 
 ```python
+import sys
+sys.path.insert(0, 'scripts')
 from privacy_rag_mcp import analyze_privacy_policy
 
 result = analyze_privacy_policy(
-    pdf_path="auditcaddie.com_privacy_policy.pdf",
+    pdf_path="data/sample_policies/auditcaddie.com_privacy_policy.pdf",
     company_name="Audit Caddie"
 )
 
 print(result['report_path'])
-# Output: Audit_Caddie_CCPA_Gap_Analysis_20231201_143022.md
+# Output: reports/Audit_Caddie_CCPA_Gap_Analysis_20231201_143022.md
 ```
 
 ### Option 3: Interactive Mode
 
 ```bash
-python run_privacy_analysis.py
+python scripts/run_privacy_analysis.py
 
 # Follow prompts:
 # Enter company homepage URL: https://example.com
