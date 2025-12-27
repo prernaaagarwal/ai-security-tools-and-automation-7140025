@@ -33,8 +33,8 @@ def convert_docx_to_pdf(docx_file: str, pdf_file: str = None) -> str:
 
     try:
         if system == "Darwin":  # macOS
-            # Use textutil (built-in macOS tool)
-            _convert_using_textutil(docx_path, pdf_file)
+            # Use LibreOffice (best option for macOS)
+            _convert_using_libreoffice(docx_path, pdf_file)
         elif system == "Linux":
             # Try libreoffice
             _convert_using_libreoffice(docx_path, pdf_file)
@@ -68,20 +68,28 @@ def _convert_using_textutil(docx_path: Path, pdf_path: Path):
 def _convert_using_libreoffice(docx_path: Path, pdf_path: Path):
     """Convert using LibreOffice (Linux/macOS/Windows)"""
     try:
-        # Check if LibreOffice is installed
+        # Find LibreOffice executable
+        soffice_path = 'soffice'
+
+        # Check if soffice is in PATH
         result = subprocess.run(
             ['which', 'soffice'],
             capture_output=True,
             text=True
         )
 
+        # If not in PATH, check standard macOS location
         if result.returncode != 0:
-            raise FileNotFoundError("LibreOffice not found")
+            macos_path = Path('/Applications/LibreOffice.app/Contents/MacOS/soffice')
+            if macos_path.exists():
+                soffice_path = str(macos_path)
+            else:
+                raise FileNotFoundError("LibreOffice not found")
 
         # Convert using LibreOffice headless
         output_dir = pdf_path.parent
         subprocess.run([
-            'soffice',
+            soffice_path,
             '--headless',
             '--convert-to', 'pdf',
             '--outdir', str(output_dir),
