@@ -17,6 +17,107 @@ from privacy_policy_scraper import scrape_privacy_policy, scrape_policy_document
 from privacy_rag_mcp import analyze_privacy_policy, analyze_policy_documents
 
 ###############################################################################
+#                    Human Feedback Collection
+###############################################################################
+def collect_user_feedback(session_id: str, company_name: str) -> dict:
+    """
+    Collect user feedback on gap analysis quality
+    This enables human reinforcement learning for model improvement
+    """
+    import requests
+
+    print("\n" + "="*70)
+    print("HUMAN FEEDBACK - Reinforcement Learning")
+    print("="*70)
+    print("Help improve the analysis quality by providing feedback!")
+    print()
+
+    try:
+        # Ask for overall rating
+        print("📊 How would you rate the overall quality of this gap analysis?")
+        print("   1 = Poor (many gaps missed, inaccurate)")
+        print("   2 = Fair (some gaps missed)")
+        print("   3 = Good (most gaps identified)")
+        print("   4 = Excellent (comprehensive and accurate)")
+        print("   5 = Outstanding (exceeded expectations)")
+        print()
+
+        rating_input = input("Rating (1-5) or press Enter to skip: ").strip()
+
+        if not rating_input:
+            print("⏭️  Feedback skipped")
+            return None
+
+        try:
+            rating = int(rating_input)
+            if rating < 1 or rating > 5:
+                print("⚠️  Invalid rating, skipping feedback")
+                return None
+        except ValueError:
+            print("⚠️  Invalid rating, skipping feedback")
+            return None
+
+        # Convert to rating label
+        rating_labels = {
+            1: "poor",
+            2: "fair",
+            3: "good",
+            4: "excellent",
+            5: "outstanding"
+        }
+        rating_label = rating_labels.get(rating, "good")
+
+        # Ask for specific feedback
+        print()
+        print("💬 Any specific comments? (optional)")
+        print("   Examples:")
+        print("   - 'Missed critical gap in data retention policies'")
+        print("   - 'Good coverage but recommendations could be more specific'")
+        print("   - 'Excellent analysis, very thorough'")
+        print()
+
+        comments = input("Comments (or press Enter to skip): ").strip()
+
+        # Log to MCP server
+        feedback_data = {
+            "session_id": session_id,
+            "question": f"Gap Analysis Quality for {company_name}",
+            "rating": rating_label,
+            "numeric_rating": rating,
+            "comments": comments if comments else None
+        }
+
+        # Send to MCP server
+        try:
+            payload = {
+                "jsonrpc": "2.0",
+                "method": "insert_feedback",
+                "params": feedback_data,
+                "id": 1
+            }
+            response = requests.post("http://localhost:8080/mcp", json=payload, timeout=5)
+
+            if response.status_code == 200:
+                print("\n✅ Feedback recorded! Thank you for improving the system.")
+                print(f"   Rating: {rating}/5 ({rating_label})")
+                if comments:
+                    print(f"   Comments: {comments}")
+            else:
+                print(f"\n⚠️  Could not save feedback: HTTP {response.status_code}")
+
+        except requests.exceptions.RequestException as e:
+            print(f"\n⚠️  Could not connect to MCP server: {e}")
+            print("   Make sure MCP server is running at http://localhost:8080")
+
+        print()
+        return feedback_data
+
+    except KeyboardInterrupt:
+        print("\n\n⏭️  Feedback cancelled")
+        return None
+
+
+###############################################################################
 #                    Complete Workflow Function
 ###############################################################################
 def run_complete_privacy_analysis(company_url: str, company_name: str = None):
@@ -111,6 +212,11 @@ def run_complete_privacy_analysis(company_url: str, company_name: str = None):
     print("5. Update website with 'Do Not Sell or Share My Personal Information' link")
     print("6. Review MCP logs at: http://localhost:8080/debug/gaps")
     print("="*70 + "\n")
+
+    # Step 4: Collect User Feedback (Human Reinforcement Learning)
+    feedback = collect_user_feedback(result['analysis']['session_id'], company_name)
+    if feedback:
+        result['user_feedback'] = feedback
 
     return result
 

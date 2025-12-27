@@ -341,6 +341,131 @@ def count_tokens(text: str) -> int:
     """Count tokens in text"""
     return len(tokenizer.encode(text))
 
+def _calculate_confidence_score(analysis_text: str, num_requirements: int, num_policy_sections: int) -> float:
+    """
+    Calculate confidence score for gap analysis based on multiple factors
+
+    Factors:
+    - Length and detail of analysis
+    - Number of requirements analyzed
+    - Number of policy sections reviewed
+    - Presence of specific CCPA section references
+    - Structured format indicators
+    """
+    score = 0.5  # Base score
+
+    # Factor 1: Analysis comprehensiveness (0-0.2)
+    analysis_length = len(analysis_text)
+    if analysis_length > 2000:
+        score += 0.2
+    elif analysis_length > 1000:
+        score += 0.15
+    elif analysis_length > 500:
+        score += 0.1
+
+    # Factor 2: CCPA section references (0-0.2)
+    ccpa_refs = analysis_text.count("Section 1798.") + analysis_text.count("CCPA Section") + analysis_text.count("CPRA Section")
+    if ccpa_refs >= 10:
+        score += 0.2
+    elif ccpa_refs >= 5:
+        score += 0.15
+    elif ccpa_refs >= 3:
+        score += 0.1
+
+    # Factor 3: Data coverage (0-0.15)
+    if num_requirements >= 30 and num_policy_sections >= 2:
+        score += 0.15
+    elif num_requirements >= 20:
+        score += 0.1
+    elif num_requirements >= 10:
+        score += 0.05
+
+    # Factor 4: Structured format (0-0.15)
+    structure_keywords = ["Gap", "Missing:", "Reference:", "Priority:", "Recommendation"]
+    structure_count = sum(1 for keyword in structure_keywords if keyword in analysis_text)
+    if structure_count >= 4:
+        score += 0.15
+    elif structure_count >= 3:
+        score += 0.1
+    elif structure_count >= 2:
+        score += 0.05
+
+    # Ensure score is between 0 and 1
+    return min(1.0, max(0.0, score))
+
+
+def _parse_gap_analysis(analysis_text: str) -> dict:
+    """
+    Parse gap analysis text to extract structured data
+
+    Returns dict with:
+    - gaps: List of identified gaps with titles and priorities
+    - recommendations: List of recommendations
+    - priority_summary: Overall priority assessment
+    """
+    import re
+
+    gaps = []
+    recommendations = []
+
+    # Parse gaps (looking for "Gap X:" or "**Gap X:" patterns)
+    gap_pattern = r'\*\*Gap \d+:?\s*([^\*\n]+)'
+    gap_matches = re.findall(gap_pattern, analysis_text)
+
+    # Alternative pattern for gaps without numbers
+    if not gap_matches:
+        gap_pattern = r'[-•]\s*\*\*([^:]+):\*\*\s*\*\*Missing:\*\*\s*([^\n]+)'
+        gap_matches = re.findall(gap_pattern, analysis_text)
+
+    for match in gap_matches:
+        if isinstance(match, tuple):
+            gap_title = match[0].strip()
+            gap_desc = match[1].strip() if len(match) > 1 else ""
+        else:
+            gap_title = match.strip()
+            gap_desc = ""
+
+        # Extract priority if present
+        priority = "Medium"  # Default
+        if "Critical" in analysis_text[max(0, analysis_text.find(gap_title)-200):analysis_text.find(gap_title)+200]:
+            priority = "Critical"
+        elif "High" in analysis_text[max(0, analysis_text.find(gap_title)-200):analysis_text.find(gap_title)+200]:
+            priority = "High"
+        elif "Low" in analysis_text[max(0, analysis_text.find(gap_title)-200):analysis_text.find(gap_title)+200]:
+            priority = "Low"
+
+        gaps.append({
+            "title": gap_title,
+            "description": gap_desc[:200] if gap_desc else gap_title,
+            "priority": priority
+        })
+
+    # Parse recommendations section
+    rec_section = re.search(r'\*\*3\.\s*Recommendations[^\n]*\*\*(.+?)(?:\*\*4\.|---|\n\n\*\*|$)', analysis_text, re.DOTALL)
+    if rec_section:
+        rec_text = rec_section.group(1)
+        # Extract bullet points or numbered items
+        rec_items = re.findall(r'(?:[-•\*]|\d+\.)\s*([^\n]+)', rec_text)
+        recommendations = [rec.strip() for rec in rec_items if len(rec.strip()) > 10]
+
+    # Determine overall priority
+    critical_count = sum(1 for g in gaps if g['priority'] == 'Critical')
+    high_count = sum(1 for g in gaps if g['priority'] == 'High')
+
+    if critical_count >= 3:
+        priority_summary = "Critical"
+    elif critical_count >= 1 or high_count >= 5:
+        priority_summary = "High"
+    else:
+        priority_summary = "Medium"
+
+    return {
+        'gaps': gaps,
+        'recommendations': recommendations[:10],  # Limit to top 10
+        'priority_summary': priority_summary
+    }
+
+
 def perform_gap_analysis(company_name: str, vectordb_ccpa, vectordb_policy) -> Dict:
     """
     Perform CCPA/CPRA gap analysis on privacy policy using GPT-4.1
@@ -423,6 +548,35 @@ Format your response as a structured report.
         tc=completion_tokens,
         total=total_tokens
     )
+
+    # Calculate confidence score based on analysis characteristics
+    confidence_score = _calculate_confidence_score(analysis_result, len(ccpa_requirements), len(policy_docs))
+
+    # Log confidence score to MCP
+    try:
+        mcp_client.insert_confidence(
+            query=f"CCPA/CPRA Gap Analysis for {company_name}",
+            response=analysis_result[:500],  # First 500 chars
+            score=confidence_score
+        )
+        print(f"✓ Confidence score logged: {confidence_score:.2f}")
+    except Exception as e:
+        print(f"⚠️  Could not log confidence score: {e}")
+
+    # Parse and log structured gap analysis
+    try:
+        parsed_gaps = _parse_gap_analysis(analysis_result)
+        if parsed_gaps:
+            mcp_client.request('insert_gap_analysis', {
+                'session_id': session_id,
+                'company': company_name,
+                'gaps': parsed_gaps['gaps'],
+                'recommendations': parsed_gaps['recommendations'],
+                'priority_level': parsed_gaps['priority_summary']
+            })
+            print(f"✓ Structured gap analysis logged: {len(parsed_gaps['gaps'])} gaps identified")
+    except Exception as e:
+        print(f"⚠️  Could not log gap analysis: {e}")
 
     print(f"✓ Gap analysis complete")
     print(f"  Tokens used: {total_tokens} (prompt: {prompt_tokens}, completion: {completion_tokens})")
