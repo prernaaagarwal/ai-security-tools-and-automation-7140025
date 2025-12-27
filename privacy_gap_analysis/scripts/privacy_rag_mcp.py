@@ -11,6 +11,7 @@ import pandas as pd
 from typing import List, Dict
 from datetime import datetime
 import PyPDF2
+from pathlib import Path
 from dotenv import load_dotenv
 from compliance_report_template import convert_markdown_to_compliance_report
 from report_pdf_generator import convert_docx_to_pdf
@@ -53,7 +54,14 @@ def load_ccpa_framework():
     print("Loading CCPA/CPRA Framework...")
     print("="*60)
 
-    ccpa_df = pd.read_csv("CCPA_CPRA_Framework.csv", index_col=False)
+    # Look for framework file in data/frameworks directory
+    framework_path = Path(__file__).parent.parent / "data" / "frameworks" / "CCPA_CPRA_Framework.csv"
+    if not framework_path.exists():
+        framework_path = Path("data/frameworks/CCPA_CPRA_Framework.csv")
+    if not framework_path.exists():
+        framework_path = Path("CCPA_CPRA_Framework.csv")
+
+    ccpa_df = pd.read_csv(str(framework_path), index_col=False)
 
     # Create combined text for better retrieval
     ccpa_df['Body'] = ccpa_df.apply(
