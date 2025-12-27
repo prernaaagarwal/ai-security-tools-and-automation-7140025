@@ -12,7 +12,8 @@ from typing import List, Dict
 from datetime import datetime
 import PyPDF2
 from dotenv import load_dotenv
-from markdown_to_docx import convert_markdown_to_docx
+from compliance_report_template import convert_markdown_to_compliance_report
+from report_pdf_generator import convert_docx_to_pdf
 
 ###############################################################################
 #                         Environment Setup
@@ -468,11 +469,33 @@ def generate_gap_report(analysis_result: Dict, output_path: str = None):
 
     print(f"\n✓ Markdown report saved: {output_path}")
 
-    # Generate Word document version
+    # Generate Professional Word document using Audit Caddie template
     docx_path = output_path.replace('.md', '.docx')
     try:
-        convert_markdown_to_docx(output_path, docx_path)
-        print(f"✓ Word document saved: {docx_path}")
+        # Prepare metadata for professional template
+        metadata = {
+            'company_name': analysis_result['company'],
+            'report_title': 'CCPA COMPLIANCE ASSESSMENT REPORT',
+            'subtitle': f"{analysis_result['company']} Privacy Policy\nCompliance Gap Analysis",
+            'executive_summary': 'This report provides a comprehensive CCPA/CPRA compliance gap analysis, '
+                               'identifying specific areas where the privacy policy requires updates to meet '
+                               'California consumer privacy requirements.',
+            'generated_by': 'Privacy Policy Gap Analysis System\nPowered by Cardinal Security',
+            'analysis_date': datetime.now().strftime('%B %d, %Y')
+        }
+
+        convert_markdown_to_compliance_report(output_path, docx_path, metadata)
+        print(f"✓ Professional Word document saved: {docx_path}")
+
+        # Generate PDF version
+        pdf_path = output_path.replace('.md', '.pdf')
+        try:
+            convert_docx_to_pdf(docx_path, pdf_path)
+            print(f"✓ PDF report saved: {pdf_path}")
+        except Exception as pdf_error:
+            print(f"⚠ Warning: Could not generate PDF: {pdf_error}")
+            print(f"  Install LibreOffice for PDF generation: brew install --cask libreoffice")
+
     except Exception as e:
         print(f"⚠ Warning: Could not generate Word document: {e}")
 
