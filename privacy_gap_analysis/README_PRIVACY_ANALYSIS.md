@@ -1,7 +1,7 @@
 # Privacy Policy Gap Analysis System
 ## CCPA/CPRA Compliance with RAG and MCP
 
-**Cardinal Security Privacy Compliance Workflow**
+**Security Privacy Compliance Workflow**
 
 Automated system for evaluating website privacy policies against CCPA/CPRA requirements using Retrieval-Augmented Generation (RAG) and Model Context Protocol (MCP).
 
@@ -416,9 +416,9 @@ The system evaluates policies against 35+ CCPA/CPRA requirements across categori
 
 ---
 
-## Cardinal Security Use Case
+##  Security Use Case
 
-This system automates the privacy compliance workflow described by Scott Morris of Cardinal Security:
+This system automates the privacy compliance workflow described by Scott Morris of  Security:
 
 ### Current Manual Process
 1. Attorney reviews website privacy statement
@@ -431,7 +431,7 @@ This system automates the privacy compliance workflow described by Scott Morris 
 2. **Speed**: Generate gap analysis in minutes vs. hours
 3. **Consistency**: Systematic evaluation of all CCPA/CPRA requirements
 4. **Documentation**: MCP tracking for audit trails
-5. **White-Label**: Cardinal Security branding, tool runs behind the scenes
+5. **White-Label**:  Security branding, tool runs behind the scenes
 
 ### Business Impact
 - **Efficiency**: Reduce attorney time per assessment
@@ -482,7 +482,7 @@ This system automates the privacy compliance workflow described by Scott Morris 
 - [ ] Implement batch processing for multiple companies
 - [ ] Add OCR for image-based PDFs
 - [ ] Generate visual compliance dashboards
-- [ ] Integrate with Cardinal Security CRM
+- [ ] Integrate with  Security CRM
 
 ---
 
@@ -495,7 +495,7 @@ Proprietary -  Audit Caddie
 ## Contact
 
 For questions or support:
-- **Audit Caddie**: Brennan Lodge (BLodgic)
+- **Audit Caddie**: Brennan Lodge @ BLodgic dot com
 
 ---
 
