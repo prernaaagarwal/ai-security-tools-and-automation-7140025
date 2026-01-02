@@ -424,7 +424,7 @@ This system automates the privacy compliance workflow described by Scott Morris 
 1. Attorney reviews website privacy statement
 2. Identifies gaps against state/federal privacy laws
 3. Drafts updated privacy policy
-4. Delivers fixed-fee compliance package ($5K)
+4. Delivers fixed-fee compliance package 
 
 ### Automated Workflow
 1. **Scale**: Scan multiple websites in parallel
