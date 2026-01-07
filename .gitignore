@@ -45,4 +45,4 @@ Thumbs.db
 # Course building materials (internal use only, not for students)
 **/CHAPTER*_LESSON*_SCRIPT.md
 **/CHAPTER*_SCREENCAP_GUIDE.md
-**/scripts/02_*_demo_*.py
+**/scripts/*_*_demo_*.py
