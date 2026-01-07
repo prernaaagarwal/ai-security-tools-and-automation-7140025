@@ -34,7 +34,7 @@ def collect_user_feedback(session_id: str, company_name: str) -> dict:
 
     try:
         # Ask for overall rating
-        print("📊 How would you rate the overall quality of this gap analysis?")
+        print(" How would you rate the overall quality of this gap analysis?")
         print("   1 = Poor (many gaps missed, inaccurate)")
         print("   2 = Fair (some gaps missed)")
         print("   3 = Good (most gaps identified)")
@@ -45,16 +45,16 @@ def collect_user_feedback(session_id: str, company_name: str) -> dict:
         rating_input = input("Rating (1-5) or press Enter to skip: ").strip()
 
         if not rating_input:
-            print("⏭️  Feedback skipped")
+            print("⏭  Feedback skipped")
             return None
 
         try:
             rating = int(rating_input)
             if rating < 1 or rating > 5:
-                print("⚠️  Invalid rating, skipping feedback")
+                print("  Invalid rating, skipping feedback")
                 return None
         except ValueError:
-            print("⚠️  Invalid rating, skipping feedback")
+            print("  Invalid rating, skipping feedback")
             return None
 
         # Convert to rating label
@@ -69,7 +69,7 @@ def collect_user_feedback(session_id: str, company_name: str) -> dict:
 
         # Ask for specific feedback
         print()
-        print("💬 Any specific comments? (optional)")
+        print(" Any specific comments? (optional)")
         print("   Examples:")
         print("   - 'Missed critical gap in data retention policies'")
         print("   - 'Good coverage but recommendations could be more specific'")
@@ -98,22 +98,22 @@ def collect_user_feedback(session_id: str, company_name: str) -> dict:
             response = requests.post("http://localhost:8080/mcp", json=payload, timeout=5)
 
             if response.status_code == 200:
-                print("\n✅ Feedback recorded! Thank you for improving the system.")
+                print("\n Feedback recorded! Thank you for improving the system.")
                 print(f"   Rating: {rating}/5 ({rating_label})")
                 if comments:
                     print(f"   Comments: {comments}")
             else:
-                print(f"\n⚠️  Could not save feedback: HTTP {response.status_code}")
+                print(f"\n  Could not save feedback: HTTP {response.status_code}")
 
         except requests.exceptions.RequestException as e:
-            print(f"\n⚠️  Could not connect to MCP server: {e}")
+            print(f"\n  Could not connect to MCP server: {e}")
             print("   Make sure MCP server is running at http://localhost:8080")
 
         print()
         return feedback_data
 
     except KeyboardInterrupt:
-        print("\n\n⏭️  Feedback cancelled")
+        print("\n\n⏭  Feedback cancelled")
         return None
 
 
@@ -151,7 +151,7 @@ def run_complete_privacy_analysis(company_url: str, company_name: str = None):
         from urllib.parse import urlparse
         domain = urlparse(company_url).netloc
         company_name = domain.replace('www.', '').replace('.com', '').replace('.', ' ').title()
-        print(f"📌 Detected company name: {company_name}")
+        print(f" Detected company name: {company_name}")
 
     # Step 1: Scrape Policy Documents (Privacy Policy + Terms & Conditions)
     print("\n" + "-"*70)
@@ -161,7 +161,7 @@ def run_complete_privacy_analysis(company_url: str, company_name: str = None):
     policy_docs = scrape_policy_documents(company_url)
 
     if not policy_docs['privacy_policy'] and not policy_docs['terms_conditions']:
-        print("\n✗ FAILED: Could not scrape any policy documents from website")
+        print("\n FAILED: Could not scrape any policy documents from website")
         print("  Please ensure:")
         print("    - The website has a privacy policy and/or terms & conditions")
         print("    - The policy links are accessible")
@@ -169,9 +169,9 @@ def run_complete_privacy_analysis(company_url: str, company_name: str = None):
         return None
 
     if policy_docs['privacy_policy']:
-        print(f"\n✓ Privacy policy downloaded: {policy_docs['privacy_policy']}")
+        print(f"\n Privacy policy downloaded: {policy_docs['privacy_policy']}")
     if policy_docs['terms_conditions']:
-        print(f"✓ Terms & conditions downloaded: {policy_docs['terms_conditions']}")
+        print(f" Terms & conditions downloaded: {policy_docs['terms_conditions']}")
 
     # Step 2: Perform Gap Analysis with RAG and MCP
     print("\n" + "-"*70)
@@ -185,21 +185,21 @@ def run_complete_privacy_analysis(company_url: str, company_name: str = None):
     )
 
     if not result:
-        print("\n✗ FAILED: Gap analysis could not be completed")
+        print("\n FAILED: Gap analysis could not be completed")
         return None
 
     # Step 3: Display Results
     print("\n" + "="*70)
-    print("✓ ANALYSIS COMPLETE")
+    print(" ANALYSIS COMPLETE")
     print("="*70)
-    print(f"\n📊 Company: {company_name}")
+    print(f"\n Company: {company_name}")
     if policy_docs['privacy_policy']:
-        print(f"📄 Privacy Policy: {policy_docs['privacy_policy']}")
+        print(f" Privacy Policy: {policy_docs['privacy_policy']}")
     if policy_docs['terms_conditions']:
-        print(f"📄 Terms & Conditions: {policy_docs['terms_conditions']}")
-    print(f"📋 Report: {result['report_path']}")
-    print(f"\n🔗 Session ID: {result['analysis']['session_id']}")
-    print(f"💰 Tokens Used: {result['analysis']['tokens_used']}")
+        print(f" Terms & Conditions: {policy_docs['terms_conditions']}")
+    print(f" Report: {result['report_path']}")
+    print(f"\n Session ID: {result['analysis']['session_id']}")
+    print(f" Tokens Used: {result['analysis']['tokens_used']}")
     print(f"⏰ Timestamp: {result['analysis']['timestamp']}")
 
     print("\n" + "-"*70)
@@ -241,14 +241,14 @@ def main():
         url = input("Enter company homepage URL: ").strip()
 
         if not url:
-            print("✗ No URL provided. Exiting.")
+            print(" No URL provided. Exiting.")
             sys.exit(1)
 
         use_auto_name = input(f"Auto-detect company name? (y/n): ").strip().lower()
         company = None if use_auto_name == 'y' else input("Enter company name: ").strip()
 
     # Ensure MCP server is running
-    print("\n⚠️  IMPORTANT: Ensure MCP server is running")
+    print("\n  IMPORTANT: Ensure MCP server is running")
     print("   Run: python privacy_mcp_server.py")
     print("   Check: http://localhost:8080/health\n")
 
@@ -258,9 +258,9 @@ def main():
     result = run_complete_privacy_analysis(url, company)
 
     if result:
-        print("\n✓ Privacy policy gap analysis completed successfully!")
+        print("\n Privacy policy gap analysis completed successfully!")
     else:
-        print("\n✗ Privacy policy gap analysis failed.")
+        print("\n Privacy policy gap analysis failed.")
         sys.exit(1)
 
 ###############################################################################

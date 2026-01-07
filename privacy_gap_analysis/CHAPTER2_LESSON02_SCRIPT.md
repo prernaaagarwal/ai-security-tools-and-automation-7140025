@@ -3,7 +3,7 @@
 
 ---
 
-## 📝 COMPLETE NARRATION SCRIPT
+##  COMPLETE NARRATION SCRIPT
 
 ### **[INTRO - 30 seconds]**
 
@@ -108,13 +108,13 @@ python demo_mcp_server.py --quick
   DEMO 1: Logging Analysis Session
 --------------------------------------------------------------------------------
 
-📝 Creating analysis session: privacy_analysis_DemoCompany_...
+ Creating analysis session: privacy_analysis_DemoCompany_...
 
 ⏳ Sending to MCP server...
    Endpoint: http://localhost:8080/mcp
    Method: insert_memory
 
-✅ Session logged successfully!
+ Session logged successfully!
    Session ID: privacy_analysis_DemoCompany_20251227_...
    Text length: 412 characters
    Timestamp: 2025-12-27T...
@@ -128,15 +128,15 @@ python demo_mcp_server.py --quick
   DEMO 2: Tracking Token Usage
 --------------------------------------------------------------------------------
 
-💰 Recording token usage for analysis:
+ Recording token usage for analysis:
    Model: gpt-4o
    Prompt tokens: 3,847
    Completion tokens: 1,203
    Total tokens: 5,050
 
-✅ Token usage logged!
+ Token usage logged!
 
-📊 This enables:
+ This enables:
    • Cost tracking per analysis
    • Usage monitoring over time
    • Budget forecasting
@@ -151,14 +151,14 @@ python demo_mcp_server.py --quick
   DEMO 3: Storing Gap Analysis Data
 --------------------------------------------------------------------------------
 
-🔍 Storing 3 compliance gaps:
+ Storing 3 compliance gaps:
    1. Right to Delete Disclosure (Critical)
    2. Do Not Sell Link (Critical)
    3. Data Retention Periods (High)
 
-✅ Gap analysis stored!
+ Gap analysis stored!
 
-📋 Compliance audit trail now includes:
+ Compliance audit trail now includes:
    • Each gap with CCPA reference
    • Priority classification
    • Specific recommendations
@@ -175,19 +175,19 @@ python demo_mcp_server.py --quick
   DEMO 4: Viewing Audit Trail
 --------------------------------------------------------------------------------
 
-1️⃣  Server Health & Statistics:
+1⃣  Server Health & Statistics:
    Status: healthy
    Total Sessions: 3
    Total Analyses: 2
    Total Feedback: 1
    Token Logs: 3
 
-2️⃣  Recent Analysis Sessions:
+2⃣  Recent Analysis Sessions:
    • privacy_analysis_BLodgic_20251227_115333
    • privacy_analysis_BLodgic_20251227_171250
    • privacy_analysis_DemoCompany_20251227_...
 
-3️⃣  Token Usage Log:
+3⃣  Token Usage Log:
    Total tokens consumed: 14,269
    Total API calls: 3
 ```
@@ -338,7 +338,7 @@ print(f"Total API cost: ${total_cost:.2f}")
 
 ---
 
-## 🎯 Key Teaching Points Covered
+##  Key Teaching Points Covered
 
 | Concept | Explanation in Script |
 |---------|---------------------|
@@ -352,7 +352,7 @@ print(f"Total API cost: ${total_cost:.2f}")
 
 ---
 
-## 📊 Script Timing
+##  Script Timing
 
 - **Intro**: 30 seconds
 - **Code Walkthrough (3 parts)**: 150 seconds (2.5 minutes)
@@ -366,7 +366,7 @@ print(f"Total API cost: ${total_cost:.2f}")
 
 ---
 
-## 🎬 Visual Cues for Editor
+##  Visual Cues for Editor
 
 ### Code Sections
 1. **Lines 1-50**: Highlight the 5 capabilities list
@@ -392,7 +392,7 @@ print(f"Total API cost: ${total_cost:.2f}")
 
 ---
 
-## 🔧 Demo Script Commands
+##  Demo Script Commands
 
 ### Preparation
 ```bash
@@ -416,7 +416,7 @@ http://localhost:8080/debug/gaps
 
 ---
 
-## 📝 Key Quotes for Emphasis
+##  Key Quotes for Emphasis
 
 > "For compliance and security tools, audit trails are NON-NEGOTIABLE."
 
@@ -428,7 +428,7 @@ http://localhost:8080/debug/gaps
 
 ---
 
-## 🎥 Post-Production Tips
+##  Post-Production Tips
 
 ### Pacing
 - **Slow down** during code walkthrough (students taking notes)
@@ -450,7 +450,7 @@ http://localhost:8080/debug/gaps
 
 ---
 
-**This script is ready for recording!** 🎥📹
+**This script is ready for recording!** 
 
 **Estimated recording time**: 10 minutes
 **Estimated editing time**: Add 5-10 minutes for graphics/b-roll

@@ -2,7 +2,7 @@
 
 This system generates professional compliance reports in multiple formats using the **Audit Caddie CCPA Compliance Report** as the template standard.
 
-## 🎯 Overview
+##  Overview
 
 The template system creates beautifully formatted reports with:
 - **Professional cover page** with company branding
@@ -12,7 +12,7 @@ The template system creates beautifully formatted reports with:
 - **Color-coded priorities** for findings
 - **Multiple output formats**: Markdown, Word (.docx), PDF
 
-## 📋 Template Features
+##  Template Features
 
 Based on the `Audit Caddie CCPA Compliance Report.docx` template:
 
@@ -36,7 +36,7 @@ Based on the `Audit Caddie CCPA Compliance Report.docx` template:
   - H3: 12pt, bold, dark blue (metadata labels)
   - Body: 11pt, 1.5 line spacing
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Method 1: Generate from Markdown
 
@@ -102,7 +102,7 @@ docx_path = convert_markdown_to_compliance_report(
 )
 ```
 
-## 📦 Available Classes and Functions
+##  Available Classes and Functions
 
 ### ComplianceReportTemplate Class
 
@@ -128,7 +128,7 @@ Main class for building professional reports.
 - **`convert_markdown_to_compliance_report(md_file, output_file, metadata)`**
 - **`generate_pdf_report(markdown_file, docx_file, pdf_file, metadata)`**
 
-## 🎨 Customization
+##  Customization
 
 ### Priority Colors
 
@@ -161,7 +161,7 @@ metadata = {
 }
 ```
 
-## 📝 Markdown Formatting
+##  Markdown Formatting
 
 The template system supports markdown with these conventions:
 
@@ -185,7 +185,7 @@ The template system supports markdown with these conventions:
 Regular paragraph text
 ```
 
-## 🔄 Complete Workflow Example
+##  Complete Workflow Example
 
 ```python
 from generate_compliance_report import ComplianceReportGenerator
@@ -230,7 +230,7 @@ files = generator.create_report_from_analysis(
 #                  'pdf': 'path/to/file.pdf'}
 ```
 
-## 📊 PDF Generation
+##  PDF Generation
 
 ### Requirements
 
@@ -261,7 +261,7 @@ python report_pdf_generator.py report.md report.pdf
 python report_pdf_generator.py report.docx report.pdf
 ```
 
-## 🎯 Integration with Privacy Scanner
+##  Integration with Privacy Scanner
 
 Update your privacy policy scanner to use the new template:
 
@@ -282,23 +282,23 @@ print(f"  Word: {files['docx']}")
 print(f"  PDF: {files['pdf']}")
 ```
 
-## 📂 File Structure
+##  File Structure
 
 ```
 privacy_gap_analysis/
-├── scripts/
-│   ├── compliance_report_template.py    # Main template class
-│   ├── report_pdf_generator.py          # PDF conversion
-│   ├── generate_compliance_report.py    # Unified generator
-│   └── ...
-├── reports/
-│   ├── Audit Caddie CCPA Compliance Report.docx  # Template reference
-│   ├── Audit Caddie CCPA Compliance Report.pdf   # Template reference
-│   └── ...
-└── TEMPLATE_USAGE_GUIDE.md              # This file
+ scripts/
+    compliance_report_template.py    # Main template class
+    report_pdf_generator.py          # PDF conversion
+    generate_compliance_report.py    # Unified generator
+    ...
+ reports/
+    Audit Caddie CCPA Compliance Report.docx  # Template reference
+    Audit Caddie CCPA Compliance Report.pdf   # Template reference
+    ...
+ TEMPLATE_USAGE_GUIDE.md              # This file
 ```
 
-## ✅ Best Practices
+##  Best Practices
 
 1. **Always provide metadata** - Creates professional cover pages
 2. **Use consistent heading levels** - Maintains document structure
@@ -306,7 +306,7 @@ privacy_gap_analysis/
 4. **Generate all formats** - Markdown for source, Word for editing, PDF for distribution
 5. **Follow naming conventions** - Use `CompanyName_Type_Report_YYYYMMDD.ext`
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### PDF Generation Fails
 **Solution**: Install LibreOffice or ensure it's in your PATH
@@ -317,7 +317,7 @@ privacy_gap_analysis/
 ### Missing Metadata
 **Solution**: All metadata fields are optional but recommended for professional output
 
-## 📞 Support
+##  Support
 
 For issues or questions:
 1. Check this guide

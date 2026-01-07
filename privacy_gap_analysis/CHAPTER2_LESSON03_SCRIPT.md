@@ -3,7 +3,7 @@
 
 ---
 
-## 📝 COMPLETE NARRATION SCRIPT
+##  COMPLETE NARRATION SCRIPT
 
 ### **[INTRO - ON CAMERA - 45 seconds]**
 
@@ -55,11 +55,11 @@ python demo_grc_classification.py --quick
 **[Pause as table displays]**
 
 ```
-┌──────────────────────┬────────────────────────┬─────────────────┬──────────┬──────────────────┐
-│ Data Type            │ Examples               │ Classification  │ AI Risk  │ Used in Tool     │
-├──────────────────────┼────────────────────────┼─────────────────┼──────────┼──────────────────┤
-│ Regulatory           │ CCPA, GDPR, SOC 2,     │ Public          │ Low      │ ✅ CCPA CSV      │
-│ Frameworks           │ NIST, ISO 27001        │                 │          │                  │
+
+ Data Type             Examples                Classification   AI Risk   Used in Tool     
+
+ Regulatory            CCPA, GDPR, SOC 2,      Public           Low        CCPA CSV      
+ Frameworks            NIST, ISO 27001                                                     
 ```
 
 > "Regulatory frameworks are classified as PUBLIC with LOW risk. We absolutely use this in our tool - it's our CCPA framework CSV.
@@ -73,17 +73,17 @@ python demo_grc_classification.py --quick
 > "Now here's the critical part - the AI deployment decision matrix. This tells us WHERE we can run AI based on data classification."
 
 ```
-┌──────────────────┬─────────────┬──────────────┬──────────────────┐
-│ Classification   │ Cloud AI    │ On-Prem AI   │ Air-Gapped AI    │
-├──────────────────┼─────────────┼──────────────┼──────────────────┤
-│ Public           │ ✅ Safe     │ ✅ Safe      │ ✅ Safe          │
-├──────────────────┼─────────────┼──────────────┼──────────────────┤
-│ Internal         │ ⚠️  Caution │ ✅ Safe      │ ✅ Safe          │
-├──────────────────┼─────────────┼──────────────┼──────────────────┤
-│ Confidential     │ ❌ Avoid    │ ⚠️  Caution  │ ✅ Safe          │
-├──────────────────┼─────────────┼──────────────┼──────────────────┤
-│ Restricted       │ ❌ Never    │ ❌ Avoid     │ ⚠️  Caution      │
-└──────────────────┴─────────────┴──────────────┴──────────────────┘
+
+ Classification    Cloud AI     On-Prem AI    Air-Gapped AI    
+
+ Public             Safe       Safe        Safe          
+
+ Internal            Caution   Safe        Safe          
+
+ Confidential       Avoid       Caution    Safe          
+
+ Restricted         Never      Avoid        Caution      
+
 ```
 
 > "Public data? Cloud AI is fine. No restrictions.
@@ -107,11 +107,11 @@ python demo_grc_classification.py --quick
   DEMO 1: Classifying CCPA Framework (Regulatory Data)
 --------------------------------------------------------------------------------
 
-📄 Loading: CCPA_CPRA_Framework.csv
+ Loading: CCPA_CPRA_Framework.csv
 
-✓ Loaded 102 CCPA requirements
+ Loaded 102 CCPA requirements
 
-📋 Sample data (first 3 rows):
+ Sample data (first 3 rows):
 
    Row 1:
    • Category: Consumer Rights
@@ -125,15 +125,15 @@ python demo_grc_classification.py --quick
 > Look at the classification analysis:"
 
 ```
-🔍 Classification Analysis:
-   ┌─────────────────────────────────────────────────────────┐
-   │ Data Type:        Regulatory Framework                  │
-   │ Source:           Public CCPA/CPRA legislation          │
-   │ Classification:   PUBLIC                                │
-   │ Sensitivity:      None (publicly available law)         │
-   │ AI Deployment:    ✅ Safe for cloud APIs                │
-   │ Risk Level:       LOW                                   │
-   └─────────────────────────────────────────────────────────┘
+ Classification Analysis:
+   
+    Data Type:        Regulatory Framework                  
+    Source:           Public CCPA/CPRA legislation          
+    Classification:   PUBLIC                                
+    Sensitivity:      None (publicly available law)         
+    AI Deployment:     Safe for cloud APIs                
+    Risk Level:       LOW                                   
+   
 ```
 
 > "Classification: PUBLIC. Sensitivity: None. AI deployment: safe for cloud APIs. Risk level: LOW.
@@ -149,7 +149,7 @@ python demo_grc_classification.py --quick
   DEMO 2: Classifying Privacy Policies (Company Policy Data)
 --------------------------------------------------------------------------------
 
-📝 Sample content:
+ Sample content:
    Privacy Policy - Acme Corporation
    Last Updated: December 1, 2025
 
@@ -162,15 +162,15 @@ python demo_grc_classification.py --quick
 > "This is a public privacy policy from a company website. Same classification analysis:"
 
 ```
-🔍 Classification Analysis:
-   ┌─────────────────────────────────────────────────────────┐
-   │ Data Type:        Company Policy (Privacy)              │
-   │ Source:           Public website                        │
-   │ Classification:   PUBLIC (published policy)             │
-   │ Sensitivity:      Low (intended for public viewing)     │
-   │ AI Deployment:    ✅ Safe for cloud APIs                │
-   │ Risk Level:       LOW to MEDIUM                         │
-   └─────────────────────────────────────────────────────────┘
+ Classification Analysis:
+   
+    Data Type:        Company Policy (Privacy)              
+    Source:           Public website                        
+    Classification:   PUBLIC (published policy)             
+    Sensitivity:      Low (intended for public viewing)     
+    AI Deployment:     Safe for cloud APIs                
+    Risk Level:       LOW to MEDIUM                         
+   
 ```
 
 > "This PUBLISHED policy is safe for cloud AI. It's already public - anyone can read it on their website.
@@ -178,7 +178,7 @@ python demo_grc_classification.py --quick
 > BUT - and this is critical - look at these scenarios:"
 
 ```
-⚠️  BUT consider these scenarios:
+  BUT consider these scenarios:
    • DRAFT privacy policy (not published)    → INTERNAL/CONFIDENTIAL
    • Internal security policy                → CONFIDENTIAL
    • Employee data handling procedures       → CONFIDENTIAL
@@ -194,10 +194,10 @@ python demo_grc_classification.py --quick
 > "Now let me show you examples of data that should NEVER go to cloud AI."
 
 ```
-🔒 Examples of data that should NOT go to cloud AI:
+ Examples of data that should NOT go to cloud AI:
 
    Example 1: Control Implementation
-   ──────────────────────────────────────────────────────────
+   
    Content:        Firewall configuration: 10.0.1.0/24 blocked, SSH port 2222
    Classification: CONFIDENTIAL
    Risk Level:     HIGH
@@ -211,7 +211,7 @@ python demo_grc_classification.py --quick
 
 ```
    Example 2: Audit Evidence
-   ──────────────────────────────────────────────────────────
+   
    Content:        Vulnerability scan: 23 critical findings, SQL injection in /api/users
    Classification: CONFIDENTIAL
    Risk Level:     VERY HIGH
@@ -284,15 +284,15 @@ def load_privacy_policy(pdf_path):
 **[OUTPUT: Production options display]**
 
 ```
-1️⃣  Option 1: Local LLM (Open Source)
-   ┌────────────────────────────────────────────────────────┐
-   │ Models:      Llama 3, Mistral, Phi-3                  │
-   │ Location:    On-premises servers                       │
-   │ Data flow:   Nothing leaves your environment          │
-   │ Cost:        Hardware + maintenance                    │
-   │ Quality:     Lower than GPT-4 (but improving)         │
-   │ Best for:    Highly sensitive compliance data          │
-   └────────────────────────────────────────────────────────┘
+1⃣  Option 1: Local LLM (Open Source)
+   
+    Models:      Llama 3, Mistral, Phi-3                  
+    Location:    On-premises servers                       
+    Data flow:   Nothing leaves your environment          
+    Cost:        Hardware + maintenance                    
+    Quality:     Lower than GPT-4 (but improving)         
+    Best for:    Highly sensitive compliance data          
+   
 ```
 
 > "**Option 1**: Run everything locally using open-source models like Llama 3 or Mistral.
@@ -302,15 +302,15 @@ def load_privacy_policy(pdf_path):
 > The tradeoff? These models aren't as strong as GPT-4. Your analysis quality will be lower. But if you're dealing with restricted data, that's the price you pay for security."
 
 ```
-2️⃣  Option 2: Enterprise Cloud AI (Azure OpenAI / AWS Bedrock)
-   ┌────────────────────────────────────────────────────────┐
-   │ Models:      GPT-4, Claude (via enterprise agreements) │
-   │ Location:    Your cloud tenant                         │
-   │ Data flow:   Stays in your cloud environment          │
-   │ Guarantees:  No training on your data (contractual)   │
-   │ Cost:        Higher than standard API                  │
-   │ Quality:     Same as GPT-4/Claude                      │
-   └────────────────────────────────────────────────────────┘
+2⃣  Option 2: Enterprise Cloud AI (Azure OpenAI / AWS Bedrock)
+   
+    Models:      GPT-4, Claude (via enterprise agreements) 
+    Location:    Your cloud tenant                         
+    Data flow:   Stays in your cloud environment          
+    Guarantees:  No training on your data (contractual)   
+    Cost:        Higher than standard API                  
+    Quality:     Same as GPT-4/Claude                      
+   
 ```
 
 > "**Option 2**: Use enterprise cloud AI - Azure OpenAI or AWS Bedrock.
@@ -320,13 +320,13 @@ def load_privacy_policy(pdf_path):
 > This costs more than the standard OpenAI API, but you get much stronger models than local LLMs. Good middle ground for internal or confidential data."
 
 ```
-3️⃣  Option 3: Hybrid Approach (Recommended)
-   ┌────────────────────────────────────────────────────────┐
-   │ Public data     → Cloud API (OpenAI, Anthropic)       │
-   │ Confidential    → Local model or Azure OpenAI         │
-   │ Pipelines:       Separated by classification          │
-   │ Benefit:         Best of both worlds                  │
-   └────────────────────────────────────────────────────────┘
+3⃣  Option 3: Hybrid Approach (Recommended)
+   
+    Public data     → Cloud API (OpenAI, Anthropic)       
+    Confidential    → Local model or Azure OpenAI         
+    Pipelines:       Separated by classification          
+    Benefit:         Best of both worlds                  
+   
 ```
 
 > "**Option 3**, and this is what I recommend: a hybrid approach.
@@ -346,24 +346,24 @@ def load_privacy_policy(pdf_path):
 > "Let me show you how our current tool implements this."
 
 ```
-📊 Data Flow Diagram:
+ Data Flow Diagram:
 
-   ┌─────────────────┐
-   │ CCPA Framework  │ (PUBLIC)
-   │   CSV File      │
-   └────────┬────────┘
-            │
-            ▼
-   ┌─────────────────┐     ┌──────────────┐     ┌─────────────┐
-   │   ChromaDB      │────▶│  OpenAI API  │────▶│   Report    │
-   │ Vector Database │     │   (GPT-4)    │     │  Generated  │
-   └────────┬────────┘     └──────────────┘     └─────────────┘
-            ▲
-            │
-   ┌────────┴────────┐
-   │ Privacy Policy  │ (PUBLIC - from website)
-   │   PDF File      │
-   └─────────────────┘
+   
+    CCPA Framework   (PUBLIC)
+      CSV File      
+   
+            
+            
+             
+      ChromaDB        OpenAI API     Report    
+    Vector Database         (GPT-4)           Generated  
+             
+            
+            
+   
+    Privacy Policy   (PUBLIC - from website)
+      PDF File      
+   
 ```
 
 > "Our data flow is simple. CCPA framework - which is public - goes into ChromaDB. Public privacy policies from websites also go into ChromaDB.
@@ -377,7 +377,7 @@ def load_privacy_policy(pdf_path):
 **[SCREEN: Show .env configuration]**
 
 ```
-⚙️  Configuration (from .env file):
+  Configuration (from .env file):
 
    OPENAI_API_KEY=sk-***                # Cloud API (for public data only)
 
@@ -406,7 +406,7 @@ def load_privacy_policy(pdf_path):
 
 ---
 
-## 🎯 Key Teaching Points Covered
+##  Key Teaching Points Covered
 
 | Concept | Explanation in Script |
 |---------|---------------------|
@@ -420,7 +420,7 @@ def load_privacy_policy(pdf_path):
 
 ---
 
-## 📊 Script Timing
+##  Script Timing
 
 - **Intro (on camera)**: 45 seconds
 - **Visual slides**: 45 seconds
@@ -435,7 +435,7 @@ def load_privacy_policy(pdf_path):
 
 ---
 
-## 🎬 Visual Cues for Editor
+##  Visual Cues for Editor
 
 ### Terminal Output
 1. **Classification matrix**: Hold for 5 seconds, let viewers read
@@ -459,7 +459,7 @@ def load_privacy_policy(pdf_path):
 
 ---
 
-## 📝 Key Quotes for Emphasis
+##  Key Quotes for Emphasis
 
 > "Data classification isn't just compliance—it determines your architecture."
 
@@ -471,7 +471,7 @@ def load_privacy_policy(pdf_path):
 
 ---
 
-## 🔧 Demo Script Commands
+##  Demo Script Commands
 
 ### Terminal Demo
 ```bash
@@ -487,7 +487,7 @@ python demo_grc_classification.py
 
 ---
 
-## 🎥 Post-Production Tips
+##  Post-Production Tips
 
 ### Pacing
 - **Slow down** during classification matrix (students reading table)
@@ -510,7 +510,7 @@ python demo_grc_classification.py
 
 ---
 
-**This script is ready for recording!** 🎥📹
+**This script is ready for recording!** 
 
 **Estimated recording time**: 12 minutes
 **Estimated editing time**: 10-15 minutes for graphics

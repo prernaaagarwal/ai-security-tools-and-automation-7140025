@@ -1,6 +1,6 @@
 # Chapter 2 Screencap Guide - RAG Demonstration
 
-## 🎬 Overview
+##  Overview
 
 This guide helps you record the RAG (Retrieval-Augmented Generation) demonstration for LinkedIn Learning Chapter 2.
 
@@ -11,7 +11,7 @@ You have **two demo scripts** available:
 
 ---
 
-## 📋 Pre-Screencap Checklist
+##  Pre-Screencap Checklist
 
 ### Terminal Setup
 
@@ -42,7 +42,7 @@ python demo_rag_retrieval.py --quick
 
 ---
 
-## 🎥 Option 1: Terminal REPL Demo (Recommended)
+##  Option 1: Terminal REPL Demo (Recommended)
 
 **Best for:** Showing the exact Python commands from your course outline
 
@@ -63,16 +63,16 @@ python demo_rag_retrieval.py --quick
 3. **What the audience sees:**
    ```
    >>> from privacy_rag_mcp import load_ccpa_framework
-   ✓ Imported load_ccpa_framework
+    Imported load_ccpa_framework
 
    >>> vectordb = load_ccpa_framework()
-   ✓ Vector database loaded
+    Vector database loaded
 
    >>> retriever = vectordb.as_retriever(search_kwargs={"k": 3})
-   ✓ Retriever created (will return top 3 results)
+    Retriever created (will return top 3 results)
 
    >>> results = retriever.invoke("right to delete personal information")
-   ✓ Retrieved 3 documents
+    Retrieved 3 documents
 
    >>> for doc in results:
    ...     print(doc.page_content[:200])
@@ -98,7 +98,7 @@ python demo_rag_retrieval.py --quick
 
 ---
 
-## 🎥 Option 2: Full Interactive Demo
+##  Option 2: Full Interactive Demo
 
 **Best for:** Showing all 3 RAG phases step-by-step
 
@@ -130,7 +130,7 @@ python demo_rag_retrieval.py --quick
 
 ---
 
-## 🎥 Option 3: Quick Non-Interactive Demo
+##  Option 3: Quick Non-Interactive Demo
 
 **Best for:** Screen recording without pauses
 
@@ -149,7 +149,7 @@ python demo_rag_retrieval.py --quick
 
 ---
 
-## 📝 Suggested Script for Narration
+##  Suggested Script for Narration
 
 ### Introduction
 > "Now let's see how RAG works in our privacy compliance tool. RAG stands for Retrieval-Augmented Generation, and it's the technique that lets us combine a knowledge base with GPT-4's reasoning."
@@ -165,7 +165,7 @@ python demo_rag_retrieval.py --quick
 
 ---
 
-## 🎯 Code Sections to Highlight
+##  Code Sections to Highlight
 
 ### In `privacy_rag_mcp.py`:
 
@@ -223,7 +223,7 @@ response = openai_client.chat.completions.create(
 
 ---
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Issue: "Module not found"
 **Solution:**
@@ -253,7 +253,7 @@ python demo_retrieval_terminal.py 2>/dev/null
 
 ---
 
-## 📹 Recommended Recording Flow
+##  Recommended Recording Flow
 
 ### 5-Minute Segment:
 
@@ -277,7 +277,7 @@ python demo_retrieval_terminal.py 2>/dev/null
 
 ---
 
-## 🎬 Post-Production Tips
+##  Post-Production Tips
 
 1. **Add annotations:**
    - Arrow pointing to "k=3" → "Retrieves top 3 results"
@@ -294,7 +294,7 @@ python demo_retrieval_terminal.py 2>/dev/null
 
 ---
 
-## ✅ Quick Reference Commands
+##  Quick Reference Commands
 
 ```bash
 # Terminal REPL demo (recommended)
@@ -312,23 +312,23 @@ python demo_rag_retrieval.py --help
 
 ---
 
-## 📊 Expected Output Summary
+##  Expected Output Summary
 
 **Indexing:**
-- ✅ "Vector database created!"
-- ✅ "All CCPA requirements indexed"
-- ✅ "102 requirements stored"
+-  "Vector database created!"
+-  "All CCPA requirements indexed"
+-  "102 requirements stored"
 
 **Retrieval:**
-- ✅ "Query: right to delete personal information"
-- ✅ "Found 3 relevant requirements"
-- ✅ Shows CCPA Section 1798.105 (Right to Delete)
+-  "Query: right to delete personal information"
+-  "Found 3 relevant requirements"
+-  Shows CCPA Section 1798.105 (Right to Delete)
 
 **Generation:**
-- ✅ "Context prepared (916 characters)"
-- ✅ Shows prompt structure
-- ✅ Demonstrates what GPT-4 receives
+-  "Context prepared (916 characters)"
+-  Shows prompt structure
+-  Demonstrates what GPT-4 receives
 
 ---
 
-**Good luck with your recording! 🎥**
+**Good luck with your recording! **

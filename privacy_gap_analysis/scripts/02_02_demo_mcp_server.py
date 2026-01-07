@@ -51,7 +51,7 @@ def demo_insert_memory():
 
     session_id = f"privacy_analysis_DemoCompany_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
-    print(f"\n📝 Creating analysis session: {session_id}")
+    print(f"\n Creating analysis session: {session_id}")
 
     analysis_text = """Gap Analysis for DemoCompany
 
@@ -84,12 +84,12 @@ def demo_insert_memory():
     response = requests.post(f"{MCP_URL}/mcp", json=payload)
 
     if response.status_code == 200:
-        print("\n✅ Session logged successfully!")
+        print("\n Session logged successfully!")
         print(f"   Session ID: {session_id}")
         print(f"   Text length: {len(analysis_text)} characters")
         print(f"   Timestamp: {datetime.now().isoformat()}")
     else:
-        print(f"\n❌ Error: {response.status_code}")
+        print(f"\n Error: {response.status_code}")
 
     return session_id
 
@@ -99,7 +99,7 @@ def demo_insert_token_usage():
 
     print_section("DEMO 2: Tracking Token Usage")
 
-    print("\n💰 Recording token usage for analysis:")
+    print("\n Recording token usage for analysis:")
     print("   Model: gpt-4o")
     print("   Prompt tokens: 3,847")
     print("   Completion tokens: 1,203")
@@ -124,8 +124,8 @@ def demo_insert_token_usage():
     response = requests.post(f"{MCP_URL}/mcp", json=payload)
 
     if response.status_code == 200:
-        print("\n✅ Token usage logged!")
-        print("\n📊 This enables:")
+        print("\n Token usage logged!")
+        print("\n This enables:")
         print("   • Cost tracking per analysis")
         print("   • Usage monitoring over time")
         print("   • Budget forecasting")
@@ -161,7 +161,7 @@ def demo_insert_gap_analysis():
         "Define retention periods for each data category"
     ]
 
-    print(f"\n🔍 Storing {len(gaps)} compliance gaps:")
+    print(f"\n Storing {len(gaps)} compliance gaps:")
     for i, gap in enumerate(gaps, 1):
         print(f"   {i}. {gap['title']} ({gap['priority']})")
 
@@ -183,8 +183,8 @@ def demo_insert_gap_analysis():
     response = requests.post(f"{MCP_URL}/mcp", json=payload)
 
     if response.status_code == 200:
-        print("\n✅ Gap analysis stored!")
-        print("\n📋 Compliance audit trail now includes:")
+        print("\n Gap analysis stored!")
+        print("\n Compliance audit trail now includes:")
         print("   • Each gap with CCPA reference")
         print("   • Priority classification")
         print("   • Specific recommendations")
@@ -196,10 +196,10 @@ def demo_view_audit_trail():
 
     print_section("DEMO 4: Viewing Audit Trail")
 
-    print("\n🔍 Retrieving audit trail from MCP server...")
+    print("\n Retrieving audit trail from MCP server...")
 
     # Get health stats
-    print("\n1️⃣  Server Health & Statistics:")
+    print("\n1⃣  Server Health & Statistics:")
     health = requests.get(f"{MCP_URL}/health").json()
     print(f"   Status: {health['status']}")
     print(f"   Total Sessions: {health['stats']['total_sessions']}")
@@ -208,7 +208,7 @@ def demo_view_audit_trail():
     print(f"   Token Logs: {health['stats']['total_token_logs']}")
 
     # Get recent memory entries
-    print("\n2️⃣  Recent Analysis Sessions:")
+    print("\n2⃣  Recent Analysis Sessions:")
     memory = requests.get(f"{MCP_URL}/debug/memory").json()
 
     if memory:
@@ -219,7 +219,7 @@ def demo_view_audit_trail():
         print("   (No sessions yet)")
 
     # Get token usage
-    print("\n3️⃣  Token Usage Log:")
+    print("\n3⃣  Token Usage Log:")
     tokens = requests.get(f"{MCP_URL}/debug/tokens").json()
 
     if tokens:
@@ -234,7 +234,7 @@ def demo_view_audit_trail():
         print("   (No token logs yet)")
 
     # Get gap analysis
-    print("\n4️⃣  Gap Analysis Store:")
+    print("\n4⃣  Gap Analysis Store:")
     gaps = requests.get(f"{MCP_URL}/debug/gaps").json()
 
     if gaps:
@@ -251,7 +251,7 @@ def demo_compliance_value():
     print_banner("WHY THIS MATTERS FOR COMPLIANCE")
 
     print("""
-🔒 For security and compliance tools, audit trails are NON-NEGOTIABLE.
+ For security and compliance tools, audit trails are NON-NEGOTIABLE.
 
 Questions auditors WILL ask:
    • When was this analysis run?
@@ -261,7 +261,7 @@ Questions auditors WILL ask:
    • What was the confidence level?
    • Who approved the results?
 
-✅ MCP gives us structured logging for ALL of this.
+ MCP gives us structured logging for ALL of this.
     """)
 
     print_section("Example: Retrieving Full Audit Trail")
@@ -273,24 +273,24 @@ When you see a Session ID in a report:
 
 You can retrieve the COMPLETE audit trail:
 
-   📥 Input:
+    Input:
       • Company: auditcaddie.com
       • Privacy policy: 3,200 characters
       • Terms & Conditions: 1,800 characters
 
-   🔍 Analysis:
+    Analysis:
       • CCPA requirements used: 35 sections
       • Model: gpt-4o
       • Temperature: 0.3
       • Tokens consumed: 4,847
 
-   📤 Output:
+    Output:
       • Gaps identified: 23
       • Critical gaps: 9
       • High priority: 8
       • Medium priority: 6
 
-   👤 Human Feedback:
+    Human Feedback:
       • Rating: 4/5 (excellent)
       • Comments: "Comprehensive analysis"
 
@@ -304,51 +304,51 @@ def run_full_demo():
     """Run complete MCP server demonstration"""
 
     print_banner("MCP Server Demo - Model Context Protocol")
-    print("\n🎯 This demo shows how MCP provides audit trails for AI compliance tools")
+    print("\n This demo shows how MCP provides audit trails for AI compliance tools")
 
     # Check server
     print("\n⏳ Checking if MCP server is running...")
 
     if not check_server():
-        print("\n❌ MCP server is not running!")
-        print("\n📝 To start the server:")
+        print("\n MCP server is not running!")
+        print("\n To start the server:")
         print("   1. Open a new terminal")
         print("   2. Run: python privacy_mcp_server.py")
         print("   3. Wait for 'Running on http://127.0.0.1:8080'")
         print("   4. Re-run this demo\n")
         return
 
-    print(f"✅ MCP server is running at {MCP_URL}")
+    print(f" MCP server is running at {MCP_URL}")
 
-    input("\n⏸️  Press Enter to start Demo 1: Logging Analysis Session...")
+    input("\n⏸  Press Enter to start Demo 1: Logging Analysis Session...")
 
     # Demo 1: Insert memory
     session_id = demo_insert_memory()
 
-    input("\n⏸️  Press Enter to start Demo 2: Tracking Token Usage...")
+    input("\n⏸  Press Enter to start Demo 2: Tracking Token Usage...")
 
     # Demo 2: Token tracking
     demo_insert_token_usage()
 
-    input("\n⏸️  Press Enter to start Demo 3: Storing Gap Analysis...")
+    input("\n⏸  Press Enter to start Demo 3: Storing Gap Analysis...")
 
     # Demo 3: Gap analysis
     demo_insert_gap_analysis()
 
-    input("\n⏸️  Press Enter to start Demo 4: Viewing Audit Trail...")
+    input("\n⏸  Press Enter to start Demo 4: Viewing Audit Trail...")
 
     # Demo 4: View audit trail
     demo_view_audit_trail()
 
-    input("\n⏸️  Press Enter to see why this matters for compliance...")
+    input("\n⏸  Press Enter to see why this matters for compliance...")
 
     # Compliance value
     demo_compliance_value()
 
-    print_banner("✅ Demo Complete!")
+    print_banner(" Demo Complete!")
 
     print("""
-🔗 MCP Server Endpoints You Can Explore:
+ MCP Server Endpoints You Can Explore:
 
    Health Check:
    http://localhost:8080/health
@@ -360,7 +360,7 @@ def run_full_demo():
    http://localhost:8080/debug/tokens
    http://localhost:8080/debug/gaps
 
-💡 Try opening these in your browser to see the audit data!
+ Try opening these in your browser to see the audit data!
     """)
 
 
@@ -370,10 +370,10 @@ def run_quick_demo():
     print_banner("MCP Server Quick Demo")
 
     if not check_server():
-        print("\n❌ MCP server not running. Start with: python privacy_mcp_server.py\n")
+        print("\n MCP server not running. Start with: python privacy_mcp_server.py\n")
         return
 
-    print(f"\n✅ MCP server running at {MCP_URL}")
+    print(f"\n MCP server running at {MCP_URL}")
 
     demo_insert_memory()
     time.sleep(1)
@@ -389,7 +389,7 @@ def run_quick_demo():
 
     demo_compliance_value()
 
-    print_banner("✅ Demo Complete!")
+    print_banner(" Demo Complete!")
 
 
 def main():
@@ -399,7 +399,7 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "--quick":
         run_quick_demo()
     elif len(sys.argv) > 1 and sys.argv[1] == "--help":
-        print("\n📚 MCP Server Demo")
+        print("\n MCP Server Demo")
         print("="*60)
         print("\nUsage:")
         print("  python demo_mcp_server.py              # Interactive demo")

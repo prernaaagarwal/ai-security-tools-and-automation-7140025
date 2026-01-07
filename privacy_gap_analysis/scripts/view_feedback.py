@@ -69,7 +69,7 @@ def display_summary():
 
     # Check server
     if not check_server():
-        print("\n❌ MCP Server is not running!")
+        print("\n MCP Server is not running!")
         print("   Start it with: python privacy_mcp_server.py")
         print("="*70 + "\n")
         return
@@ -77,7 +77,7 @@ def display_summary():
     # Get stats
     stats = get_stats()
     if stats:
-        print("\n📊 OVERALL STATISTICS")
+        print("\n OVERALL STATISTICS")
         print("-"*70)
         print(f"   Total Sessions: {stats['stats']['total_sessions']}")
         print(f"   Total Analyses: {stats['stats']['total_analyses']}")
@@ -87,7 +87,7 @@ def display_summary():
     # Get feedback
     feedback = get_feedback()
     if feedback:
-        print(f"\n💬 USER FEEDBACK ({len(feedback)} entries)")
+        print(f"\n USER FEEDBACK ({len(feedback)} entries)")
         print("-"*70)
 
         # Calculate average rating
@@ -105,7 +105,7 @@ def display_summary():
             rating_labels = {1: "Poor", 2: "Fair", 3: "Good", 4: "Excellent", 5: "Outstanding"}
             for rating in [5, 4, 3, 2, 1]:
                 count = rating_counts[rating]
-                bar = "█" * count
+                bar = "" * count
                 print(f"   {rating} ({rating_labels[rating]:11s}): {bar} ({count})")
 
         # Show recent feedback
@@ -119,7 +119,7 @@ def display_summary():
                 print(f"      Comments: {entry['comments']}")
 
     else:
-        print("\n💬 USER FEEDBACK")
+        print("\n USER FEEDBACK")
         print("-"*70)
         print("   No feedback entries yet")
         print("   Run an analysis and provide feedback to see data here!")
@@ -127,7 +127,7 @@ def display_summary():
     # Get confidence scores
     confidence = get_confidence()
     if confidence:
-        print(f"\n🎯 CONFIDENCE SCORES ({len(confidence)} entries)")
+        print(f"\n CONFIDENCE SCORES ({len(confidence)} entries)")
         print("-"*70)
 
         scores = [c['confidence_score'] for c in confidence]
@@ -142,13 +142,13 @@ def display_summary():
         for i, entry in enumerate(confidence[-3:], 1):  # Last 3
             score = entry['confidence_score']
             query = entry.get('query', 'Unknown')[:40]
-            status = "✅ High" if entry.get('is_high_confidence') else "⚠️  Low"
+            status = " High" if entry.get('is_high_confidence') else "  Low"
             print(f"   {i}. {status} - {score:.2f} - {query}")
 
     # Get gap analysis
     gaps = get_gaps()
     if gaps:
-        print(f"\n🔍 GAP ANALYSIS DATA ({len(gaps)} entries)")
+        print(f"\n GAP ANALYSIS DATA ({len(gaps)} entries)")
         print("-"*70)
 
         total_gaps = sum(len(g['gaps']) for g in gaps)
@@ -171,7 +171,7 @@ def display_summary():
                 print(f"   {priority:8s}: {count}")
 
     print("\n" + "="*70)
-    print("🔗 MCP Server Endpoints:")
+    print(" MCP Server Endpoints:")
     print(f"   Health: {MCP_URL}/health")
     print(f"   Feedback: {MCP_URL}/debug/feedback")
     print(f"   Confidence: {MCP_URL}/debug/confidence")
@@ -183,7 +183,7 @@ def export_data():
     """Export all feedback data to JSON"""
     import json
 
-    print("\n📦 Exporting feedback data...")
+    print("\n Exporting feedback data...")
 
     data = {
         "export_date": datetime.now().isoformat(),
@@ -198,7 +198,7 @@ def export_data():
     with open(filename, 'w') as f:
         json.dump(data, f, indent=2)
 
-    print(f"✅ Data exported to: {filename}\n")
+    print(f" Data exported to: {filename}\n")
 
 
 def main():

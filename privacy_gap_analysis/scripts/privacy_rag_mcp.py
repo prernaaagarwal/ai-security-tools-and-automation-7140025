@@ -78,7 +78,7 @@ def load_ccpa_framework():
     )
     vectordb_ccpa.persist()
 
-    print(f"✓ CCPA/CPRA requirements stored: {vectordb_ccpa._collection.count()}")
+    print(f" CCPA/CPRA requirements stored: {vectordb_ccpa._collection.count()}")
     return vectordb_ccpa
 
 ###############################################################################
@@ -86,7 +86,7 @@ def load_ccpa_framework():
 ###############################################################################
 def extract_text_from_pdf(pdf_path: str) -> str:
     """Extract text content from PDF file"""
-    print(f"\n📄 Extracting text from: {pdf_path}")
+    print(f"\n Extracting text from: {pdf_path}")
 
     try:
         with open(pdf_path, 'rb') as file:
@@ -97,11 +97,11 @@ def extract_text_from_pdf(pdf_path: str) -> str:
                 text += page.extract_text()
                 print(f"  Page {page_num + 1}/{len(pdf_reader.pages)} extracted")
 
-            print(f"✓ Extracted {len(text)} characters")
+            print(f" Extracted {len(text)} characters")
             return text
 
     except Exception as e:
-        print(f"✗ Error extracting PDF: {e}")
+        print(f" Error extracting PDF: {e}")
         return ""
 
 ###############################################################################
@@ -117,14 +117,14 @@ def load_privacy_policy(pdf_path: str, company_name: str):
     policy_text = extract_text_from_pdf(pdf_path)
 
     if not policy_text:
-        print("✗ No text extracted from PDF")
+        print(" No text extracted from PDF")
         return None
 
     # Chunk the policy text (split by paragraphs or sections)
     # Simple chunking by double newlines
     chunks = [chunk.strip() for chunk in policy_text.split('\n\n') if chunk.strip()]
 
-    print(f"📊 Created {len(chunks)} chunks from policy")
+    print(f" Created {len(chunks)} chunks from policy")
 
     # Create documents
     documents = [
@@ -143,7 +143,7 @@ def load_privacy_policy(pdf_path: str, company_name: str):
     )
     vectordb_policy.persist()
 
-    print(f"✓ Privacy policy stored: {vectordb_policy._collection.count()} chunks")
+    print(f" Privacy policy stored: {vectordb_policy._collection.count()} chunks")
     return vectordb_policy
 
 
@@ -168,7 +168,7 @@ def load_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str = No
 
     # Process Privacy Policy
     if privacy_pdf_path:
-        print(f"\n📄 Processing Privacy Policy...")
+        print(f"\n Processing Privacy Policy...")
         policy_text = extract_text_from_pdf(privacy_pdf_path)
 
         if policy_text:
@@ -189,15 +189,15 @@ def load_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str = No
                 for i, chunk in enumerate(chunks)
             ]
             all_documents.extend(privacy_docs)
-            print(f"  ✓ Privacy Policy: {len(chunks)} chunks, {len(policy_text)} characters")
+            print(f"   Privacy Policy: {len(chunks)} chunks, {len(policy_text)} characters")
         else:
-            print(f"  ⚠️  Privacy Policy: No text extracted")
+            print(f"    Privacy Policy: No text extracted")
     else:
-        print(f"  ⚠️  Privacy Policy: Not provided")
+        print(f"    Privacy Policy: Not provided")
 
     # Process Terms & Conditions
     if terms_pdf_path:
-        print(f"\n📄 Processing Terms & Conditions...")
+        print(f"\n Processing Terms & Conditions...")
         terms_text = extract_text_from_pdf(terms_pdf_path)
 
         if terms_text:
@@ -218,18 +218,18 @@ def load_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str = No
                 for i, chunk in enumerate(chunks)
             ]
             all_documents.extend(terms_docs)
-            print(f"  ✓ Terms & Conditions: {len(chunks)} chunks, {len(terms_text)} characters")
+            print(f"   Terms & Conditions: {len(chunks)} chunks, {len(terms_text)} characters")
         else:
-            print(f"  ⚠️  Terms & Conditions: No text extracted")
+            print(f"    Terms & Conditions: No text extracted")
     else:
-        print(f"  ⚠️  Terms & Conditions: Not provided")
+        print(f"    Terms & Conditions: Not provided")
 
     if not all_documents:
-        print("\n✗ No policy documents to load")
+        print("\n No policy documents to load")
         return None
 
     # Create combined vector database
-    print(f"\n📊 Total: {len(all_documents)} chunks, {total_chars} characters")
+    print(f"\n Total: {len(all_documents)} chunks, {total_chars} characters")
 
     vectordb_policy = Chroma.from_documents(
         documents=all_documents,
@@ -238,7 +238,7 @@ def load_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str = No
     )
     vectordb_policy.persist()
 
-    print(f"✓ Policy documents stored: {vectordb_policy._collection.count()} chunks")
+    print(f" Policy documents stored: {vectordb_policy._collection.count()} chunks")
     return vectordb_policy
 
 ###############################################################################
@@ -301,7 +301,7 @@ from openai import OpenAI
 # Initialize OpenAI client
 openai_key = os.getenv("OPENAI_API_KEY", "")
 if not openai_key:
-    print("⚠️  WARNING: OPENAI_API_KEY not set in environment")
+    print("  WARNING: OPENAI_API_KEY not set in environment")
 
 openai_client = OpenAI(api_key=openai_key)
 
@@ -482,8 +482,8 @@ def perform_gap_analysis(company_name: str, vectordb_ccpa, vectordb_policy) -> D
     policy_retriever = vectordb_policy.as_retriever(search_kwargs={"k": 50})  # Get comprehensive policy content
     policy_docs = policy_retriever.invoke("privacy policy content")
 
-    print(f"📋 Retrieved {len(ccpa_requirements)} CCPA requirements")
-    print(f"📋 Retrieved {len(policy_docs)} policy sections")
+    print(f" Retrieved {len(ccpa_requirements)} CCPA requirements")
+    print(f" Retrieved {len(policy_docs)} policy sections")
 
     # Build context
     ccpa_context = "\n\n".join([doc.page_content for doc in ccpa_requirements])
@@ -508,7 +508,7 @@ Perform a comprehensive gap analysis and provide:
 Format your response as a structured report.
 """
 
-    print("\n🤖 Calling GPT-4.1 for gap analysis...")
+    print("\n Calling GPT-4.1 for gap analysis...")
 
     # Build messages
     messages = [
@@ -559,9 +559,9 @@ Format your response as a structured report.
             response=analysis_result[:500],  # First 500 chars
             score=confidence_score
         )
-        print(f"✓ Confidence score logged: {confidence_score:.2f}")
+        print(f" Confidence score logged: {confidence_score:.2f}")
     except Exception as e:
-        print(f"⚠️  Could not log confidence score: {e}")
+        print(f"  Could not log confidence score: {e}")
 
     # Parse and log structured gap analysis
     try:
@@ -574,11 +574,11 @@ Format your response as a structured report.
                 'recommendations': parsed_gaps['recommendations'],
                 'priority_level': parsed_gaps['priority_summary']
             })
-            print(f"✓ Structured gap analysis logged: {len(parsed_gaps['gaps'])} gaps identified")
+            print(f" Structured gap analysis logged: {len(parsed_gaps['gaps'])} gaps identified")
     except Exception as e:
-        print(f"⚠️  Could not log gap analysis: {e}")
+        print(f"  Could not log gap analysis: {e}")
 
-    print(f"✓ Gap analysis complete")
+    print(f" Gap analysis complete")
     print(f"  Tokens used: {total_tokens} (prompt: {prompt_tokens}, completion: {completion_tokens})")
 
     return {
@@ -629,7 +629,7 @@ def generate_gap_report(analysis_result: Dict, output_path: str = None):
     with open(output_path, 'w') as f:
         f.write(report)
 
-    print(f"\n✓ Markdown report saved: {output_path}")
+    print(f"\n Markdown report saved: {output_path}")
 
     # Generate Professional Word document using Audit Caddie template
     docx_path = output_path.replace('.md', '.docx')
@@ -647,19 +647,19 @@ def generate_gap_report(analysis_result: Dict, output_path: str = None):
         }
 
         convert_markdown_to_compliance_report(output_path, docx_path, metadata)
-        print(f"✓ Professional Word document saved: {docx_path}")
+        print(f" Professional Word document saved: {docx_path}")
 
         # Generate PDF version
         pdf_path = output_path.replace('.md', '.pdf')
         try:
             convert_docx_to_pdf(docx_path, pdf_path)
-            print(f"✓ PDF report saved: {pdf_path}")
+            print(f" PDF report saved: {pdf_path}")
         except Exception as pdf_error:
-            print(f"⚠ Warning: Could not generate PDF: {pdf_error}")
+            print(f" Warning: Could not generate PDF: {pdf_error}")
             print(f"  Install LibreOffice for PDF generation: brew install --cask libreoffice")
 
     except Exception as e:
-        print(f"⚠ Warning: Could not generate Word document: {e}")
+        print(f" Warning: Could not generate Word document: {e}")
 
     return output_path
 
@@ -684,7 +684,7 @@ def analyze_privacy_policy(pdf_path: str, company_name: str):
     vectordb_policy = load_privacy_policy(pdf_path, company_name)
 
     if not vectordb_policy:
-        print("✗ Failed to load privacy policy")
+        print(" Failed to load privacy policy")
         return None
 
     # Step 3: Perform gap analysis
@@ -694,7 +694,7 @@ def analyze_privacy_policy(pdf_path: str, company_name: str):
     report_path = generate_gap_report(analysis_result)
 
     print("\n" + "="*70)
-    print("✓ ANALYSIS COMPLETE")
+    print(" ANALYSIS COMPLETE")
     print("="*70)
     print(f"Report: {report_path}")
     print("="*70)
@@ -738,7 +738,7 @@ def analyze_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str =
     )
 
     if not vectordb_policy:
-        print("✗ Failed to load policy documents")
+        print(" Failed to load policy documents")
         return None
 
     # Step 3: Perform gap analysis
@@ -748,7 +748,7 @@ def analyze_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str =
     report_path = generate_gap_report(analysis_result)
 
     print("\n" + "="*70)
-    print("✓ ANALYSIS COMPLETE")
+    print(" ANALYSIS COMPLETE")
     print("="*70)
     print(f"Report: {report_path}")
     print("="*70)

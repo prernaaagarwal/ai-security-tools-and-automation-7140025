@@ -4,7 +4,7 @@
 
 The Privacy Compliance Calculator now includes a comprehensive human feedback reinforcement learning (HFRL) system that automatically collects and stores feedback data to improve analysis quality over time.
 
-## 🎯 Three Feedback Mechanisms
+##  Three Feedback Mechanisms
 
 ### 1. **Automatic Confidence Scoring**
 
@@ -83,7 +83,7 @@ The Privacy Compliance Calculator now includes a comprehensive human feedback re
 **User Experience:**
 After each analysis, users are prompted:
 ```
-📊 How would you rate the overall quality of this gap analysis?
+ How would you rate the overall quality of this gap analysis?
    1 = Poor (many gaps missed, inaccurate)
    2 = Fair (some gaps missed)
    3 = Good (most gaps identified)
@@ -92,7 +92,7 @@ After each analysis, users are prompted:
 
 Rating (1-5) or press Enter to skip: 4
 
-💬 Any specific comments? (optional)
+ Any specific comments? (optional)
 Comments: Excellent analysis, very comprehensive
 ```
 
@@ -110,7 +110,7 @@ Comments: Excellent analysis, very comprehensive
 }
 ```
 
-## 📊 How to Use
+##  How to Use
 
 ### Running Analysis with Feedback
 
@@ -120,9 +120,9 @@ python run_privacy_analysis.py https://example.com "Example Company"
 ```
 
 The system will automatically:
-1. ✅ Calculate confidence score after GPT-4 analysis
-2. ✅ Parse and store structured gap data
-3. ✅ Prompt you for user feedback at the end
+1.  Calculate confidence score after GPT-4 analysis
+2.  Parse and store structured gap data
+3.  Prompt you for user feedback at the end
 
 ### Skipping Feedback
 
@@ -151,7 +151,7 @@ curl http://localhost:8080/debug/gaps | python -m json.tool
 curl http://localhost:8080/debug/feedback | python -m json.tool
 ```
 
-## 🔬 Using Data for Model Improvement
+##  Using Data for Model Improvement
 
 ### 1. Identify Low-Confidence Analyses
 
@@ -179,46 +179,46 @@ curl -s http://localhost:8080/debug/gaps | \
   print(f'Critical: {sum(1 for g in gaps if g[\"priority\"]==\"Critical\")}')"
 ```
 
-## 🔄 Feedback Loop Workflow
+##  Feedback Loop Workflow
 
 ```
-┌─────────────────────────────────────────────────────┐
-│  1. User runs privacy compliance analysis          │
-└─────────────────┬───────────────────────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────────────────┐
-│  2. GPT-4 performs gap analysis                     │
-└─────────────────┬───────────────────────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────────────────┐
-│  3. System calculates confidence score (automatic)  │
-│     - Logs to MCP: confidence_store                 │
-└─────────────────┬───────────────────────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────────────────┐
-│  4. System parses gap data (automatic)              │
-│     - Logs to MCP: gap_analysis_store               │
-└─────────────────┬───────────────────────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────────────────┐
-│  5. User provides quality rating (interactive)      │
-│     - Logs to MCP: feedback_store                   │
-└─────────────────┬───────────────────────────────────┘
-                  │
-                  ▼
-┌─────────────────────────────────────────────────────┐
-│  6. Data aggregation for model fine-tuning          │
-│     - Correlate confidence + feedback + gaps        │
-│     - Identify improvement opportunities            │
-│     - Update prompts or model parameters            │
-└─────────────────────────────────────────────────────┘
+
+  1. User runs privacy compliance analysis          
+
+                  
+                  
+
+  2. GPT-4 performs gap analysis                     
+
+                  
+                  
+
+  3. System calculates confidence score (automatic)  
+     - Logs to MCP: confidence_store                 
+
+                  
+                  
+
+  4. System parses gap data (automatic)              
+     - Logs to MCP: gap_analysis_store               
+
+                  
+                  
+
+  5. User provides quality rating (interactive)      
+     - Logs to MCP: feedback_store                   
+
+                  
+                  
+
+  6. Data aggregation for model fine-tuning          
+     - Correlate confidence + feedback + gaps        
+     - Identify improvement opportunities            
+     - Update prompts or model parameters            
+
 ```
 
-## 📈 Key Metrics Tracked
+##  Key Metrics Tracked
 
 | Metric | Source | Purpose |
 |--------|--------|---------|
@@ -229,7 +229,7 @@ curl -s http://localhost:8080/debug/gaps | \
 | Comments | Human feedback | Qualitative improvement insights |
 | Token Usage | OpenAI API | Cost tracking and optimization |
 
-## 🎯 Best Practices
+##  Best Practices
 
 1. **Always provide feedback** - Even a quick rating helps improve the system
 2. **Be specific in comments** - Mention what was good or what was missed
@@ -237,7 +237,7 @@ curl -s http://localhost:8080/debug/gaps | \
 4. **Track patterns over time** - Look for recurring gaps or issues
 5. **Export data periodically** - Use for model fine-tuning or reporting
 
-## 🔧 Advanced: Exporting Feedback Data
+##  Advanced: Exporting Feedback Data
 
 ### Export to JSON file
 ```bash
@@ -269,10 +269,10 @@ combined = {
 with open(f"hfrl_export_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json", 'w') as f:
     json.dump(combined, f, indent=2)
 
-print("✅ Feedback data exported")
+print(" Feedback data exported")
 ```
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 Planned improvements to the HFRL system:
 
@@ -283,7 +283,7 @@ Planned improvements to the HFRL system:
 - [ ] A/B testing different analysis prompts
 - [ ] Integration with model fine-tuning pipelines
 
-## 📞 Support
+##  Support
 
 For questions or issues with the feedback system:
 1. Check MCP server is running: `curl http://localhost:8080/health`

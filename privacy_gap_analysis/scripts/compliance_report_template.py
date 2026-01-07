@@ -371,11 +371,11 @@ if __name__ == '__main__':
         markdown_file = sys.argv[1]
         output_file = sys.argv[2] if len(sys.argv) > 2 else None
 
-        print(f"\n🔄 Converting {markdown_file} to professional compliance report...")
+        print(f"\n Converting {markdown_file} to professional compliance report...")
         docx_path = convert_markdown_to_compliance_report(markdown_file, output_file)
-        print(f"✅ Professional report created: {docx_path}\n")
+        print(f" Professional report created: {docx_path}\n")
     else:
-        print("\n📄 Compliance Report Template Generator")
+        print("\n Compliance Report Template Generator")
         print("=" * 50)
         print("\nUsage: python compliance_report_template.py <markdown_file> [output_file]")
         print("\nExample:")

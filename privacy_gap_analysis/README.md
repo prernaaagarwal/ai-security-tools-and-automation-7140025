@@ -8,7 +8,7 @@ AI-powered privacy compliance tool that analyzes company privacy policies agains
 
 ---
 
-## 🎯 Overview
+##  Overview
 
 This tool automates privacy policy compliance analysis by:
 - Scraping privacy policies from company websites
@@ -23,29 +23,29 @@ This tool automates privacy policy compliance analysis by:
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 🔍 Automated Compliance Analysis
+###  Automated Compliance Analysis
 - **Web Scraping**: Automatically downloads privacy policies and terms from websites
 - **CCPA/CPRA Framework**: Built-in database of 102+ California privacy law requirements
 - **RAG System**: Semantic search using vector embeddings (all-MiniLM-L12-v2)
 - **GPT-4 Analysis**: Advanced AI-powered gap identification with confidence scoring
 - **Priority Classification**: Gaps ranked as Critical, High, Medium, or Low
 
-### 📊 Professional Report Generation
+###  Professional Report Generation
 - **Multiple Formats**: Markdown, Word (.docx), and PDF
 - **Template-Based**: Uses Audit Caddie professional template styling
 - **Audit Caddie Branding**: Color-coded priorities, structured sections
 - **Auto-Generated**: Complete reports with executive summaries and recommendations
 
-### 🔒 Enterprise Audit Trails
+###  Enterprise Audit Trails
 - **MCP Server**: Model Context Protocol for structured logging
 - **Session Tracking**: Unique session IDs for every analysis
 - **Token Usage**: Complete GPT-4 API consumption tracking
 - **Gap Analysis Store**: Structured compliance data storage
 - **Confidence Scoring**: Automatic quality assessment
 
-### 🎓 Human Feedback Reinforcement Learning (HFRL)
+###  Human Feedback Reinforcement Learning (HFRL)
 - **Automatic Confidence Scoring**: Multi-factor quality assessment
 - **Interactive User Feedback**: 1-5 rating scale with comments
 - **Structured Gap Parsing**: Automated data extraction
@@ -54,7 +54,7 @@ This tool automates privacy policy compliance analysis by:
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -95,7 +95,7 @@ python run_privacy_analysis.py https://example.com "Example Company"
 
 ---
 
-## 📖 Documentation
+##  Documentation
 
 ### Complete Guides
 - **[TEMPLATE_USAGE_GUIDE.md](TEMPLATE_USAGE_GUIDE.md)** - Report generation and templates
@@ -108,43 +108,43 @@ python run_privacy_analysis.py https://example.com "Example Company"
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### System Components
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    Privacy Analysis Tool                     │
-└─────────────────────────────────────────────────────────────┘
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        │                     │                     │
-        ▼                     ▼                     ▼
-┌───────────────┐   ┌──────────────────┐   ┌──────────────┐
-│   Web Scraper │   │   RAG System     │   │ MCP Server   │
-│               │   │                  │   │              │
-│ • Selenium    │   │ • ChromaDB       │   │ • FastAPI    │
-│ • BeautifulSoup│  │ • LangChain      │   │ • JSON-RPC   │
-│ • PDF Extract │   │ • HuggingFace    │   │ • Audit Log  │
-└───────────────┘   └──────────────────┘   └──────────────┘
-                              │
-                              ▼
-                    ┌──────────────────┐
-                    │   GPT-4 Engine   │
-                    │                  │
-                    │ • Gap Analysis   │
-                    │ • CCPA Matching  │
-                    │ • Confidence     │
-                    └──────────────────┘
-                              │
-                              ▼
-                    ┌──────────────────┐
-                    │ Report Generator │
-                    │                  │
-                    │ • Markdown       │
-                    │ • Word (python-docx)│
-                    │ • PDF (LibreOffice)│
-                    └──────────────────┘
+
+                    Privacy Analysis Tool                     
+
+                              
+        
+                                                  
+                                                  
+      
+   Web Scraper       RAG System         MCP Server   
+                                                     
+ • Selenium        • ChromaDB           • FastAPI    
+ • BeautifulSoup   • LangChain          • JSON-RPC   
+ • PDF Extract     • HuggingFace        • Audit Log  
+      
+                              
+                              
+                    
+                       GPT-4 Engine   
+                                      
+                     • Gap Analysis   
+                     • CCPA Matching  
+                     • Confidence     
+                    
+                              
+                              
+                    
+                     Report Generator 
+                                      
+                     • Markdown       
+                     • Word (python-docx)
+                     • PDF (LibreOffice)
+                    
 ```
 
 ### Data Flow
@@ -160,7 +160,7 @@ python run_privacy_analysis.py https://example.com "Example Company"
 
 ---
 
-## 🛠️ Usage Examples
+##  Usage Examples
 
 ### Example 1: Complete Analysis Workflow
 
@@ -211,7 +211,7 @@ python scripts/view_feedback.py --export
 
 ---
 
-## 🎓 Educational Demos
+##  Educational Demos
 
 ### Demo Scripts for Training
 
@@ -237,17 +237,17 @@ Each demo includes:
 
 ---
 
-## 🔒 Data Classification & Security
+##  Data Classification & Security
 
 ### GRC Data Types
 
 | Data Type | Classification | AI Deployment | Used in Tool |
 |-----------|---------------|---------------|--------------|
-| Regulatory Frameworks (CCPA, GDPR) | Public | ✅ Cloud AI Safe | ✅ Yes |
-| Public Privacy Policies | Public | ✅ Cloud AI Safe | ✅ Yes |
-| Internal Policies | Confidential | ⚠️ On-Prem Only | ❌ No |
-| Control Implementations | Confidential | ⚠️ On-Prem Only | ❌ No |
-| Audit Evidence | Restricted | ❌ Extreme Caution | ❌ No |
+| Regulatory Frameworks (CCPA, GDPR) | Public |  Cloud AI Safe |  Yes |
+| Public Privacy Policies | Public |  Cloud AI Safe |  Yes |
+| Internal Policies | Confidential |  On-Prem Only |  No |
+| Control Implementations | Confidential |  On-Prem Only |  No |
+| Audit Evidence | Restricted |  Extreme Caution |  No |
 
 ### Deployment Options
 
@@ -260,7 +260,7 @@ Each demo includes:
 
 ---
 
-## 📊 Example Output
+##  Example Output
 
 ### Gap Analysis Report Structure
 
@@ -298,7 +298,7 @@ Each demo includes:
 
 ---
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -332,7 +332,7 @@ Default configuration in `scripts/privacy_mcp_server.py`:
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! This is an educational tool for LinkedIn Learning courses.
 
@@ -359,13 +359,13 @@ pytest tests/
 
 ---
 
-## 📝 License
+##  License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **OpenAI** - GPT-4 API
 - **LangChain** - RAG framework
@@ -376,7 +376,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ---
 
-## 📞 Support
+##  Support
 
 For questions, issues, or contributions:
 - **GitHub Issues**: https://github.com/Blodgic/privacy_analysis/issues
@@ -385,29 +385,29 @@ For questions, issues, or contributions:
 
 ---
 
-## 🚧 Roadmap
+##  Roadmap
 
 ### Current Features (v1.0)
-- ✅ Automated web scraping
-- ✅ RAG-based compliance analysis
-- ✅ Multi-format report generation
-- ✅ MCP audit trail server
-- ✅ Human feedback system
-- ✅ Professional templates
+-  Automated web scraping
+-  RAG-based compliance analysis
+-  Multi-format report generation
+-  MCP audit trail server
+-  Human feedback system
+-  Professional templates
 
 ### Planned Features (v2.0)
-- 🔄 Support for GDPR, SOC 2, ISO 27001
-- 🔄 Multi-language policy analysis
-- 🔄 Persistent MCP database (PostgreSQL)
-- 🔄 Web dashboard for results
-- 🔄 Batch analysis mode
-- 🔄 Custom compliance frameworks
-- 🔄 API endpoints for integration
-- 🔄 Model fine-tuning with feedback data
+-  Support for GDPR, SOC 2, ISO 27001
+-  Multi-language policy analysis
+-  Persistent MCP database (PostgreSQL)
+-  Web dashboard for results
+-  Batch analysis mode
+-  Custom compliance frameworks
+-  API endpoints for integration
+-  Model fine-tuning with feedback data
 
 ---
 
-## 📈 Version History
+##  Version History
 
 **v1.0.0** (December 2025)
 - Initial release
@@ -420,12 +420,12 @@ For questions, issues, or contributions:
 
 ---
 
-## ⚖️ Legal Notice
+##  Legal Notice
 
 This tool is for educational and compliance assistance purposes only. It does not constitute legal advice. Always consult with qualified legal counsel for compliance matters.
 
 ---
 
-**Built with ❤️ for privacy compliance professionals**
+**Built with  for privacy compliance professionals**
 
 **Powered by AI | Designed for Compliance | Built for Enterprise**

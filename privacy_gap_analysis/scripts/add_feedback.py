@@ -30,7 +30,7 @@ def add_feedback(session_id: str, rating: str, comments: str = None):
     # Validate rating
     valid_ratings = ["poor", "fair", "good", "excellent", "outstanding"]
     if rating.lower() not in valid_ratings:
-        print(f"❌ Error: Rating must be one of: {', '.join(valid_ratings)}")
+        print(f" Error: Rating must be one of: {', '.join(valid_ratings)}")
         return False
 
     # Map to numeric
@@ -64,22 +64,22 @@ def add_feedback(session_id: str, rating: str, comments: str = None):
         result = response.json()
 
         if "result" in result:
-            print("\n✅ Feedback added successfully!")
+            print("\n Feedback added successfully!")
             print(f"   Session: {session_id}")
             print(f"   Rating: {rating_map[rating.lower()]}/5 ({rating.lower()})")
             if comments:
                 print(f"   Comments: {comments}")
             return True
         else:
-            print(f"❌ Error: {result.get('error', 'Unknown error')}")
+            print(f" Error: {result.get('error', 'Unknown error')}")
             return False
 
     except requests.exceptions.ConnectionError:
-        print("❌ Error: Could not connect to MCP server")
+        print(" Error: Could not connect to MCP server")
         print("   Make sure it's running at http://localhost:8080")
         return False
     except Exception as e:
-        print(f"❌ Error: {e}")
+        print(f" Error: {e}")
         return False
 
 
@@ -92,16 +92,16 @@ def interactive_mode():
     print("Add feedback for a previous analysis\n")
 
     # Get session ID
-    print("📋 Enter the session ID from the analysis report")
+    print(" Enter the session ID from the analysis report")
     print("   (Example: privacy_analysis_BLodgic_20251227_171250)")
     session_id = input("\nSession ID: ").strip()
 
     if not session_id:
-        print("❌ Session ID is required")
+        print(" Session ID is required")
         return
 
     # Get rating
-    print("\n📊 Rate the analysis quality:")
+    print("\n Rate the analysis quality:")
     print("   1 = poor")
     print("   2 = fair")
     print("   3 = good")
@@ -113,17 +113,17 @@ def interactive_mode():
     try:
         rating_num = int(rating_input)
         if rating_num < 1 or rating_num > 5:
-            print("❌ Rating must be 1-5")
+            print(" Rating must be 1-5")
             return
     except ValueError:
-        print("❌ Rating must be a number 1-5")
+        print(" Rating must be a number 1-5")
         return
 
     rating_map = {1: "poor", 2: "fair", 3: "good", 4: "excellent", 5: "outstanding"}
     rating = rating_map[rating_num]
 
     # Get comments
-    print("\n💬 Optional comments:")
+    print("\n Optional comments:")
     comments = input("Comments (or press Enter to skip): ").strip()
 
     # Submit
@@ -151,7 +151,7 @@ def main():
         add_feedback(session_id, rating, comments)
 
     else:
-        print("\n📝 MANUAL FEEDBACK ENTRY TOOL")
+        print("\n MANUAL FEEDBACK ENTRY TOOL")
         print("="*60)
         print("\nUsage:")
         print("  Interactive mode:")

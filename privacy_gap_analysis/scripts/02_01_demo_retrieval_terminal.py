@@ -27,22 +27,22 @@ print("="*80 + "\n")
 print(">>> from privacy_rag_mcp import load_ccpa_framework")
 from privacy_rag_mcp import load_ccpa_framework
 
-print("✓ Imported load_ccpa_framework\n")
+print(" Imported load_ccpa_framework\n")
 
 # Step 2: Load vector database
 print(">>> vectordb = load_ccpa_framework()")
 vectordb = load_ccpa_framework()
-print("✓ Vector database loaded\n")
+print(" Vector database loaded\n")
 
 # Step 3: Create retriever
 print('>>> retriever = vectordb.as_retriever(search_kwargs={"k": 3})')
 retriever = vectordb.as_retriever(search_kwargs={"k": 3})
-print("✓ Retriever created (will return top 3 results)\n")
+print(" Retriever created (will return top 3 results)\n")
 
 # Step 4: Perform retrieval
 print('>>> results = retriever.invoke("right to delete personal information")')
 results = retriever.invoke("right to delete personal information")
-print(f"✓ Retrieved {len(results)} documents\n")
+print(f" Retrieved {len(results)} documents\n")
 
 # Step 5: Display results
 print(">>> for doc in results:")
@@ -57,13 +57,13 @@ for i, doc in enumerate(results, 1):
     print()
 
 print("="*80)
-print("✅ Demo Complete - This is how RAG retrieval works!")
+print(" Demo Complete - This is how RAG retrieval works!")
 print("="*80)
-print("\n💡 What just happened:")
+print("\n What just happened:")
 print("   1. Loaded CCPA requirements into vector database")
 print("   2. Created a retriever to search semantically")
 print("   3. Queried: 'right to delete personal information'")
 print("   4. Got back the 3 most relevant CCPA sections")
-print("\n🎯 Key Point:")
+print("\n Key Point:")
 print("   This is SEMANTIC search (meaning-based), not keyword search!")
 print("   The system understood the INTENT of our query.\n")

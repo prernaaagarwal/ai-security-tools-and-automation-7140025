@@ -39,7 +39,7 @@ def demo_indexing():
 
     print_banner("PHASE 1: INDEXING - Loading CCPA Framework into Vector Database")
 
-    print("\n📚 Loading CCPA/CPRA compliance requirements...")
+    print("\n Loading CCPA/CPRA compliance requirements...")
     print("   File: CCPA_CPRA_Framework.csv")
     print("   Each row = 1 compliance requirement")
     print("\n⏳ Building vector embeddings with all-MiniLM-L12-v2...")
@@ -47,7 +47,7 @@ def demo_indexing():
     # Load the framework
     vectordb = load_ccpa_framework()
 
-    print("\n✅ Vector database created!")
+    print("\n Vector database created!")
     print("   - All CCPA requirements indexed")
     print("   - Embeddings stored in ChromaDB")
     print("   - Ready for semantic search")
@@ -60,7 +60,7 @@ def demo_retrieval(vectordb, query, top_k=3):
 
     print_banner(f"PHASE 2: RETRIEVAL - Semantic Search")
 
-    print(f"\n🔍 Query: \"{query}\"")
+    print(f"\n Query: \"{query}\"")
     print(f"   Retrieving top {top_k} most relevant CCPA requirements...")
 
     # Create retriever
@@ -70,7 +70,7 @@ def demo_retrieval(vectordb, query, top_k=3):
     print("\n⏳ Searching vector database...")
     results = retriever.invoke(query)
 
-    print(f"\n✅ Found {len(results)} relevant requirements:")
+    print(f"\n Found {len(results)} relevant requirements:")
 
     # Display results
     for i, doc in enumerate(results, 1):
@@ -78,12 +78,12 @@ def demo_retrieval(vectordb, query, top_k=3):
 
         # Show metadata if available
         if hasattr(doc, 'metadata') and doc.metadata:
-            print(f"\n📋 Metadata:")
+            print(f"\n Metadata:")
             for key, value in doc.metadata.items():
                 print(f"   {key}: {value}")
 
         # Show content
-        print(f"\n📄 Content:")
+        print(f"\n Content:")
         content = doc.page_content
 
         # Pretty print content (wrap at 76 characters)
@@ -112,13 +112,13 @@ def demo_generation_context(results):
 
     print_banner("PHASE 3: GENERATION - Context for GPT-4")
 
-    print("\n📝 Building context for GPT-4...")
+    print("\n Building context for GPT-4...")
 
     # Build context like the real system does
     ccpa_context = "\n\n".join([doc.page_content for doc in results])
 
-    print(f"\n✅ Context prepared ({len(ccpa_context)} characters)")
-    print("\n📤 This context would be sent to GPT-4 in the prompt:")
+    print(f"\n Context prepared ({len(ccpa_context)} characters)")
+    print("\n This context would be sent to GPT-4 in the prompt:")
 
     print_section("GPT-4 Prompt Structure")
 
@@ -151,17 +151,17 @@ def run_interactive_demo():
     print("  LinkedIn Learning: AI Automation - Chapter 2")
     print("="*80)
 
-    print("\n🎯 This demo shows how RAG works in our Privacy Compliance Tool:")
+    print("\n This demo shows how RAG works in our Privacy Compliance Tool:")
     print("   1. INDEXING: Load compliance requirements into vector database")
     print("   2. RETRIEVAL: Search for relevant requirements")
     print("   3. GENERATION: Provide context to GPT-4 for analysis")
 
-    input("\n⏸️  Press Enter to start Phase 1: INDEXING...")
+    input("\n⏸  Press Enter to start Phase 1: INDEXING...")
 
     # Phase 1: Indexing
     vectordb = demo_indexing()
 
-    input("\n⏸️  Press Enter to start Phase 2: RETRIEVAL...")
+    input("\n⏸  Press Enter to start Phase 2: RETRIEVAL...")
 
     # Phase 2: Retrieval - Multiple queries to demonstrate
     queries = [
@@ -181,17 +181,17 @@ def run_interactive_demo():
         all_results.append(results)
 
         if i < len(queries):
-            input(f"\n⏸️  Press Enter for next retrieval example...")
+            input(f"\n⏸  Press Enter for next retrieval example...")
 
-    input("\n⏸️  Press Enter to start Phase 3: GENERATION CONTEXT...")
+    input("\n⏸  Press Enter to start Phase 3: GENERATION CONTEXT...")
 
     # Phase 3: Show generation context
     demo_generation_context(all_results[0])
 
     print("\n" + "="*80)
-    print("  ✅ Demo Complete!")
+    print("   Demo Complete!")
     print("="*80)
-    print("\n📚 Key Takeaways:")
+    print("\n Key Takeaways:")
     print("   1. Vector databases enable semantic search (meaning-based, not keyword)")
     print("   2. Retrieval finds the MOST RELEVANT requirements for each query")
     print("   3. GPT-4 uses this context to perform accurate gap analysis")
@@ -221,7 +221,7 @@ def run_quick_demo():
     demo_generation_context(results)
 
     print("\n" + "="*80)
-    print("  ✅ Demo Complete!")
+    print("   Demo Complete!")
     print("="*80 + "\n")
 
 
@@ -232,7 +232,7 @@ def main():
         # Quick demo (no pauses)
         run_quick_demo()
     elif len(sys.argv) > 1 and sys.argv[1] == "--help":
-        print("\n📚 RAG Retrieval Demo")
+        print("\n RAG Retrieval Demo")
         print("="*60)
         print("\nUsage:")
         print("  python demo_rag_retrieval.py              # Interactive demo with pauses")
