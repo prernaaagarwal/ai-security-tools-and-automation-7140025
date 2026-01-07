@@ -239,19 +239,21 @@ def demo_view_audit_trail(session_id, quick_mode=False):
         response = requests.get("http://localhost:8080/debug/memory", timeout=5)
         memory_logs = response.json()
 
+        # MCP returns dict with session_id as keys, values are arrays of log entries
         # Find our session
         our_log = None
-        for log in memory_logs:
-            if log.get('session_id') == session_id:
-                our_log = log
-                break
+        if session_id in memory_logs:
+            # Get the first (most recent) log entry for this session
+            logs_for_session = memory_logs[session_id]
+            if logs_for_session and len(logs_for_session) > 0:
+                our_log = logs_for_session[-1]  # Get the last entry
 
         if our_log:
             print(" Audit trail entry found:")
             print()
-            print(f"  Session ID: {our_log['session_id']}")
-            print(f"  Timestamp: {our_log['timestamp']}")
-            print(f"  Text (preview): {our_log['text'][:100]}...")
+            print(f"  Session ID: {session_id}")
+            print(f"  Timestamp: {our_log.get('timestamp', 'N/A')}")
+            print(f"  Text (preview): {our_log.get('text', '')[:100]}...")
             print()
             print(" Query successfully logged to audit trail!")
         else:
@@ -259,6 +261,8 @@ def demo_view_audit_trail(session_id, quick_mode=False):
 
     except requests.exceptions.RequestException as e:
         print(f" ERROR: Failed to retrieve audit trail: {e}")
+    except Exception as e:
+        print(f" ERROR: Failed to parse audit trail: {e}")
 
     pause("Audit trail verified. Press Enter for summary...", quick_mode)
 
