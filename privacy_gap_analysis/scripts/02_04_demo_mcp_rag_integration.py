@@ -212,7 +212,10 @@ def demo_log_to_mcp(query, results, quick_mode=False):
         print(f"  {response_data}")
         print()
 
-        if response_data.get('result', {}).get('status') == 'success':
+        # Handle both response formats: dict with status or string result
+        result = response_data.get('result', '')
+        if (isinstance(result, dict) and result.get('status') == 'success') or \
+           (isinstance(result, str) and 'inserted' in result.lower()):
             print(" Query logged successfully!")
 
     except requests.exceptions.RequestException as e:
