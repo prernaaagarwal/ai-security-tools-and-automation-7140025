@@ -46,3 +46,7 @@ Thumbs.db
 **/CHAPTER*_LESSON*_SCRIPT.md
 **/CHAPTER*_SCREENCAP_GUIDE.md
 **/scripts/*_*_demo_*.py
+
+# Course-specific directories (not for students)
+CADDIE_RAG_MPC/
+privacy scanner/
