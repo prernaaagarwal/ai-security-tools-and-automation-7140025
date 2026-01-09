@@ -2,8 +2,6 @@
 """
 End-to-End Privacy Policy Gap Analysis Workflow
 Integrates: Privacy Scraper → PDF Extraction → RAG → MCP → GPT-4.1 → Report
-
-Cardinal Security - Privacy Compliance Workflow
 """
 
 import sys
@@ -141,7 +139,7 @@ def run_complete_privacy_analysis(company_url: str, company_name: str = None):
 
     print("\n" + "="*70)
     print("PRIVACY POLICY GAP ANALYSIS WORKFLOW")
-    print("Cardinal Security - CCPA/CPRA Compliance")
+    
     print("="*70)
     print(f"Target: {company_url}")
     print("="*70 + "\n")
@@ -228,7 +226,7 @@ def main():
 
     print("\n" + "="*70)
     print("PRIVACY POLICY GAP ANALYSIS - CCPA/CPRA COMPLIANCE")
-    print("Cardinal Security Privacy Compliance Workflow")
+    
     print("="*70)
 
     # Check if URL provided as argument

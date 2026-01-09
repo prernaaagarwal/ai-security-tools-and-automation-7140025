@@ -42,6 +42,17 @@ Thumbs.db
 # Jupyter Notebooks checkpoints
 .ipynb_checkpoints/
 
-# Generated files (optional - remove if you want to track)
-# reports/*.docx
-# reports/*.md
+# Generated reports and output files
+reports/*.docx
+reports/*.md
+reports/*.pdf
+scripts/*_CCPA_Gap_Analysis_*.docx
+scripts/*_CCPA_Gap_Analysis_*.md
+scripts/*_CCPA_Gap_Analysis_*.pdf
+*.docx
+*.pdf
+
+# Course building materials (internal use only, not for students)
+CHAPTER*_LESSON*_SCRIPT.md
+scripts/*_*_demo_*.py
+course_materials/
