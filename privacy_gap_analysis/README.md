@@ -427,5 +427,3 @@ This tool is for educational and compliance assistance purposes only. It does no
 ---
 
 **Built with  for privacy compliance professionals**
-
-**Powered by AI | Designed for Compliance | Built for Enterprise**
