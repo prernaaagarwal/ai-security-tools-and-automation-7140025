@@ -1,0 +1,267 @@
+{
+  "evidence_type": "CC7.2 - System Monitoring",
+  "description": "System monitoring logs demonstrating continuous monitoring for anomalies and quality metrics",
+  "audit_period": {
+    "start": "2025-01-01",
+    "end": "2025-12-31"
+  },
+  "monitoring_capabilities": {
+    "token_usage_tracking": true,
+    "confidence_score_monitoring": true,
+    "anomaly_detection": true,
+    "quality_metrics": true,
+    "cost_tracking": true,
+    "performance_monitoring": true
+  },
+  "token_usage_monitoring": {
+    "total_sessions": 12,
+    "total_tokens": 98957,
+    "total_cost_usd": 9.88,
+    "avg_tokens_per_session": 8246.42,
+    "baseline_tokens": 8500,
+    "anomaly_threshold_pct": 20,
+    "anomalies_detected": 2,
+    "sessions_by_token_usage": [
+      {
+        "session_id": "privacy_analysis_Yahoo_20251202_190758",
+        "tokens_used": 8912,
+        "baseline_deviation_pct": 4.85,
+        "status": "normal",
+        "timestamp": "2025-12-02T19:07:58Z"
+      },
+      {
+        "session_id": "privacy_analysis_Yahoo_20250306_141234",
+        "tokens_used": 8734,
+        "baseline_deviation_pct": -2.76,
+        "status": "normal",
+        "timestamp": "2025-03-06T14:12:34Z"
+      },
+      {
+        "session_id": "privacy_analysis_Yahoo_20250615_093045",
+        "tokens_used": 9103,
+        "baseline_deviation_pct": 7.09,
+        "status": "normal",
+        "timestamp": "2025-06-15T09:30:45Z"
+      },
+      {
+        "session_id": "privacy_analysis_AcmeCorp_20250115_103022",
+        "tokens_used": 4521,
+        "baseline_deviation_pct": -46.81,
+        "status": "anomaly_low",
+        "timestamp": "2025-01-15T10:30:22Z",
+        "notes": "Lower token usage - smaller policy document (12 pages vs typical 150+)"
+      },
+      {
+        "session_id": "privacy_analysis_Facebook_20250423_155612",
+        "tokens_used": 11245,
+        "baseline_deviation_pct": 32.29,
+        "status": "anomaly_high",
+        "timestamp": "2025-04-23T15:56:12Z",
+        "alert_sent": true,
+        "investigation": "Reviewed - legitimate usage for 203-page policy document",
+        "notes": "Larger than baseline but appropriate for document size"
+      },
+      {
+        "session_id": "privacy_analysis_Amazon_20250530_091845",
+        "tokens_used": 9876,
+        "baseline_deviation_pct": 16.19,
+        "status": "normal",
+        "timestamp": "2025-05-30T09:18:45Z"
+      },
+      {
+        "session_id": "privacy_analysis_Google_20250712_143301",
+        "tokens_used": 10532,
+        "baseline_deviation_pct": 23.91,
+        "status": "elevated",
+        "timestamp": "2025-07-12T14:33:01Z",
+        "notes": "Near anomaly threshold - monitored"
+      },
+      {
+        "session_id": "privacy_analysis_Microsoft_20250815_112214",
+        "tokens_used": 9234,
+        "baseline_deviation_pct": 8.64,
+        "status": "normal",
+        "timestamp": "2025-08-15T11:22:14Z"
+      },
+      {
+        "session_id": "privacy_analysis_Apple_20250920_095533",
+        "tokens_used": 8056,
+        "baseline_deviation_pct": -5.22,
+        "status": "normal",
+        "timestamp": "2025-09-20T09:55:33Z"
+      },
+      {
+        "session_id": "privacy_analysis_Netflix_20251025_130945",
+        "tokens_used": 6234,
+        "baseline_deviation_pct": -26.66,
+        "status": "low",
+        "timestamp": "2025-10-25T13:09:45Z",
+        "notes": "Smaller policy document (98 pages)"
+      },
+      {
+        "session_id": "privacy_analysis_Uber_20251118_162201",
+        "tokens_used": 7812,
+        "baseline_deviation_pct": -8.09,
+        "status": "normal",
+        "timestamp": "2025-11-18T16:22:01Z"
+      },
+      {
+        "session_id": "privacy_analysis_AcmeCorp_20251210_094512",
+        "tokens_used": 4698,
+        "baseline_deviation_pct": -44.73,
+        "status": "anomaly_low",
+        "timestamp": "2025-12-10T09:45:12Z",
+        "notes": "Lower token usage - NIST CSF framework with short policy document"
+      }
+    ]
+  },
+  "confidence_score_monitoring": {
+    "description": "Quality monitoring via confidence scores for each gap identified",
+    "confidence_threshold_minimum": 0.70,
+    "avg_confidence_score": 0.89,
+    "confidence_distribution": {
+      "high_confidence_0.90_to_1.00": 67,
+      "medium_confidence_0.80_to_0.89": 102,
+      "acceptable_confidence_0.70_to_0.79": 48,
+      "low_confidence_below_0.70": 12
+    },
+    "low_confidence_alerts": [
+      {
+        "session_id": "privacy_analysis_Yahoo_20251202_190758",
+        "gap_reference": "Gap #18 - Third-party sharing disclosures",
+        "confidence_score": 0.68,
+        "timestamp": "2025-12-02T19:09:31Z",
+        "alert_sent": true,
+        "review_status": "Reviewed by compliance analyst - finding valid but ambiguous policy language",
+        "notes": "Low confidence due to vague third-party sharing language in policy"
+      },
+      {
+        "session_id": "privacy_analysis_Yahoo_20250615_093045",
+        "gap_reference": "Gap #16 - International data transfers",
+        "confidence_score": 0.69,
+        "timestamp": "2025-06-15T09:32:16Z",
+        "alert_sent": true,
+        "review_status": "Reviewed by legal team - finding confirmed",
+        "notes": "Policy lacks specific adequacy determination language"
+      },
+      {
+        "session_id": "privacy_analysis_Facebook_20250423_155612",
+        "gap_reference": "Gap #12 - Data retention periods",
+        "confidence_score": 0.67,
+        "timestamp": "2025-04-23T15:57:54Z",
+        "alert_sent": true,
+        "review_status": "Reviewed - finding valid",
+        "notes": "Policy states retention periods vaguely ('as long as necessary')"
+      }
+    ],
+    "quality_trends": {
+      "Q1_2025": 0.87,
+      "Q2_2025": 0.89,
+      "Q3_2025": 0.90,
+      "Q4_2025": 0.91,
+      "trend": "improving",
+      "notes": "Confidence scores improving as model fine-tuning continues"
+    }
+  },
+  "anomaly_detection_events": {
+    "total_anomalies_detected": 5,
+    "anomaly_types": {
+      "high_token_usage": 1,
+      "low_confidence_scores": 3,
+      "failed_sessions": 0,
+      "unusual_session_duration": 1
+    },
+    "anomaly_details": [
+      {
+        "anomaly_id": "ANOM-2025-001",
+        "type": "high_token_usage",
+        "session_id": "privacy_analysis_Facebook_20250423_155612",
+        "detected_at": "2025-04-23T15:57:58Z",
+        "severity": "medium",
+        "description": "Token usage 32% above baseline",
+        "automatic_action": "Alert sent to monitoring dashboard",
+        "investigation_status": "Resolved - legitimate usage for large policy document",
+        "resolution_timestamp": "2025-04-23T16:15:00Z"
+      },
+      {
+        "anomaly_id": "ANOM-2025-002",
+        "type": "low_confidence_score",
+        "session_id": "privacy_analysis_Yahoo_20251202_190758",
+        "detected_at": "2025-12-02T19:09:31Z",
+        "severity": "low",
+        "description": "Confidence score 0.68 below 0.70 threshold for Gap #18",
+        "automatic_action": "Flagged for manual review",
+        "investigation_status": "Resolved - finding valid, ambiguous policy language noted",
+        "resolution_timestamp": "2025-12-03T10:22:00Z"
+      },
+      {
+        "anomaly_id": "ANOM-2025-003",
+        "type": "low_confidence_score",
+        "session_id": "privacy_analysis_Yahoo_20250615_093045",
+        "detected_at": "2025-06-15T09:32:16Z",
+        "severity": "low",
+        "description": "Confidence score 0.69 below 0.70 threshold for Gap #16",
+        "automatic_action": "Flagged for manual review",
+        "investigation_status": "Resolved - finding confirmed by legal team",
+        "resolution_timestamp": "2025-06-16T14:05:00Z"
+      },
+      {
+        "anomaly_id": "ANOM-2025-004",
+        "type": "low_confidence_score",
+        "session_id": "privacy_analysis_Facebook_20250423_155612",
+        "detected_at": "2025-04-23T15:57:54Z",
+        "severity": "low",
+        "description": "Confidence score 0.67 below 0.70 threshold for Gap #12",
+        "automatic_action": "Flagged for manual review",
+        "investigation_status": "Resolved - finding valid",
+        "resolution_timestamp": "2025-04-24T09:30:00Z"
+      },
+      {
+        "anomaly_id": "ANOM-2025-005",
+        "type": "unusual_session_duration",
+        "session_id": "privacy_analysis_Google_20250712_143301",
+        "detected_at": "2025-07-12T14:34:48Z",
+        "severity": "low",
+        "description": "Session duration 107 seconds, 27% above baseline of 84 seconds",
+        "automatic_action": "Logged for trend analysis",
+        "investigation_status": "Resolved - larger policy document (189 pages)",
+        "resolution_timestamp": "2025-07-12T14:40:00Z"
+      }
+    ]
+  },
+  "monitoring_infrastructure": {
+    "monitoring_method": "Real-time MCP server logging",
+    "log_retention_days": 365,
+    "alert_mechanisms": [
+      "Real-time dashboard alerts",
+      "Email notifications to ops team",
+      "Slack channel notifications",
+      "JIRA ticket creation for high-severity anomalies"
+    ],
+    "monitoring_dashboard_url": "https://mcp.acmecorp.com/monitoring",
+    "alert_response_sla": "4 hours for medium severity, 1 hour for high severity"
+  },
+  "performance_metrics": {
+    "avg_session_duration_seconds": 84.25,
+    "median_session_duration_seconds": 89,
+    "min_session_duration_seconds": 42,
+    "max_session_duration_seconds": 107,
+    "avg_response_time_ms": 450,
+    "system_uptime_pct": 99.97,
+    "failed_sessions": 0,
+    "successful_sessions": 12,
+    "success_rate_pct": 100
+  },
+  "compliance_notes": {
+    "soc2_criteria": "CC7.2 - System Monitoring",
+    "evidence_demonstrates": [
+      "Continuous monitoring of system operations (token usage, confidence scores)",
+      "Automated anomaly detection with defined thresholds",
+      "Real-time alerting for unusual activity",
+      "Quality metrics tracking (confidence scores)",
+      "Performance monitoring and trending",
+      "Incident investigation and resolution tracking"
+    ],
+    "auditor_guidance": "This log demonstrates that the AI compliance analysis system is continuously monitored for anomalies. Token usage, confidence scores, and performance metrics are tracked in real-time. Anomalies are automatically detected, alerted, investigated, and resolved. This provides evidence of proactive system monitoring as required by CC7.2."
+  }
+}

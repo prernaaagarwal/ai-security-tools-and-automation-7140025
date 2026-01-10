@@ -1,10 +1,14 @@
-# Exercise Files for Chapter 4, Lesson 01: Framework Mapping
+# Exercise Files for Chapter 4: Framework Mapping & Evidence Collection
 
 ## Overview
 
-These exercise files demonstrate how AI-powered compliance analysis can be applied to different frameworks beyond CCPA/CPRA. Specifically, this shows how to analyze a corporate security policy against the NIST Cybersecurity Framework 2.0.
+These exercise files demonstrate:
+1. **Lesson 01:** How AI-powered compliance analysis can be applied to different frameworks (NIST CSF 2.0)
+2. **Lesson 03:** How AI-generated compliance reports serve as audit evidence for SOC 2 and other frameworks
 
 ## Files Included
+
+### Lesson 01: Framework Mapping Files
 
 ### 1. `NIST_CSF_Framework.csv`
 **Location:** `data/frameworks/NIST_CSF_Framework.csv`
@@ -66,6 +70,63 @@ A complete sample output showing what the AI-powered gap analysis would produce 
 - **Compliance summary by NIST CSF function** (table showing % compliance per function)
 - **Cost-benefit analysis** with ROI rankings
 - **Attestation section** for CISO approval
+
+---
+
+### Lesson 03: Evidence Collection Files
+
+### 4. `mcp_access_logs_CC6.1.json`
+**Purpose:** Demonstrates audit evidence for **SOC 2 CC6.1 - Logical Access Controls**
+
+A complete year of MCP server audit logs (12 sessions across 2025) showing:
+- **User authentication** for all system access (authenticated user emails)
+- **Session tracking** with unique session IDs for complete audit trail
+- **Timestamp documentation** (ISO 8601 format with timezone)
+- **Access attribution** (user, IP address, user agent for every action)
+- **Audit retention** (365 days minimum)
+
+**Key Metrics:**
+- 12 total sessions | 3 unique users | 11 companies analyzed
+- 229 total gaps identified | $9.88 total API cost
+- 100% session success rate
+
+**Auditor Use Case:** Demonstrates logical access controls are implemented, tracked, and auditable.
+
+---
+
+### 5. `mcp_monitoring_logs_CC7.2.json`
+**Purpose:** Demonstrates audit evidence for **SOC 2 CC7.2 - System Monitoring**
+
+System monitoring logs showing continuous monitoring for anomalies and quality:
+- **Token usage tracking** (baseline 8,500 tokens, ±20% anomaly threshold)
+- **Confidence score monitoring** (89% average, 0.70 minimum threshold)
+- **Anomaly detection** (5 anomalies detected and resolved in 2025)
+- **Quality metrics** (confidence scores, performance metrics)
+- **Alert system** (automated alerts with 4-hour SLA for medium severity)
+
+**Monitoring Capabilities:**
+- Real-time tracking of token usage, confidence scores, performance
+- Automated anomaly detection with defined thresholds
+- Investigation and resolution tracking for all anomalies
+- 99.97% system uptime | 100% session success rate
+
+**Auditor Use Case:** Demonstrates system components are continuously monitored for anomalies with automated detection and response.
+
+---
+
+### 6. `README_EVIDENCE_FILES.md`
+**Purpose:** Complete documentation for the evidence files
+
+Comprehensive guide explaining:
+- What each evidence file demonstrates
+- How to map technical logs to compliance criteria
+- Real-world audit scenarios and responses
+- Key takeaways for building similar systems
+- Evidence package structure for SOC 2 audits
+
+**Learning Focus:** Understanding what makes good audit evidence and how AI systems generate it automatically.
+
+---
 
 ## How to Use These Files
 
