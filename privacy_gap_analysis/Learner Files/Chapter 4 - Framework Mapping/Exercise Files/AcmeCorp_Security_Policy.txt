@@ -1,0 +1,450 @@
+ACME CORPORATION
+INFORMATION SECURITY POLICY
+Version 2.1 | Effective Date: January 1, 2025
+
+==============================================================================
+1. EXECUTIVE SUMMARY
+==============================================================================
+
+Acme Corporation ("Acme" or "the Company") is committed to protecting the
+confidentiality, integrity, and availability of information assets. This
+Information Security Policy establishes the framework for managing cybersecurity
+risks across the organization.
+
+This policy applies to all Acme employees, contractors, vendors, and third-party
+service providers with access to Acme information systems.
+
+==============================================================================
+2. GOVERNANCE AND OVERSIGHT
+==============================================================================
+
+2.1 Cybersecurity Oversight
+The Board of Directors receives quarterly updates on cybersecurity risk from
+the Chief Information Security Officer (CISO). The CISO reports directly to
+the Chief Technology Officer.
+
+2.2 Roles and Responsibilities
+The CISO is responsible for:
+- Developing and maintaining the information security program
+- Conducting annual risk assessments
+- Reporting security incidents to executive leadership
+- Managing the security operations team
+
+Department heads are responsible for:
+- Ensuring their teams complete security awareness training
+- Reporting suspected security incidents within 24 hours
+- Implementing security controls appropriate to their data classification
+
+2.3 Policy Review and Updates
+This policy is reviewed annually by the Security Committee and updated as
+needed to address emerging threats and regulatory requirements.
+
+==============================================================================
+3. RISK MANAGEMENT
+==============================================================================
+
+3.1 Risk Assessment Process
+Acme conducts comprehensive risk assessments annually and when significant
+changes occur to systems, processes, or the threat landscape.
+
+Risk assessments identify:
+- Critical information assets
+- Potential threats and vulnerabilities
+- Likelihood and impact of security incidents
+- Existing controls and gaps
+- Recommended risk mitigation strategies
+
+3.2 Risk Appetite and Tolerance
+The organization maintains a moderate risk appetite. We accept some risk to
+enable business operations but prioritize protection of customer data and
+critical systems.
+
+Risk tolerance levels:
+- HIGH risk: Requires executive approval and documented mitigation plan
+- MEDIUM risk: Requires departmental approval and quarterly review
+- LOW risk: May be accepted with standard security controls
+
+3.3 Vulnerability Management
+We maintain an inventory of all systems and applications. Security
+vulnerabilities are identified through:
+- Quarterly vulnerability scans of all internet-facing systems
+- Annual penetration testing by external security firms
+- Continuous monitoring of security bulletins and threat intelligence
+
+Critical vulnerabilities must be remediated within 30 days. High-severity
+vulnerabilities must be remediated within 90 days.
+
+==============================================================================
+4. ASSET MANAGEMENT
+==============================================================================
+
+4.1 Asset Inventory
+The IT department maintains an inventory of:
+- Physical servers and workstations (updated quarterly)
+- Software applications and licenses (updated annually)
+- Network devices and infrastructure (updated as changes occur)
+
+Note: We do not currently maintain a comprehensive inventory of cloud-based
+resources or external SaaS applications used by individual departments.
+
+4.2 Asset Classification
+Information assets are classified as:
+- PUBLIC: Can be freely shared (marketing materials, press releases)
+- INTERNAL: For Acme personnel only (policies, procedures, org charts)
+- CONFIDENTIAL: Restricted access (customer data, financial records, trade secrets)
+- RESTRICTED: Highest security (encryption keys, credentials, merger documents)
+
+4.3 Asset Prioritization
+Critical systems are identified based on:
+- Business impact if unavailable
+- Sensitivity of data processed
+- Regulatory compliance requirements
+
+Our payment processing system and customer database are designated as
+critical assets requiring enhanced security controls.
+
+==============================================================================
+5. IDENTITY AND ACCESS MANAGEMENT
+==============================================================================
+
+5.1 User Access Control
+Access to systems and data is granted based on job role and business need.
+The principle of least privilege is applied to limit access to only what is
+necessary to perform assigned duties.
+
+New employee access requests are approved by the hiring manager and provisioned
+by IT within 48 hours of start date.
+
+Access is reviewed annually and terminated within 24 hours of employment
+separation.
+
+5.2 Authentication Requirements
+All users must use strong passwords meeting these requirements:
+- Minimum 12 characters
+- Mix of uppercase, lowercase, numbers, and special characters
+- Changed every 180 days
+- Cannot reuse last 5 passwords
+
+Multi-factor authentication (MFA) is required for:
+- All remote access (VPN)
+- Administrative accounts
+- Access to production systems
+
+Note: MFA is not currently enforced for standard user access to internal
+applications or email systems.
+
+5.3 Remote Access
+Remote access to Acme systems requires:
+- Approved VPN connection
+- Company-issued laptop with full-disk encryption
+- Up-to-date antivirus software
+
+Personal devices are not permitted to access corporate resources.
+
+5.4 Physical Access Control
+Our corporate headquarters has:
+- Badge-controlled access to all floors
+- Security guards at main entrance during business hours
+- Visitor sign-in and escort requirements
+- Surveillance cameras in common areas
+
+Server rooms require additional badge authorization and maintain access logs.
+
+Note: Our satellite offices do not currently have badge-controlled access
+systems. Physical security relies on building management.
+
+==============================================================================
+6. DATA PROTECTION
+==============================================================================
+
+6.1 Data Encryption
+Data at rest:
+- All laptops and mobile devices use full-disk encryption (BitLocker/FileVault)
+- Customer payment information is encrypted in our database (AES-256)
+- Backup tapes are encrypted before off-site storage
+
+Data in transit:
+- All external communications use TLS 1.2 or higher
+- VPN connections use AES-256 encryption
+- Email containing confidential information should be sent via encrypted email
+
+Note: Internal network traffic between data center servers is not currently
+encrypted. We rely on network segmentation for protection.
+
+6.2 Data Retention and Disposal
+Data is retained according to legal and business requirements:
+- Financial records: 7 years
+- Employee records: 7 years after separation
+- Customer transaction records: 5 years
+- Email: 2 years (automatic deletion)
+- System logs: 90 days
+
+Media disposal:
+- Hard drives are securely wiped using DoD 5220.22-M standard
+- Drives containing highly sensitive data are physically destroyed
+- Paper documents are shredded using cross-cut shredders
+
+6.3 Backup and Recovery
+Critical systems are backed up daily. Backups are:
+- Stored both on-site and at an off-site facility
+- Tested quarterly to verify restoration capability
+- Encrypted before transmission to off-site location
+
+Recovery Time Objectives (RTO):
+- Critical systems: 4 hours
+- Important systems: 24 hours
+- Standard systems: 72 hours
+
+Recovery Point Objectives (RPO):
+- Critical systems: 1 hour (hourly snapshots)
+- Important systems: 24 hours (daily backups)
+- Standard systems: 24 hours (daily backups)
+
+==============================================================================
+7. SECURITY AWARENESS AND TRAINING
+==============================================================================
+
+7.1 General Employee Training
+All employees must complete security awareness training:
+- Upon hire (within first 30 days)
+- Annually thereafter
+
+Training covers:
+- Password security and phishing recognition
+- Data classification and handling procedures
+- Incident reporting procedures
+- Acceptable use of company resources
+- Social engineering awareness
+
+7.2 Role-Based Training
+Additional training is required for:
+- IT administrators: Annual security administration training
+- Developers: Secure coding practices (annual)
+- HR personnel: Privacy and data protection (annual)
+
+Note: We do not currently provide specialized cybersecurity training for
+executives or board members beyond the general employee training.
+
+7.3 Third-Party Personnel
+Contractors and vendors with access to Acme systems must:
+- Complete security awareness training before access is granted
+- Acknowledge security policies and acceptable use agreement
+- Undergo background checks consistent with their level of access
+
+==============================================================================
+8. SECURE DEVELOPMENT AND OPERATIONS
+==============================================================================
+
+8.1 System Development Lifecycle
+Software development follows secure SDLC principles:
+- Security requirements are identified during design phase
+- Code reviews include security considerations
+- Penetration testing is performed before production deployment
+- Security patches are applied within 30 days of release
+
+8.2 Configuration Management
+All systems are configured according to security baselines:
+- Unnecessary services are disabled
+- Default passwords are changed before production use
+- Security patches are tracked and applied
+- Configuration changes require change management approval
+
+Change control process requires:
+- Business justification for the change
+- Risk assessment of the proposed change
+- Approval from change advisory board
+- Testing in non-production environment
+- Rollback plan in case of issues
+
+8.3 Development and Production Separation
+Development, testing, and production environments are logically separated.
+Production data may not be used in development or testing environments without
+explicit approval and data masking.
+
+Developers do not have administrative access to production systems.
+Production deployments follow formal change control procedures.
+
+Note: Currently, some legacy applications do not have separate development
+and testing environments due to budget constraints.
+
+8.4 Security Testing
+Applications undergo security testing:
+- Static code analysis during development
+- Dynamic application security testing before production release
+- Annual penetration testing by third-party security firm
+
+Web applications are tested for OWASP Top 10 vulnerabilities.
+
+==============================================================================
+9. NETWORK SECURITY
+==============================================================================
+
+9.1 Network Segmentation
+Our network is segmented into:
+- External DMZ (web servers, email gateway)
+- Internal corporate network (workstations, file servers)
+- Production environment (customer-facing applications)
+- Management network (IT administration)
+
+Firewalls control traffic between segments based on least-privilege principles.
+
+9.2 Network Monitoring
+Network traffic is monitored for:
+- Unauthorized access attempts
+- Malware and suspicious activity
+- Unusual data transfers
+- Policy violations
+
+Security Information and Event Management (SIEM) system aggregates logs from:
+- Firewalls and intrusion detection systems
+- Authentication systems
+- Critical servers and applications
+
+Note: Log retention is currently limited to 90 days due to storage constraints.
+Extended retention for compliance requirements is under evaluation.
+
+9.3 Wireless Network Security
+Corporate wireless networks use WPA3 encryption and require authentication
+via 802.1X using Active Directory credentials.
+
+Guest wireless network is isolated from corporate network and internet usage
+is logged.
+
+Personal wireless access points are prohibited on company premises.
+
+==============================================================================
+10. INCIDENT RESPONSE AND BUSINESS CONTINUITY
+==============================================================================
+
+10.1 Incident Response Plan
+Security incidents are categorized as:
+- CRITICAL: Data breach, ransomware, major system compromise
+- HIGH: Successful phishing attack, malware infection, unauthorized access
+- MEDIUM: Failed attack attempts, policy violations, suspicious activity
+- LOW: Spam, minor configuration issues
+
+Incident response procedures:
+1. Detection and initial assessment (immediate)
+2. Containment to prevent further damage (within 2 hours)
+3. Investigation to determine scope and impact (within 24 hours)
+4. Eradication of threat and restoration of systems (varies by severity)
+5. Post-incident review and lessons learned (within 2 weeks)
+
+Critical incidents are reported to executive leadership within 4 hours of
+discovery. Data breaches affecting customer information are reported to
+affected parties and regulators as required by applicable laws.
+
+10.2 Business Continuity and Disaster Recovery
+Business continuity plans are maintained for critical business functions.
+Plans are tested annually through tabletop exercises.
+
+Disaster recovery plans exist for critical IT systems. Recovery procedures
+are documented and tested quarterly.
+
+Alternate processing facilities have been identified but formal agreements
+are not yet in place for all critical systems.
+
+10.3 Vendor and Third-Party Management
+Third-party service providers with access to Acme data or systems must:
+- Undergo security assessment before contract execution
+- Provide evidence of security controls (e.g., SOC 2 reports)
+- Agree to contractual security requirements
+- Submit to periodic security audits
+
+Note: Legacy vendor contracts do not always include comprehensive cybersecurity
+provisions. These are being updated as contracts come up for renewal.
+
+==============================================================================
+11. COMPLIANCE AND AUDIT
+==============================================================================
+
+11.1 Regulatory Compliance
+Acme complies with applicable regulations including:
+- Payment Card Industry Data Security Standard (PCI DSS)
+- State data breach notification laws
+- Industry-specific regulations as applicable
+
+Compliance assessments are conducted:
+- PCI DSS: Annual assessment by Qualified Security Assessor
+- Internal security audit: Annual
+- External security audit: Every 2 years
+
+11.2 Policy Exceptions
+Exceptions to this security policy require:
+- Written business justification
+- Risk assessment documenting compensating controls
+- Approval by CISO
+- Time-limited approval (maximum 1 year)
+- Annual review for continued necessity
+
+All approved exceptions are tracked and reported quarterly to the
+Security Committee.
+
+11.3 Enforcement and Consequences
+Violations of this policy may result in:
+- Mandatory retraining
+- Disciplinary action up to and including termination
+- Legal action if violations result in harm to the company
+- Reporting to law enforcement for criminal violations
+
+All security incidents are investigated. Intentional policy violations are
+treated more severely than inadvertent mistakes.
+
+==============================================================================
+12. POLICY MAINTENANCE
+==============================================================================
+
+This Information Security Policy is maintained by the Information Security
+team and reviewed annually by the Security Committee.
+
+Updates to this policy require approval by:
+- CISO (for minor clarifications and updates)
+- Security Committee (for substantive changes)
+- Board of Directors (for changes affecting risk posture)
+
+Version History:
+- Version 1.0: January 2022 - Initial policy
+- Version 2.0: January 2024 - Major revision to align with NIST CSF
+- Version 2.1: January 2025 - Updates for MFA and cloud security
+
+==============================================================================
+APPENDIX A: DEFINITIONS
+==============================================================================
+
+Authentication: Process of verifying the identity of a user or system
+Availability: Ensuring information and systems are accessible when needed
+Confidentiality: Protecting information from unauthorized disclosure
+Critical Asset: System or data whose loss would severely impact business
+Encryption: Process of encoding data to prevent unauthorized access
+Incident: Event that compromises security, availability, or integrity
+Integrity: Ensuring information is accurate and has not been tampered with
+Least Privilege: Providing minimum access needed to perform job duties
+Multi-Factor Authentication: Using two or more authentication methods
+Vulnerability: Weakness that could be exploited by a threat
+
+==============================================================================
+APPENDIX B: RELATED POLICIES
+==============================================================================
+
+- Acceptable Use Policy
+- Data Classification Policy
+- Remote Access Policy
+- Password Policy
+- Incident Response Plan
+- Business Continuity Plan
+- Disaster Recovery Plan
+- Third-Party Risk Management Policy
+- Cloud Security Policy
+
+==============================================================================
+APPENDIX C: CONTACTS
+==============================================================================
+
+Chief Information Security Officer (CISO): security@acmecorp.com
+IT Help Desk: helpdesk@acmecorp.com
+Security Incident Reporting: incident@acmecorp.com
+Phone (24/7 Security Hotline): 1-800-555-SECURITY
+
+==============================================================================
+END OF POLICY
+==============================================================================

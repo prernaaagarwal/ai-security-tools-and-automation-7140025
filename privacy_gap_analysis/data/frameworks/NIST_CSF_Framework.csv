@@ -1,0 +1,105 @@
+Category,Requirement,Body,Reference
+Govern - Policy,Organizational Cybersecurity Policy,Organizational cybersecurity policy is established and communicated to all stakeholders,GV.PO-01
+Govern - Policy,Policy Roles and Responsibilities,Roles and responsibilities for cybersecurity are established and communicated across the organization,GV.PO-02
+Govern - Policy,Policy Review and Updates,Policy is reviewed and updated at defined intervals or when significant changes occur,GV.PO-03
+Govern - Risk Management,Risk Management Processes,Risk management processes are established and managed across the organization,GV.RM-01
+Govern - Risk Management,Risk Appetite and Tolerance,Risk appetite and risk tolerance are established and communicated throughout the organization,GV.RM-02
+Govern - Risk Management,Risk Assessment Framework,The organization establishes and maintains a risk assessment framework,GV.RM-03
+Govern - Oversight,Cybersecurity Oversight,The Board of Directors and executive leadership provide oversight of cybersecurity risk,GV.OV-01
+Govern - Oversight,Cybersecurity Accountability,Cybersecurity roles and responsibilities are coordinated and aligned with internal and external stakeholders,GV.OV-02
+Govern - Oversight,Cybersecurity Performance,Organizational cybersecurity performance is measured and reviewed,GV.OV-03
+Govern - Supply Chain,Supply Chain Risk Management,Cybersecurity supply chain risk management processes are identified and established,GV.SC-01
+Govern - Supply Chain,Supplier Assessment,Suppliers and third-party partners are assessed using organizational cybersecurity requirements,GV.SC-02
+Govern - Supply Chain,Contracts with Suppliers,Contracts with suppliers include provisions to manage cybersecurity risks,GV.SC-03
+Identify - Asset Management,Physical Devices Inventory,Physical devices and systems within the organization are inventoried and maintained,ID.AM-01
+Identify - Asset Management,Software Platforms Inventory,Software platforms and applications within the organization are inventoried and maintained,ID.AM-02
+Identify - Asset Management,Network Resources Inventory,Organizational communication and data flows are mapped and maintained,ID.AM-03
+Identify - Asset Management,External Systems Inventory,External information systems are catalogued and managed,ID.AM-04
+Identify - Asset Management,Asset Priority,Resources (systems and devices) are prioritized based on their classification and business criticality,ID.AM-05
+Identify - Asset Management,Cybersecurity Roles,Cybersecurity roles and responsibilities for the entire workforce are established,ID.AM-06
+Identify - Risk Assessment,Vulnerability Identification,Vulnerabilities in assets are identified documented and managed,ID.RA-01
+Identify - Risk Assessment,Cyber Threat Intelligence,Cyber threat intelligence is received from information sharing forums and sources,ID.RA-02
+Identify - Risk Assessment,Internal and External Threats,Internal and external threats to the organization are identified and documented,ID.RA-03
+Identify - Risk Assessment,Business Impact Analysis,Potential business impacts and likelihoods are identified and documented,ID.RA-04
+Identify - Risk Assessment,Risk Response,Threats vulnerabilities likelihoods and impacts are used to determine and prioritize risk,ID.RA-05
+Identify - Risk Assessment,Risk Assessment Updates,Risk assessments are performed on a regular basis and when significant changes occur,ID.RA-06
+Identify - Governance,Mission Objectives,The organization's role in the supply chain is identified and communicated,ID.GV-01
+Identify - Governance,Legal and Regulatory Requirements,Legal regulatory and contractual requirements regarding cybersecurity are understood and managed,ID.GV-02
+Identify - Governance,Risk Management Strategy,Risk management strategy is informed by a comprehensive understanding of organizational risk tolerance,ID.GV-03
+Identify - Governance,Governance and Risk Roles,Governance and risk management processes address cybersecurity risks,ID.GV-04
+Protect - Identity Management,Identity Management,Physical and logical access to assets is managed based on risk and business requirements,PR.AA-01
+Protect - Identity Management,Multi-Factor Authentication,Multi-factor authentication is used for access to systems and data,PR.AA-02
+Protect - Identity Management,Remote Access,Remote access is managed and monitored,PR.AA-03
+Protect - Identity Management,Access Permissions,Access permissions and authorizations are managed incorporating least privilege,PR.AA-04
+Protect - Identity Management,Network Integrity,Network integrity is protected through network segregation and other techniques,PR.AA-05
+Protect - Identity Management,Physical Access Control,Physical access to assets is managed and protected,PR.AA-06
+Protect - Awareness and Training,Cybersecurity Training,All users are informed and trained on their cybersecurity roles and responsibilities,PR.AT-01
+Protect - Awareness and Training,Privileged Users Training,Privileged users understand their roles and responsibilities,PR.AT-02
+Protect - Awareness and Training,Third-Party Training,Third-party stakeholders understand their roles and responsibilities,PR.AT-03
+Protect - Awareness and Training,Senior Executives Training,Senior executives understand their roles and responsibilities,PR.AT-04
+Protect - Awareness and Training,Security Awareness,Physical and cybersecurity personnel understand their roles and responsibilities,PR.AT-05
+Protect - Data Security,Data at Rest Protection,Data-at-rest is protected through encryption and other appropriate mechanisms,PR.DS-01
+Protect - Data Security,Data in Transit Protection,Data-in-transit is protected through encryption and other appropriate mechanisms,PR.DS-02
+Protect - Data Security,Formal Asset Management,Assets are formally managed throughout removal retirement and disposal,PR.DS-03
+Protect - Data Security,Adequate Capacity,Adequate capacity to ensure availability is maintained,PR.DS-04
+Protect - Data Security,Leak Protection,Protections against data leaks are implemented,PR.DS-05
+Protect - Data Security,Integrity Checking,Integrity checking mechanisms are used to verify software firmware and data integrity,PR.DS-06
+Protect - Data Security,Development Environment Separation,Development and testing environments are separated from production,PR.DS-07
+Protect - Data Security,Hardware Integrity,Hardware integrity is verified using trusted computing or other mechanisms,PR.DS-08
+Protect - Platform Security,Configuration Management,Configuration management processes are established and implemented,PR.IP-01
+Protect - Platform Security,System Development Lifecycle,A System Development Life Cycle to manage systems is implemented,PR.IP-02
+Protect - Platform Security,Configuration Change Control,Configuration change control processes are in place and managed,PR.IP-03
+Protect - Platform Security,Backups and Recovery,Backups of information are conducted maintained and tested,PR.IP-04
+Protect - Platform Security,Physical Operating Environment,Physical operating environment requirements are met,PR.IP-05
+Protect - Platform Security,Data Destruction,Data is destroyed according to organizational policy,PR.IP-06
+Protect - Platform Security,Protection Processes,Protection processes are improved based on lessons learned,PR.IP-07
+Protect - Platform Security,Secure Development,Effectiveness of protection technologies is shared,PR.IP-08
+Protect - Platform Security,Response and Recovery Plans,Response and recovery plans are in place and managed,PR.IP-09
+Protect - Platform Security,Testing Response Plans,Response and recovery plans are tested,PR.IP-10
+Protect - Platform Security,Managing Vulnerabilities,Cybersecurity is included in human resources practices,PR.IP-11
+Protect - Platform Security,Vulnerability Management Plan,A vulnerability management plan is developed and implemented,PR.IP-12
+Protect - Technology,Audit Logs,Audit and log records are determined documented implemented and reviewed,PR.PT-01
+Protect - Technology,Removable Media,Removable media is protected and its use is restricted,PR.PT-02
+Protect - Technology,Least Functionality,The principle of least functionality is incorporated,PR.PT-03
+Protect - Technology,Communications Networks,Communications and control networks are protected,PR.PT-04
+Protect - Technology,Security Mechanisms,Mechanisms are implemented to achieve resilience in normal and adverse situations,PR.PT-05
+Detect - Anomalies and Events,Baseline Network Operations,A baseline of network operations and expected data flows is established and managed,DE.AE-01
+Detect - Anomalies and Events,Detected Events Analysis,Detected events are analyzed to understand attack targets and methods,DE.AE-02
+Detect - Anomalies and Events,Event Data Aggregation,Event data are collected and correlated from multiple sources,DE.AE-03
+Detect - Anomalies and Events,Event Impact Determination,Impact of events is determined and prioritized,DE.AE-04
+Detect - Anomalies and Events,Incident Alert Thresholds,Incident alert thresholds are established and managed,DE.AE-05
+Detect - Continuous Monitoring,Networks Monitored,Networks and network services are monitored to detect potential cybersecurity events,DE.CM-01
+Detect - Continuous Monitoring,Physical Environment Monitored,The physical environment is monitored to detect potential cybersecurity events,DE.CM-02
+Detect - Continuous Monitoring,Personnel Activity Monitored,Personnel activity and technology usage are monitored to detect potential cybersecurity events,DE.CM-03
+Detect - Continuous Monitoring,Malicious Code Detection,Malicious code is detected and prevented from executing,DE.CM-04
+Detect - Continuous Monitoring,Unauthorized Activity Detection,Unauthorized mobile code is detected and prevented from executing,DE.CM-05
+Detect - Continuous Monitoring,External Service Monitoring,External service provider activities are monitored to detect potential cybersecurity events,DE.CM-06
+Detect - Continuous Monitoring,Vulnerability Scanning,Monitoring for unauthorized personnel connections devices and software is performed,DE.CM-07
+Detect - Continuous Monitoring,Vulnerability Scan Analysis,Vulnerability scans are performed and analyzed,DE.CM-08
+Detect - Detection Processes,Roles and Responsibilities Defined,Roles and responsibilities for detection are well defined to ensure accountability,DE.DP-01
+Detect - Detection Processes,Detection Activities Comply,Detection activities comply with all applicable requirements,DE.DP-02
+Detect - Detection Processes,Detection Processes Tested,Detection processes are tested and improved,DE.DP-03
+Detect - Detection Processes,Event Detection Information,Event detection information is communicated to appropriate parties,DE.DP-04
+Detect - Detection Processes,Detection Processes Improved,Detection processes are continuously improved through lessons learned,DE.DP-05
+Respond - Response Planning,Response Plan Executed,Response plan is executed during or after an incident,RS.RP-01
+Respond - Communications,Personnel Notified,Personnel know their roles and order of operations when a response is needed,RS.CO-01
+Respond - Communications,Incidents Reported,Incidents are reported consistent with established criteria,RS.CO-02
+Respond - Communications,Information Shared,Information is shared consistent with response plans,RS.CO-03
+Respond - Communications,Coordination with Stakeholders,Coordination with stakeholders occurs consistent with response plans,RS.CO-04
+Respond - Communications,Voluntary Information Sharing,Voluntary information sharing occurs with external stakeholders,RS.CO-05
+Respond - Analysis,Notifications Investigated,Notifications from detection systems are investigated,RS.AN-01
+Respond - Analysis,Impact of Incident,Impact of the incident is understood,RS.AN-02
+Respond - Analysis,Forensics Performed,Forensics are performed to understand the nature and scope of incidents,RS.AN-03
+Respond - Analysis,Incidents Categorized,Incidents are categorized consistent with response plans,RS.AN-04
+Respond - Analysis,Processes Established,Processes are established to receive analyze and respond to vulnerabilities,RS.AN-05
+Respond - Mitigation,Incidents Contained,Incidents are contained to limit their impact,RS.MI-01
+Respond - Mitigation,Incidents Mitigated,Incidents are mitigated to reduce their effects,RS.MI-02
+Respond - Mitigation,Vulnerabilities Mitigated,Newly identified vulnerabilities are mitigated or documented as accepted risks,RS.MI-03
+Respond - Improvements,Response Improved,Lessons learned are incorporated into response strategies,RS.IM-01
+Respond - Improvements,Response Strategies Updated,Response strategies are updated based on lessons learned,RS.IM-02
+Recover - Recovery Planning,Recovery Plan Executed,Recovery plan is executed during or after a cybersecurity incident,RC.RP-01
+Recover - Improvements,Recovery Improved,Recovery planning and processes are improved by incorporating lessons learned,RC.IM-01
+Recover - Improvements,Recovery Strategies Updated,Recovery strategies are updated based on lessons learned and testing,RC.IM-02
+Recover - Communications,Public Relations Managed,Public relations are managed during and after recovery,RC.CO-01
+Recover - Communications,Reputation Repaired,Reputation is repaired after an incident,RC.CO-02
+Recover - Communications,Recovery Activities Communicated,Recovery activities are communicated to internal and external stakeholders,RC.CO-03
