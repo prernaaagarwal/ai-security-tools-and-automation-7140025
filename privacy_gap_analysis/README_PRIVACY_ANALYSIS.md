@@ -125,15 +125,14 @@ privacy_gap_analysis/
 │   │   └── CCPA_CPRA_Framework.csv   # CSV version
 │   │
 │   └── sample_policies/               # Sample Privacy Policy PDFs
+│       ├── blodgic.com_privacy_policy.pdf
 │       ├── auditcaddie.com_privacy_policy.pdf
-│       ├── stripe.com_privacy_policy.pdf
-│       ├── legal.yahoo.com_privacy_policy.pdf
 │       └── *_terms_conditions.pdf
 │
 ├── reports/                           # Generated Gap Analysis Reports
 │   ├── Audit_Caddie_CCPA_Gap_Analysis_*.md
-│   ├── Stripe_CCPA_Gap_Analysis_*.md
-│   ├── Yahoo_CCPA_Gap_Analysis_*.md
+│   ├── BLodgic_CCPA_Gap_Analysis_*.md
+│   ├── AcmeCorp_NIST_CSF_Gap_Analysis_*.md
 │   └── *.docx                        # Word format reports
 │
 ├── assets/                            # Images and Visual Assets
