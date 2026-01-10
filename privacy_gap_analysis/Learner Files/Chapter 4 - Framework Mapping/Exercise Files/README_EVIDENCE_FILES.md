@@ -57,7 +57,7 @@ You provide this file demonstrating:
 - 100% session success rate
 
 **Anomaly Examples Demonstrated:**
-1. **High Token Usage:** Facebook analysis (11,245 tokens, +32% above baseline)
+1. **High Token Usage:** Audit Caddie analysis (11,245 tokens, +32% above baseline)
    - Alert sent → Investigated → Resolved (legitimate large policy)
 
 2. **Low Confidence Scores:** 3 instances below 0.70 threshold
@@ -65,7 +65,7 @@ You provide this file demonstrating:
    - Human analysts validated findings
    - Ambiguous policy language documented as root cause
 
-3. **Unusual Session Duration:** Google analysis (107 seconds, +27% above baseline)
+3. **Unusual Session Duration:** Audit Caddie analysis (107 seconds, +27% above baseline)
    - Logged and analyzed
    - Resolved as normal for larger document
 
@@ -149,8 +149,8 @@ Acme_Corp_SOC2_Evidence_2025-12-31.zip
 │   ├── monitoring_dashboard_screenshots/
 │   └── anomaly_response_procedures.pdf
 ├── reports/
-│   ├── Yahoo_CCPA_Gap_Analysis_20251202_190758.md
-│   ├── Yahoo_CCPA_Gap_Analysis_20250306_141234.md
+│   ├── BLodgic_CCPA_Gap_Analysis_20251202_190758.md
+│   ├── BLodgic_CCPA_Gap_Analysis_20250306_141234.md
 │   └── [additional gap analysis reports...]
 └── metadata/
     ├── token_usage_summary.json
@@ -170,7 +170,7 @@ While these files are designed for CC6.1 and CC7.2, they also provide evidence f
 | **CC6.7** | Security event logs are reviewed | Anomaly detection, investigation tracking |
 | **CC7.3** | Environmental events detected and evaluated | Performance monitoring, uptime tracking |
 | **CC7.4** | Security incidents identified and managed | Anomaly alerts, resolution tracking |
-| **CC9.1** | Vendor commitments identified | Third-party analysis tracking (e.g., Yahoo, Google) |
+| **CC9.1** | Vendor commitments identified | Third-party analysis tracking (e.g., BLodgic, Audit Caddie) |
 
 ---
 
@@ -179,8 +179,8 @@ While these files are designed for CC6.1 and CC7.2, they also provide evidence f
 ### Scenario: SOC 2 Type II Audit
 
 **Month 1-12:** Your AI compliance tool runs quarterly gap analyses
-- December 2025: 3 analyses for Yahoo
-- Throughout 2025: 12 total analyses across 11 companies
+- December 2025: 3 analyses for BLodgic Inc.
+- Throughout 2025: 12 total analyses across 3 companies (BLodgic, Audit Caddie, Acme Corp)
 
 **Month 13:** External auditor arrives for SOC 2 Type II audit
 
