@@ -1,4 +1,4 @@
-# Exercise Files for Chapter 4: Framework Mapping & Evidence Collection
+# Framework Mapping & Evidence Collection
 
 ## Overview
 
