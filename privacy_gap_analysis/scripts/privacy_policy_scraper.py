@@ -289,7 +289,14 @@ def scrape_policy_documents(homepage_url):
     print("="*60)
     print("STEP 1: PRIVACY POLICY")
     print("="*60)
-    privacy_url = find_privacy_policy_link(homepage_url)
+    # If the URL itself looks like a privacy page, use it directly — otherwise
+    # scan the homepage for a link.
+    lowered = homepage_url.lower()
+    if any(k in lowered for k in ('privacy', 'data-protection', 'dataprotection')):
+        privacy_url = homepage_url
+        print(f"✓ Treating input URL as privacy policy: {privacy_url}")
+    else:
+        privacy_url = find_privacy_policy_link(homepage_url)
 
     if privacy_url:
         privacy_pdf = download_privacy_policy_as_pdf(privacy_url)
@@ -307,7 +314,11 @@ def scrape_policy_documents(homepage_url):
     print("="*60)
     print("STEP 2: TERMS & CONDITIONS")
     print("="*60)
-    terms_url = find_terms_conditions_link(homepage_url)
+    if any(k in lowered for k in ('terms', 'tos', 'legal')):
+        terms_url = homepage_url
+        print(f"✓ Treating input URL as terms page: {terms_url}")
+    else:
+        terms_url = find_terms_conditions_link(homepage_url)
 
     if terms_url:
         terms_pdf = download_terms_conditions_as_pdf(terms_url)
