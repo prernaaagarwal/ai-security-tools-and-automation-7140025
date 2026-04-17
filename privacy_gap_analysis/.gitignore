@@ -19,6 +19,7 @@ build/
 api key/
 *.key
 *.pem
+.streamlit/secrets.toml
 
 # Logs
 logs/*.log
