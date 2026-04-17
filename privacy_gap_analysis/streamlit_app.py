@@ -146,27 +146,35 @@ def _validate_inputs() -> str | None:
     return None
 
 
-def _disable_mcp_client(module) -> None:
-    """The analysis code logs to an MCP server on localhost:8080 that we don't
-    run in this deployment. Replace every MCP call with a no-op so the
-    pipeline doesn't crash on ConnectionError."""
-
-    def _noop(*_args, **_kwargs):
-        return None
+def _wire_mcp_client_to_store(module) -> None:
+    """Route the analysis code's MCP calls into the in-process JSON store
+    instead of an HTTP server. This gives us an audit trail without having to
+    run a separate FastAPI process — important on Streamlit Cloud where we
+    can't expose a second port."""
+    import mcp_store
 
     client = getattr(module, "mcp_client", None)
     if client is None:
         return
-    for name in (
-        "request",
-        "insert_memory",
-        "fetch_memory",
-        "insert_confidence",
-        "insert_feedback",
-        "insert_token_usage",
-    ):
-        if hasattr(client, name):
-            setattr(client, name, _noop)
+
+    client.insert_memory = lambda data: mcp_store.insert_memory(**(data or {}))
+    client.fetch_memory = lambda session_id: mcp_store.fetch_memory(session_id)
+    client.insert_confidence = mcp_store.insert_confidence
+    client.insert_feedback = mcp_store.insert_feedback
+    client.insert_token_usage = mcp_store.insert_token_usage
+
+    def _request(method, params):
+        fn = {
+            "insert_memory": lambda: mcp_store.insert_memory(**(params or {})),
+            "insert_confidence": lambda: mcp_store.insert_confidence(**(params or {})),
+            "insert_feedback": lambda: mcp_store.insert_feedback(**(params or {})),
+            "insert_token_usage": lambda: mcp_store.insert_token_usage(**(params or {})),
+            "insert_gap_analysis": lambda: mcp_store.insert_gap_analysis(**(params or {})),
+            "fetch_memory": lambda: mcp_store.fetch_memory((params or {}).get("session_id", "")),
+        }.get(method)
+        return fn() if fn else None
+
+    client.request = _request
 
 
 def _friendly_error(exc: Exception) -> str:
@@ -214,7 +222,7 @@ if run_clicked:
             st.write("📥 Importing analysis engine…")
             import privacy_rag_mcp  # noqa: E402
 
-            _disable_mcp_client(privacy_rag_mcp)
+            _wire_mcp_client_to_store(privacy_rag_mcp)
 
             if framework_key == "CCPA":
                 from privacy_policy_scraper import scrape_policy_documents  # noqa: E402
@@ -266,14 +274,18 @@ if run_clicked:
             report_docx = report_md.with_suffix(".docx")
             report_pdf = report_md.with_suffix(".pdf")
 
+            analysis_meta = result.get("analysis") or {}
             st.session_state["result"] = {
                 "framework": framework_key,
                 "company": effective_company,
+                "session_id": analysis_meta.get("session_id"),
+                "tokens_used": analysis_meta.get("tokens_used"),
                 "md_path": str(report_md),
                 "docx_path": str(report_docx) if report_docx.exists() else None,
                 "pdf_path": str(report_pdf) if report_pdf.exists() else None,
                 "markdown": report_md.read_text(encoding="utf-8"),
             }
+            st.session_state.pop("feedback_submitted", None)
             status.update(label="Analysis complete ✅", state="complete")
 
         except Exception as exc:
@@ -325,6 +337,48 @@ if result:
                 )
         else:
             st.button("PDF unavailable (install LibreOffice)", disabled=True, use_container_width=True)
+
+    st.divider()
+
+    # -----------------------------------------------------------------------
+    # Feedback widget — captured into the MCP store for the Audit Trail page
+    # -----------------------------------------------------------------------
+    st.markdown("## Rate this analysis")
+    if st.session_state.get("feedback_submitted"):
+        st.success("Thanks — your feedback has been recorded in the audit trail.")
+    else:
+        with st.form("feedback_form", clear_on_submit=False):
+            rating = st.slider(
+                "Overall quality",
+                min_value=1,
+                max_value=5,
+                value=4,
+                help="1 = Poor, 3 = Good, 5 = Outstanding",
+            )
+            comment = st.text_area(
+                "Comments (optional)",
+                placeholder="What worked well? What was missed?",
+                height=80,
+            )
+            submit_feedback = st.form_submit_button("Submit feedback")
+
+            if submit_feedback:
+                import importlib
+
+                importlib.import_module("sys").path.insert(0, str(SCRIPTS_DIR))
+                mcp_store = importlib.import_module("mcp_store")
+                rating_labels = {1: "poor", 2: "fair", 3: "good", 4: "excellent", 5: "outstanding"}
+                mcp_store.insert_feedback(
+                    session_id=result.get("session_id") or "unknown",
+                    question="Overall analysis quality",
+                    rating=rating_labels[rating],
+                    numeric_rating=rating,
+                    comments=comment.strip(),
+                    company=result.get("company"),
+                    framework=result.get("framework"),
+                )
+                st.session_state["feedback_submitted"] = True
+                st.rerun()
 
     st.divider()
     st.markdown("## Report preview")

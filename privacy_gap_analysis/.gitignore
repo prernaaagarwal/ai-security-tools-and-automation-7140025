@@ -29,6 +29,9 @@ logs/*.log
 vectordb/*/
 *.index
 
+# Local audit-trail / feedback data (JSON store)
+mcp_store/
+
 # IDE
 .vscode/
 .idea/

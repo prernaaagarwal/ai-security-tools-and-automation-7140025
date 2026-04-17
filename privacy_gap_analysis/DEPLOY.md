@@ -34,10 +34,17 @@ Your browser should pop open at `http://localhost:8501` showing the app.
 
 ### Using the app
 
-1. Paste your OpenAI API key in the sidebar (it's never saved).
-2. Enter a company name and the company's homepage URL (e.g. `https://auditcaddie.com`).
-3. Click **Run analysis**. First run takes ~60–90 seconds to warm up.
-4. When finished, you'll see the report on the page plus download buttons for **Markdown**, **Word**, and **PDF**.
+The app has three pages, switchable from the left sidebar:
+
+1. **Gap Analysis** (main page)
+   - Pick the framework — **CCPA / CPRA** (audits a privacy policy URL) or **NIST CSF 2.0** (audits an uploaded security policy).
+   - Paste your OpenAI API key, fill in the inputs, and click **Run analysis**.
+   - First run takes ~60–90 seconds to warm up.
+   - Preview the report on the page, download Markdown / Word / PDF, then optionally **rate the analysis 1–5 stars**. Ratings feed the audit trail.
+2. **Scraper** — just grab the privacy + terms PDFs for a URL without running the full analysis (free, no OpenAI calls).
+3. **Audit Trail** — dashboard of every analysis, confidence score, token usage, and rating captured so far. Refreshes on demand and has a "Clear" button.
+
+Audit-trail data lives in `./mcp_store/audit_trail.json` inside the app folder. It persists between runs on your laptop but is **cleared each time Streamlit Cloud restarts** the container (free-tier storage is ephemeral).
 
 To stop the app, close the browser and press `Ctrl + C` in the terminal.
 
