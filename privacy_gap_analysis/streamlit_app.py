@@ -1,5 +1,9 @@
 """
-Streamlit Web UI for the Privacy Policy Gap Analysis Tool.
+Streamlit Web UI for the AI Security & Compliance Gap Analysis Tool.
+
+Supports two frameworks:
+- **CCPA / CPRA** — scrape a company's privacy policy URL and audit it.
+- **NIST CSF 2.0** — paste or upload a security policy and audit it.
 
 Run locally:
     streamlit run streamlit_app.py
@@ -24,17 +28,31 @@ os.chdir(APP_DIR)
 
 
 st.set_page_config(
-    page_title="Privacy Policy Gap Analysis",
+    page_title="Compliance Gap Analysis",
     page_icon="🔐",
     layout="wide",
 )
 
 
+FRAMEWORK_OPTIONS = {
+    "CCPA / CPRA (privacy policy audit)": "CCPA",
+    "NIST CSF 2.0 (security policy audit)": "NIST",
+}
+
+
 # ---------------------------------------------------------------------------
 # Sidebar — inputs
 # ---------------------------------------------------------------------------
-st.sidebar.title("Privacy Gap Analysis")
-st.sidebar.caption("CCPA / CPRA compliance audit, powered by GPT-4.")
+st.sidebar.title("Gap Analysis")
+st.sidebar.caption("AI-powered compliance audit, powered by GPT-4.")
+
+framework_label = st.sidebar.selectbox(
+    "Framework",
+    list(FRAMEWORK_OPTIONS.keys()),
+    index=0,
+    help="CCPA/CPRA audits a public privacy policy. NIST CSF 2.0 audits an internal security policy document.",
+)
+framework_key = FRAMEWORK_OPTIONS[framework_label]
 
 try:
     default_key = st.secrets.get("OPENAI_API_KEY", "")
@@ -48,11 +66,31 @@ api_key = st.sidebar.text_input(
 )
 
 company_name = st.sidebar.text_input("Company name", value="", placeholder="Acme Corp")
-homepage_url = st.sidebar.text_input(
-    "Company homepage URL",
-    value="",
-    placeholder="https://example.com",
-)
+
+# Framework-specific inputs
+homepage_url = ""
+policy_text = ""
+uploaded_file = None
+
+if framework_key == "CCPA":
+    homepage_url = st.sidebar.text_input(
+        "Company homepage URL",
+        value="",
+        placeholder="https://example.com",
+        help="The tool will auto-discover the privacy policy and terms pages.",
+    )
+else:
+    uploaded_file = st.sidebar.file_uploader(
+        "Security policy document",
+        type=["txt", "md"],
+        help="Upload a plain-text or Markdown security policy (e.g. an InfoSec Policy).",
+    )
+    policy_text = st.sidebar.text_area(
+        "…or paste the policy here",
+        value="",
+        height=160,
+        help="If you upload a file above, you can skip this.",
+    )
 
 st.sidebar.info(
     "Each run costs roughly **$0.20 – $0.80** in OpenAI usage. "
@@ -65,33 +103,46 @@ run_clicked = st.sidebar.button("Run analysis", type="primary", use_container_wi
 # ---------------------------------------------------------------------------
 # Main area — header
 # ---------------------------------------------------------------------------
-st.title("🔐 Privacy Policy Gap Analysis")
-st.markdown(
-    "Paste a company's homepage URL. The tool will scrape its privacy policy, "
-    "compare it to **CCPA / CPRA** requirements using retrieval-augmented GPT-4, "
-    "and produce a professional audit report you can download."
-)
+st.title("🔐 Compliance Gap Analysis")
+
+if framework_key == "CCPA":
+    st.markdown(
+        "Paste a company's homepage URL. The tool will scrape its privacy policy, "
+        "compare it to **CCPA / CPRA** requirements using retrieval-augmented GPT-4, "
+        "and produce a professional audit report you can download."
+    )
+else:
+    st.markdown(
+        "Upload or paste an organization's **information security policy**. "
+        "The tool compares it to **NIST CSF 2.0** controls using retrieval-augmented "
+        "GPT-4 and produces a professional audit report."
+    )
 
 if not run_clicked and "result" not in st.session_state:
     st.info(
-        "👈 Fill in the sidebar and click **Run analysis**. "
+        "👈 Pick a framework and fill in the sidebar, then click **Run analysis**. "
         "First run takes ~60–90 seconds to warm up."
     )
 
 
 # ---------------------------------------------------------------------------
-# Analysis pipeline
+# Helpers
 # ---------------------------------------------------------------------------
 def _validate_inputs() -> str | None:
     if not api_key.strip():
         return "Please enter your OpenAI API key in the sidebar."
     if not api_key.strip().startswith("sk-"):
         return "That doesn't look like a valid OpenAI key (should start with `sk-`)."
-    if not homepage_url.strip():
-        return "Please enter the company's homepage URL."
-    url = homepage_url.strip()
-    if not (url.startswith("http://") or url.startswith("https://")):
-        return "URL must start with `http://` or `https://`."
+
+    if framework_key == "CCPA":
+        if not homepage_url.strip():
+            return "Please enter the company's homepage URL."
+        url = homepage_url.strip()
+        if not (url.startswith("http://") or url.startswith("https://")):
+            return "URL must start with `http://` or `https://`."
+    else:
+        if not uploaded_file and not policy_text.strip():
+            return "Please upload a security policy file or paste the policy text."
     return None
 
 
@@ -136,6 +187,17 @@ def _friendly_error(exc: Exception) -> str:
     return f"Something went wrong: {msg}"
 
 
+def _read_uploaded_text(upload) -> str:
+    raw = upload.read()
+    try:
+        return raw.decode("utf-8")
+    except UnicodeDecodeError:
+        return raw.decode("latin-1", errors="replace")
+
+
+# ---------------------------------------------------------------------------
+# Analysis pipeline
+# ---------------------------------------------------------------------------
 if run_clicked:
     err = _validate_inputs()
     if err:
@@ -150,31 +212,49 @@ if run_clicked:
     with st.status("Running analysis…", expanded=True) as status:
         try:
             st.write("📥 Importing analysis engine…")
-            from privacy_policy_scraper import scrape_policy_documents  # noqa: E402
             import privacy_rag_mcp  # noqa: E402
 
             _disable_mcp_client(privacy_rag_mcp)
 
-            st.write(f"🌐 Scraping policy pages from {homepage_url}…")
-            scrape_result = scrape_policy_documents(homepage_url.strip())
-            privacy_pdf = scrape_result.get("privacy_policy") if scrape_result else None
-            terms_pdf = scrape_result.get("terms_conditions") if scrape_result else None
+            if framework_key == "CCPA":
+                from privacy_policy_scraper import scrape_policy_documents  # noqa: E402
 
-            if not privacy_pdf and not terms_pdf:
-                status.update(label="No policy found", state="error")
-                st.error(
-                    "Couldn't find a privacy policy or terms page at that URL. "
-                    "Try a different URL (or link directly to the privacy page)."
+                st.write(f"🌐 Scraping policy pages from {homepage_url}…")
+                scrape_result = scrape_policy_documents(homepage_url.strip())
+                privacy_pdf = scrape_result.get("privacy_policy") if scrape_result else None
+                terms_pdf = scrape_result.get("terms_conditions") if scrape_result else None
+
+                if not privacy_pdf and not terms_pdf:
+                    status.update(label="No policy found", state="error")
+                    st.error(
+                        "Couldn't find a privacy policy or terms page at that URL. "
+                        "Try a different URL (or link directly to the privacy page)."
+                    )
+                    st.stop()
+
+                st.write("📚 Loading CCPA/CPRA framework and policy into vector DB… (first run is slow)")
+                st.write("🤖 Running GPT-4 gap analysis…")
+                result = privacy_rag_mcp.analyze_policy_documents(
+                    privacy_pdf_path=privacy_pdf,
+                    terms_pdf_path=terms_pdf,
+                    company_name=effective_company,
                 )
-                st.stop()
+            else:
+                # NIST CSF 2.0 flow
+                if uploaded_file is not None:
+                    resolved_text = _read_uploaded_text(uploaded_file)
+                else:
+                    resolved_text = policy_text
 
-            st.write("📚 Loading CCPA framework and policy into vector DB… (first run is slow)")
-            st.write("🤖 Running GPT-4 gap analysis…")
-            result = privacy_rag_mcp.analyze_policy_documents(
-                privacy_pdf_path=privacy_pdf,
-                terms_pdf_path=terms_pdf,
-                company_name=effective_company,
-            )
+                st.write(
+                    f"📄 Ingesting {len(resolved_text):,} characters of security policy…"
+                )
+                st.write("📚 Loading NIST CSF 2.0 framework into vector DB… (first run is slow)")
+                st.write("🤖 Running GPT-4 gap analysis…")
+                result = privacy_rag_mcp.analyze_security_policy_nist(
+                    policy_text=resolved_text,
+                    company_name=effective_company,
+                )
 
             if not result or not result.get("report_path"):
                 status.update(label="Analysis failed", state="error")
@@ -187,6 +267,7 @@ if run_clicked:
             report_pdf = report_md.with_suffix(".pdf")
 
             st.session_state["result"] = {
+                "framework": framework_key,
                 "company": effective_company,
                 "md_path": str(report_md),
                 "docx_path": str(report_docx) if report_docx.exists() else None,
@@ -208,7 +289,8 @@ if run_clicked:
 # ---------------------------------------------------------------------------
 result = st.session_state.get("result")
 if result:
-    st.success(f"Report generated for **{result['company']}**.")
+    framework_display = "NIST CSF 2.0" if result.get("framework") == "NIST" else "CCPA / CPRA"
+    st.success(f"{framework_display} report generated for **{result['company']}**.")
 
     dl_cols = st.columns(3)
     with dl_cols[0]:
