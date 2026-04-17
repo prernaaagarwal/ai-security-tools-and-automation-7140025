@@ -36,7 +36,10 @@ st.set_page_config(
 st.sidebar.title("Privacy Gap Analysis")
 st.sidebar.caption("CCPA / CPRA compliance audit, powered by GPT-4.")
 
-default_key = st.secrets.get("OPENAI_API_KEY", "") if hasattr(st, "secrets") else ""
+try:
+    default_key = st.secrets.get("OPENAI_API_KEY", "")
+except Exception:
+    default_key = ""
 api_key = st.sidebar.text_input(
     "OpenAI API key",
     value=default_key,
