@@ -81,6 +81,51 @@ def load_ccpa_framework():
     print(f" CCPA/CPRA requirements stored: {vectordb_ccpa._collection.count()}")
     return vectordb_ccpa
 
+
+def load_framework(framework_key: str = "CCPA"):
+    """Load an arbitrary compliance framework CSV into a vector database.
+
+    Expects a CSV with columns: Category, Requirement, Body, Reference.
+    Looks for the file in <repo>/data/frameworks/<csv_filename>.
+    """
+    config = FRAMEWORKS.get(framework_key.upper())
+    if not config:
+        raise ValueError(f"Unknown framework: {framework_key}. Known: {list(FRAMEWORKS)}")
+
+    print("\n" + "=" * 60)
+    print(f"Loading {config['display_name']} framework...")
+    print("=" * 60)
+
+    csv_name = config["csv_filename"]
+    framework_path = Path(__file__).parent.parent / "data" / "frameworks" / csv_name
+    if not framework_path.exists():
+        framework_path = Path("data/frameworks") / csv_name
+    if not framework_path.exists():
+        framework_path = Path(csv_name)
+
+    df = pd.read_csv(str(framework_path), index_col=False)
+    df["Body"] = df.apply(
+        lambda row: (
+            f"Category: {row['Category']}\n"
+            f"Requirement: {row['Requirement']}\n"
+            f"{row['Body']}\n"
+            f"Reference: {row['Reference']}"
+        ),
+        axis=1,
+    )
+
+    documents = DataFrameLoader(df, page_content_column="Body").load()
+    persist_dir = f"./{config['persist_subdir']}"
+    vectordb = Chroma.from_documents(
+        documents=documents,
+        embedding=embedding_model,
+        persist_directory=persist_dir,
+    )
+    vectordb.persist()
+
+    print(f" {config['display_name']} requirements stored: {vectordb._collection.count()}")
+    return vectordb
+
 ###############################################################################
 #                    PDF Text Extraction
 ###############################################################################
@@ -144,6 +189,46 @@ def load_privacy_policy(pdf_path: str, company_name: str):
     vectordb_policy.persist()
 
     print(f" Privacy policy stored: {vectordb_policy._collection.count()} chunks")
+    return vectordb_policy
+
+
+def load_policy_from_text(
+    policy_text: str,
+    company_name: str = "Company",
+    source_label: str = "Security Policy",
+    persist_dir: str = "./vectordb_policy_text",
+):
+    """Load a policy document supplied as plain text (not a PDF) into a vector DB.
+
+    Used by the NIST CSF flow where the user pastes or uploads a security policy
+    rather than scraping a URL.
+    """
+    print("\n" + "=" * 60)
+    print(f"Loading {source_label}: {company_name}")
+    print("=" * 60)
+
+    if not policy_text or not policy_text.strip():
+        print(" No policy text provided")
+        return None
+
+    chunks = [chunk.strip() for chunk in policy_text.split("\n\n") if chunk.strip()]
+    print(f" Created {len(chunks)} chunks from {source_label.lower()}")
+
+    documents = [
+        Document(
+            page_content=chunk,
+            metadata={"company": company_name, "source": source_label, "chunk_id": i},
+        )
+        for i, chunk in enumerate(chunks)
+    ]
+
+    vectordb_policy = Chroma.from_documents(
+        documents=documents,
+        embedding=embedding_model,
+        persist_directory=persist_dir,
+    )
+    vectordb_policy.persist()
+    print(f" Policy stored: {vectordb_policy._collection.count()} chunks")
     return vectordb_policy
 
 
@@ -337,6 +422,70 @@ Common gap areas to check:
 If a requirement is missing or inadequate, clearly state what is missing and what needs to be added.
 """
 
+NIST_ANALYSIS_PROMPT = """
+You are a Cybersecurity Compliance Officer specializing in the NIST Cybersecurity
+Framework 2.0 (NIST CSF 2.0). Your role is to analyze an organization's
+information security policy and identify gaps against NIST CSF 2.0 controls.
+
+When analyzing:
+- **Focus on NIST CSF 2.0 Compliance:** Evaluate strictly against the six functions
+  (Govern, Identify, Protect, Detect, Respond, Recover).
+- **Identify Specific Gaps:** Call out missing controls, weak or informal
+  implementations, and controls that are described but not demonstrably enforced.
+- **Be Precise:** Reference specific NIST CSF 2.0 control IDs (e.g., `GV.PO-01`,
+  `ID.AM-01`, `PR.DS-01`) when identifying gaps.
+- **Provide Recommendations:** Suggest concrete policy language, processes, or
+  technical controls to close each gap.
+- **Maturity Focus:** Distinguish between controls that are absent, informal, or
+  partially implemented.
+
+Common gap areas to check:
+1. Governance — policies, roles & responsibilities, risk management strategy
+2. Asset inventory — hardware, software, data, and cloud assets
+3. Access control — authentication, MFA, privileged access, joiner/mover/leaver
+4. Data protection — encryption at rest and in transit, classification, DLP
+5. Vulnerability management and patching cadence
+6. Logging, monitoring, and detection coverage (retention windows, SIEM, anomalies)
+7. Incident response plans, tabletop exercises, communication protocols
+8. Business continuity and recovery objectives (RTO/RPO)
+9. Supply-chain / third-party risk management
+10. Security awareness training and phishing simulations
+
+If a control is missing or inadequate, state what is missing, what NIST CSF 2.0
+control it maps to, and what specific language or process should be added.
+"""
+
+
+# Framework registry — lets callers pick a framework by key.
+FRAMEWORKS = {
+    "CCPA": {
+        "display_name": "CCPA / CPRA",
+        "csv_filename": "CCPA_CPRA_Framework.csv",
+        "persist_subdir": "vectordb_ccpa",
+        "system_prompt": PRIVACY_ANALYSIS_PROMPT,
+        "retriever_query": "CCPA CPRA requirements",
+        "policy_retriever_query": "privacy policy content",
+        "requirements_header": "CCPA/CPRA REQUIREMENTS",
+        "policy_header": "COMPANY PRIVACY POLICY",
+        "analysis_object": "privacy policy",
+        "report_title": "CCPA/CPRA Gap Analysis Report",
+        "filename_tag": "CCPA_Gap_Analysis",
+    },
+    "NIST": {
+        "display_name": "NIST CSF 2.0",
+        "csv_filename": "NIST_CSF_Framework.csv",
+        "persist_subdir": "vectordb_nist",
+        "system_prompt": NIST_ANALYSIS_PROMPT,
+        "retriever_query": "NIST CSF cybersecurity controls",
+        "policy_retriever_query": "information security policy controls",
+        "requirements_header": "NIST CSF 2.0 CONTROLS",
+        "policy_header": "COMPANY SECURITY POLICY",
+        "analysis_object": "security policy",
+        "report_title": "NIST CSF 2.0 Gap Analysis Report",
+        "filename_tag": "NIST_CSF_Gap_Analysis",
+    },
+}
+
 def count_tokens(text: str) -> int:
     """Count tokens in text"""
     return len(tokenizer.encode(text))
@@ -466,55 +615,66 @@ def _parse_gap_analysis(analysis_text: str) -> dict:
     }
 
 
-def perform_gap_analysis(company_name: str, vectordb_ccpa, vectordb_policy) -> Dict:
+def perform_gap_analysis(company_name: str, vectordb_ccpa, vectordb_policy, framework: str = "CCPA") -> Dict:
     """
-    Perform CCPA/CPRA gap analysis on privacy policy using GPT-4.1
+    Perform a compliance gap analysis using GPT-4.
+
+    The positional arg is named `vectordb_ccpa` for backward compatibility, but
+    any framework vector DB (CCPA, NIST CSF, etc.) may be passed. The
+    `framework` kwarg controls which system prompt, retriever queries, and
+    output terminology are used.
     """
+    config = FRAMEWORKS.get(framework.upper(), FRAMEWORKS["CCPA"])
+    framework_key = framework.upper() if framework.upper() in FRAMEWORKS else "CCPA"
+
     print("\n" + "="*60)
-    print(f"Performing Gap Analysis: {company_name}")
+    print(f"Performing Gap Analysis ({config['display_name']}): {company_name}")
     print("="*60)
 
-    # Get all CCPA requirements
-    ccpa_retriever = vectordb_ccpa.as_retriever(search_kwargs={"k": 35})  # Get all requirements
-    ccpa_requirements = ccpa_retriever.invoke("CCPA CPRA requirements")
+    # Get all framework requirements
+    framework_retriever = vectordb_ccpa.as_retriever(search_kwargs={"k": 35})
+    framework_requirements = framework_retriever.invoke(config["retriever_query"])
 
-    # Get privacy policy content
-    policy_retriever = vectordb_policy.as_retriever(search_kwargs={"k": 50})  # Get comprehensive policy content
-    policy_docs = policy_retriever.invoke("privacy policy content")
+    # Get policy content
+    policy_retriever = vectordb_policy.as_retriever(search_kwargs={"k": 50})
+    policy_docs = policy_retriever.invoke(config["policy_retriever_query"])
 
-    print(f" Retrieved {len(ccpa_requirements)} CCPA requirements")
+    print(f" Retrieved {len(framework_requirements)} {config['display_name']} requirements")
     print(f" Retrieved {len(policy_docs)} policy sections")
 
     # Build context
-    ccpa_context = "\n\n".join([doc.page_content for doc in ccpa_requirements])
+    framework_context = "\n\n".join([doc.page_content for doc in framework_requirements])
     policy_context = "\n\n".join([doc.page_content for doc in policy_docs])
 
     # Create analysis prompt
     analysis_query = f"""
-Analyze the following privacy policy for {company_name} against CCPA/CPRA requirements.
+Analyze the following {config['analysis_object']} for {company_name} against {config['display_name']} requirements.
 
-CCPA/CPRA REQUIREMENTS:
-{ccpa_context}
+{config['requirements_header']}:
+{framework_context}
 
-COMPANY PRIVACY POLICY:
+{config['policy_header']}:
 {policy_context}
 
 Perform a comprehensive gap analysis and provide:
 1. Executive Summary of compliance status
-2. Detailed list of gaps with specific CCPA/CPRA sections
+2. Detailed list of gaps with specific {config['display_name']} references
 3. Recommendations for each gap
 4. Priority level for each gap (Critical/High/Medium/Low)
 
 Format your response as a structured report.
 """
 
-    print("\n Calling GPT-4.1 for gap analysis...")
+    print(f"\n Calling GPT-4 for {config['display_name']} gap analysis...")
 
     # Build messages
     messages = [
-        {"role": "system", "content": PRIVACY_ANALYSIS_PROMPT},
-        {"role": "user", "content": analysis_query}
+        {"role": "system", "content": config["system_prompt"]},
+        {"role": "user", "content": analysis_query},
     ]
+
+    # Keep a reference for downstream code that still uses the CCPA-specific name.
+    ccpa_requirements = framework_requirements
 
     # Call GPT-4.1
     response = openai_client.chat.completions.create(
@@ -555,7 +715,7 @@ Format your response as a structured report.
     # Log confidence score to MCP
     try:
         mcp_client.insert_confidence(
-            query=f"CCPA/CPRA Gap Analysis for {company_name}",
+            query=f"{config['display_name']} Gap Analysis for {company_name}",
             response=analysis_result[:500],  # First 500 chars
             score=confidence_score
         )
@@ -586,21 +746,29 @@ Format your response as a structured report.
         'session_id': session_id,
         'analysis': analysis_result,
         'tokens_used': total_tokens,
-        'timestamp': datetime.now().isoformat()
+        'timestamp': datetime.now().isoformat(),
+        'framework': framework_key,
     }
 
 ###############################################################################
 #                         Part 4: Report Generation
 ###############################################################################
-def generate_gap_report(analysis_result: Dict, output_path: str = None):
-    """Generate a formatted gap analysis report"""
+def generate_gap_report(analysis_result: Dict, output_path: str = None, framework: str = None):
+    """Generate a formatted gap analysis report for the selected framework.
+
+    If `framework` is not provided, it is read from `analysis_result['framework']`
+    (set by `perform_gap_analysis`). Falls back to CCPA for backward compat.
+    """
+    framework_key = (framework or analysis_result.get("framework") or "CCPA").upper()
+    config = FRAMEWORKS.get(framework_key, FRAMEWORKS["CCPA"])
+    framework_label = "NIST CSF 2.0" if framework_key == "NIST" else "CCPA/CPRA (California Consumer Privacy Act / California Privacy Rights Act)"
 
     if not output_path:
         company = analysis_result['company'].replace(' ', '_')
         timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_path = f"{company}_CCPA_Gap_Analysis_{timestamp}.md"
+        output_path = f"{company}_{config['filename_tag']}_{timestamp}.md"
 
-    report = f"""# CCPA/CPRA Gap Analysis Report
+    report = f"""# {config['report_title']}
 
 **Company:** {analysis_result['company']}
 **Analysis Date:** {analysis_result['timestamp']}
@@ -618,12 +786,11 @@ def generate_gap_report(analysis_result: Dict, output_path: str = None):
 
 - **Model Used:** GPT-4.1
 - **Tokens Consumed:** {analysis_result['tokens_used']}
-- **Framework:** CCPA/CPRA (California Consumer Privacy Act / California Privacy Rights Act)
+- **Framework:** {framework_label}
 
 ---
 
-*Report generated by Privacy Policy Gap Analysis System with RAG and MCP*
-*Powered by Cardinal Security Privacy Compliance Workflow*
+*Report generated by AI Security & Compliance Gap Analysis System with RAG and MCP*
 """
 
     with open(output_path, 'w') as f:
@@ -634,15 +801,29 @@ def generate_gap_report(analysis_result: Dict, output_path: str = None):
     # Generate Professional Word document using Audit Caddie template
     docx_path = output_path.replace('.md', '.docx')
     try:
-        # Prepare metadata for professional template
+        if framework_key == "NIST":
+            docx_title = "NIST CSF 2.0 COMPLIANCE ASSESSMENT REPORT"
+            docx_subtitle = f"{analysis_result['company']} Security Policy\nCompliance Gap Analysis"
+            docx_exec = (
+                "This report provides a comprehensive NIST CSF 2.0 compliance gap analysis, "
+                "identifying specific areas where the organization's security policy requires "
+                "updates to meet cybersecurity framework requirements."
+            )
+        else:
+            docx_title = "CCPA COMPLIANCE ASSESSMENT REPORT"
+            docx_subtitle = f"{analysis_result['company']} Privacy Policy\nCompliance Gap Analysis"
+            docx_exec = (
+                "This report provides a comprehensive CCPA/CPRA compliance gap analysis, "
+                "identifying specific areas where the privacy policy requires updates to meet "
+                "California consumer privacy requirements."
+            )
+
         metadata = {
             'company_name': analysis_result['company'],
-            'report_title': 'CCPA COMPLIANCE ASSESSMENT REPORT',
-            'subtitle': f"{analysis_result['company']} Privacy Policy\nCompliance Gap Analysis",
-            'executive_summary': 'This report provides a comprehensive CCPA/CPRA compliance gap analysis, '
-                               'identifying specific areas where the privacy policy requires updates to meet '
-                               'California consumer privacy requirements.',
-            'generated_by': 'Privacy Policy Gap Analysis System\nPowered by Cardinal Security',
+            'report_title': docx_title,
+            'subtitle': docx_subtitle,
+            'executive_summary': docx_exec,
+            'generated_by': 'AI Security & Compliance Gap Analysis System',
             'analysis_date': datetime.now().strftime('%B %d, %Y')
         }
 
@@ -757,6 +938,49 @@ def analyze_policy_documents(privacy_pdf_path: str = None, terms_pdf_path: str =
         'analysis': analysis_result,
         'report_path': report_path
     }
+
+
+def analyze_security_policy_nist(policy_text: str, company_name: str = "Company"):
+    """Run a NIST CSF 2.0 gap analysis on a pasted/uploaded security policy.
+
+    Mirrors `analyze_policy_documents` but (1) uses the NIST framework CSV,
+    (2) accepts raw policy text instead of a URL + PDF, and (3) uses the
+    NIST system prompt and report formatting.
+    """
+    print("\n" + "=" * 70)
+    print("SECURITY POLICY GAP ANALYSIS - NIST CSF 2.0")
+    print("=" * 70)
+    print(f"Company: {company_name}")
+    print(f"Policy characters: {len(policy_text or '')}")
+    print("=" * 70)
+
+    vectordb_framework = load_framework("NIST")
+    vectordb_policy = load_policy_from_text(
+        policy_text=policy_text,
+        company_name=company_name,
+        source_label="Security Policy",
+    )
+
+    if not vectordb_policy:
+        print(" Failed to load security policy text")
+        return None
+
+    analysis_result = perform_gap_analysis(
+        company_name, vectordb_framework, vectordb_policy, framework="NIST"
+    )
+    report_path = generate_gap_report(analysis_result, framework="NIST")
+
+    print("\n" + "=" * 70)
+    print(" ANALYSIS COMPLETE")
+    print("=" * 70)
+    print(f"Report: {report_path}")
+    print("=" * 70)
+
+    return {
+        "analysis": analysis_result,
+        "report_path": report_path,
+    }
+
 
 ###############################################################################
 #                         Example Usage
